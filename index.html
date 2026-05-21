@@ -676,11 +676,19 @@
       box-shadow:var(--shadow);
     }
     .simple-icon{
-      width:54px;height:54px;border-radius:16px;
-      background:linear-gradient(180deg,#d5bb96,#b9986c);
-      box-shadow:0 12px 22px rgba(185,152,108,.24);
+      width:48px; height:48px;
       margin-bottom:16px;
-      position:relative;
+      background:var(--gold);
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:24px;
+    }
+    .simple-icon:after{
+      content:"✓";
+      font-weight:bold;
     }
     .simple-icon:before{
       content:"";
