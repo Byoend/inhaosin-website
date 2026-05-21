@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inhaosin | Professional Ink Solutions</title>
+<title>Inhaosin | Professional Ink Solution</title>
 <style>
-:root{
+:root {
   --bg:#fff;
   --text:#1a1d24;
   --text-light:#6e7480;
@@ -19,7 +19,7 @@ a{text-decoration:none;color:inherit;}
 header{display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10;background:#fff;}
 header .logo img{height:52px;}
 nav a{margin:0 15px;font-weight:600;color:#333;}
-.hero{display:flex;align-items:center;justify-content:space-between;padding:80px 0;background:#f9f9f9;overflow:hidden;}
+.hero{display:flex;align-items:flex-end;justify-content:center;padding:80px 0;background:#f9f9f9;gap:20px;}
 .hero-text{max-width:600px;}
 .hero-text h1{font-size:42px;margin-bottom:20px;}
 .hero-text p{font-size:16px;margin-bottom:20px;line-height:1.5;}
@@ -27,86 +27,122 @@ nav a{margin:0 15px;font-weight:600;color:#333;}
 .btn:hover{transform:translateY(-2px);}
 .btn-primary{background:var(--gold);color:#fff;}
 .btn-outline{border:1px solid var(--gold);color:var(--gold);background:#fff;}
-.hero-image{position:relative;width:500px;height:400px;display:flex;align-items:flex-end;justify-content:center;gap:15px;}
-.bottle{position:relative;width:80px;height:240px;border-radius:22px;background:linear-gradient(180deg,#fff,#f0f0f0);border:1px solid #e7e7e7;box-shadow:var(--shadow);}
-.bottle:before{content:"";position:absolute;top:-30px;left:20px;width:40px;height:40px;border-radius:10px;background:#111;box-shadow:0 8px 18px rgba(0,0,0,.18);}
-.bottle-label{position:absolute;top:60px;left:10px;right:10px;height:120px;background:#fff;border-radius:14px;border:1px solid #eee;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.hero-image{display:flex;gap:15px;align-items:flex-end;}
+
+/* 立体墨水瓶模拟 */
+.bottle{
+  width:80px;height:240px;border-radius:22px;background:linear-gradient(180deg,#fff,#f0f0f0);border:1px solid #e7e7e7;box-shadow:var(--shadow);position:relative;transition:transform .3s;
+}
+.bottle:hover{transform:translateY(-10px);}
+.bottle:before{
+  content:"";position:absolute;top:-30px;left:20px;width:40px;height:40px;border-radius:10px;background:#111;box-shadow:0 8px 18px rgba(0,0,0,.18);
+}
+.bottle-label{
+  position:absolute;top:60px;left:10px;right:10px;height:120px;background:#fff;border-radius:14px;border:1px solid #eee;display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
 .bottle-label .type{font-size:12px;font-weight:700;color:#555;margin-top:6px;text-transform:uppercase;}
 .bottle-color{width:24px;height:24px;border-radius:50%;margin-top:8px;}
+
+/* 产品分类卡片 */
 .categories{display:flex;justify-content:space-between;margin:50px 0;flex-wrap:wrap;gap:15px;}
-.category-card{flex:1 1 calc(12% - 10px);text-align:center;background:#fff;padding:10px;border-radius:12px;box-shadow:var(--shadow);}
-.category-card .sim-bottle{width:60px;height:180px;margin:auto;border-radius:18px;background:linear-gradient(180deg,#fff,#f4f4f4);border:1px solid #e7e7e7;box-shadow:0 8px 18px rgba(0,0,0,.08);position:relative;}
+.category-card{flex:1 1 calc(12% - 10px);text-align:center;background:#fff;padding:10px;border-radius:12px;box-shadow:var(--shadow);transition:transform .25s;}
+.category-card:hover{transform:translateY(-5px);}
+.sim-bottle{width:60px;height:180px;margin:auto;border-radius:18px;background:linear-gradient(180deg,#fff,#f4f4f4);border:1px solid #e7e7e7;box-shadow:0 8px 18px rgba(0,0,0,.08);position:relative;}
+
+/* 工厂实力条 */
 .stats{display:flex;justify-content:space-between;background:#121317;color:#fff;padding:30px 20px;border-radius:12px;margin-bottom:50px;flex-wrap:wrap;gap:15px;}
 .stat{flex:1;text-align:center;}
 .stat h2{margin:0;font-size:24px;}
 .stat p{margin:5px 0 0;font-size:14px;color:#ccc;}
+
+/* 热销产品模块 */
+.hot-products{margin-bottom:50px;}
+.hot-products h2{text-align:center;font-size:28px;margin-bottom:30px;}
 .product-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;}
 .product-card{width:calc(16.6% - 10px);background:#fff;border-radius:12px;padding:15px;text-align:center;box-shadow:var(--shadow);transition:transform .25s;}
 .product-card:hover{transform:translateY(-5px);}
-.product-card .sim-bottle-small{width:60px;height:180px;margin:auto;border-radius:18px;background:linear-gradient(180deg,#fff,#f4f4f4);border:1px solid #e7e7e7;box-shadow:0 8px 18px rgba(0,0,0,.08);position:relative;}
+.sim-bottle-small{width:60px;height:180px;margin:auto;border-radius:18px;background:linear-gradient(180deg,#fff,#f4f4f4);border:1px solid #e7e7e7;box-shadow:0 8px 18px rgba(0,0,0,.08);position:relative;}
+
+/* CTA */
 .cta{display:flex;justify-content:space-between;align-items:center;padding:40px 20px;background:#17181c;border-radius:12px;margin-bottom:50px;color:#fff;flex-wrap:wrap;gap:15px;}
 .cta h2{font-size:24px;max-width:600px;}
-.cta .btn-cta{background:var(--gold);color:#fff;}
+.btn-cta{background:var(--gold);color:#fff;}
+
+/* Footer */
 footer{background:#121317;color:#ccc;padding:40px 0;text-align:center;font-size:14px;}
-@media(max-width:1024px){.hero{flex-direction:column;}.hero-image{width:100%;justify-content:center;margin-top:30px;}.product-card{width:calc(33% - 10px);}.categories{flex-wrap:wrap;}.stat{flex:1 1 calc(33% - 10px);}}
-@media(max-width:640px){.product-card{width:calc(50% - 10px);}.stat{flex:1 1 100%;}.categories{flex-direction:column;}}
+
+/* 响应式 */
+@media(max-width:1024px){.hero{flex-direction:column;}.product-card{width:calc(33% - 10px);}.category-card{flex:1 1 30%;}.stat{flex:1 1 30%;}}
+@media(max-width:640px){.product-card{width:calc(50% - 10px);}.stat{flex:1 1 100%;}.category-card{flex:1 1 100%;}}
 </style>
 </head>
 <body>
-<header class="container"><div class="logo"><img src="assets/images/logo.png" alt="Inhaosin Logo"></div><nav><a href="#">Home</a><a href="#">Products</a><a href="#">About</a><a href="#">ODM/OEM</a><a href="#">Application</a><a href="#">Support</a><a href="#">Contact</a></nav></header>
+
+<header class="container">
+  <div class="logo"><img src="assets/images/logo.png" alt="Inhaosin Logo"></div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">About</a>
+    <a href="#">ODM/OEM</a>
+    <a href="#">Application</a>
+    <a href="#">Support</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
 
 <section class="hero container">
-<div class="hero-text">
-<h1>Professional Ink Solution Provider</h1>
-<p>High quality, stable performance and eco-friendly inks for DTF, UV, sublimation, eco-solvent and related consumables.</p>
-<button class="btn btn-primary">View Products</button>
-<button class="btn btn-outline">Contact Us</button>
-</div>
-<div class="hero-image">
-<div class="bottle" style="--c:#00a9e8;"><div class="bottle-label"><div class="type">DTF Ink</div><div class="bottle-color" style="background:#00a9e8;"></div></div></div>
-<div class="bottle" style="--c:#ff3f98;"><div class="bottle-label"><div class="type">UV Ink</div><div class="bottle-color" style="background:#ff3f98;"></div></div></div>
-<div class="bottle" style="--c:#f2bf14;"><div class="bottle-label"><div class="type">Sublimation</div><div class="bottle-color" style="background:#f2bf14;"></div></div></div>
-<div class="bottle" style="--c:#222a35;"><div class="bottle-label"><div class="type">Eco Solvent</div><div class="bottle-color" style="background:#222a35;"></div></div></div>
-<div class="bottle" style="--c:#c9c9c9;"><div class="bottle-label"><div class="type">White Ink</div><div class="bottle-color" style="background:#c9c9c9;"></div></div></div>
-</div>
+  <div class="hero-text">
+    <h1>Professional Ink Solution Provider</h1>
+    <p>High quality, stable performance and eco-friendly inks for DTF, UV, sublimation, eco-solvent and related consumables.</p>
+    <button class="btn btn-primary">View Products</button>
+    <button class="btn btn-outline">Contact Us</button>
+  </div>
+  <div class="hero-image">
+    <div class="bottle"><div class="bottle-label"><div class="type">DTF Ink</div><div class="bottle-color" style="background:#00a9e8;"></div></div></div>
+    <div class="bottle"><div class="bottle-label"><div class="type">UV Ink</div><div class="bottle-color" style="background:#ff3f98;"></div></div></div>
+    <div class="bottle"><div class="bottle-label"><div class="type">Sublimation</div><div class="bottle-color" style="background:#f2bf14;"></div></div></div>
+    <div class="bottle"><div class="bottle-label"><div class="type">Eco Solvent</div><div class="bottle-color" style="background:#222a35;"></div></div></div>
+    <div class="bottle"><div class="bottle-label"><div class="type">White Ink</div><div class="bottle-color" style="background:#c9c9c9;"></div></div></div>
+  </div>
 </section>
 
 <section class="container categories">
-<div class="category-card"><div class="sim-bottle"></div><span>DTF Ink</span></div>
-<div class="category-card"><div class="sim-bottle"></div><span>UV Ink</span></div>
-<div class="category-card"><div class="sim-bottle"></div><span>Sublimation</span></div>
-<div class="category-card"><div class="sim-bottle"></div><span>Eco Solvent</span></div>
-<div class="category-card"><div class="sim-bottle"></div><span>DTF PET Film</span></div>
-<div class="category-card"><div class="sim-bottle"></div><span>DTF Powder</span></div>
-<div class="category-card"><div class="sim-bottle"></div><span>Cleaning Solution</span></div>
-<div class="category-card"><div class="sim-bottle"></div><span>UV DTF Film</span></div>
-<div class="category-card"><div class="sim-bottle"></div><span>OEM / Private Label</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>DTF Ink</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>UV Ink</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>Sublimation</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>Eco Solvent</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>DTF PET Film</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>DTF Powder</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>Cleaning Solution</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>UV DTF Film</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>OEM / Private Label</span></div>
 </section>
 
 <section class="container stats">
-<div class="stat"><h2>12+</h2><p>Years Experience</p></div>
-<div class="stat"><h2>30,000 m³</h2><p>Factory Area</p></div>
-<div class="stat"><h2>10,000,000+</h2><p>Liters Annual Output</p></div>
-<div class="stat"><h2>80+</h2><p>Export Countries</p></div>
-<div class="stat"><h2>50+</h2><p>R&D Team</p></div>
-<div class="stat"><h2>ISO9001</h2><p>Quality Certified</p></div>
+  <div class="stat"><h2>12+</h2><p>Years Experience</p></div>
+  <div class="stat"><h2>30,000 m³</h2><p>Factory Area</p></div>
+  <div class="stat"><h2>10,000,000+</h2><p>Liters Annual Output</p></div>
+  <div class="stat"><h2>80+</h2><p>Export Countries</p></div>
+  <div class="stat"><h2>50+</h2><p>R&D Team</p></div>
+  <div class="stat"><h2>ISO9001</h2><p>Quality Certified</p></div>
 </section>
 
 <section class="container hot-products">
-<h2>HOT PRODUCTS</h2>
-<div class="product-row">
-<div class="product-card"><div class="sim-bottle-small"></div><h4>DTF Ink</h4><p>CMYK W Colors Standard/High/Super</p></div>
-<div class="product-card"><div class="sim-bottle-small"></div><h4>UV Ink</h4><p>For Epson/Industrial Heads Hard/Soft/Neutral</p></div>
-<div class="product-card"><div class="sim-bottle-small"></div><h4>Sublimation Ink</h4><p>Epson 1-16H / 1-35H / 8H Fluorescent</p></div>
-<div class="product-card"><div class="sim-bottle-small"></div><h4>Eco Solvent Ink</h4><p>Low Odor / Odorless Eco / Premium / Leather / ECO</p></div>
-<div class="product-card"><div class="sim-bottle-small"></div><h4>DTF PET Film</h4><p>A3 / A4 Sheets 30cm/33cm/60cm Rolls</p></div>
-<div class="product-card"><div class="sim-bottle-small"></div><h4>DTF Powder</h4><p>White DTF Powder Hot Melt TPU Powder</p></div>
-</div>
+  <h2>HOT PRODUCTS</h2>
+  <div class="product-row">
+    <div class="product-card"><div class="sim-bottle-small"></div><h4>DTF Ink</h4><p>CMYK W Colors Standard/High/Super</p></div>
+    <div class="product-card"><div class="sim-bottle-small"></div><h4>UV Ink</h4><p>For Epson/Industrial Heads Hard/Soft/Neutral</p></div>
+    <div class="product-card"><div class="sim-bottle-small"></div><h4>Sublimation Ink</h4><p>Epson 1-16H / 1-35H / 8H Fluorescent</p></div>
+    <div class="product-card"><div class="sim-bottle-small"></div><h4>Eco Solvent Ink</h4><p>Low Odor / Odorless Eco / Premium / Leather / ECO</p></div>
+    <div class="product-card"><div class="sim-bottle-small"></div><h4>DTF PET Film</h4><p>A3 / A4 Sheets 30cm/33cm/60cm Rolls</p></div>
+    <div class="product-card"><div class="sim-bottle-small"></div><h4>DTF Powder</h4><p>White DTF Powder Hot Melt TPU Powder</p></div>
+  </div>
 </section>
 
 <section class="cta container">
-<h2>LOOKING FOR A RELIABLE INK SOLUTION PARTNER?</h2>
-<button class="btn btn-cta">Get A Free Quote</button>
+  <h2>LOOKING FOR A RELIABLE INK SOLUTION PARTNER?</h2>
+  <button class="btn btn-cta">Get A Free Quote</button>
 </section>
 
 <footer>
@@ -114,6 +150,3 @@ footer{background:#121317;color:#ccc;padding:40px 0;text-align:center;font-size:
 </footer>
 </body>
 </html>
-```  
-
----
