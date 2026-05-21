@@ -5,170 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inhaosin - Professional Ink Solution</title>
 <style>
-body { margin:0; font-family:'Segoe UI', sans-serif; background:#fff; color:#222; overflow-x:hidden;}
-a { text-decoration:none; color:inherit; }
-
-/* Top info bar */
-.top-bar {
-  background:#0b1b38;
-  color:#fff;
-  font-size:14px;
-  padding:5px 50px;
-  display:flex; justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:200;
-}
-.top-bar a { margin-left:15px; color:#fff; }
-.top-bar a:hover { text-decoration:underline; }
-
-/* Header */
-header {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 50px;
-  background:#fff;
-  box-shadow:0 2px 6px rgba(0,0,0,0.08);
-  position:sticky;
-  top:25px; z-index:100;
-  transition: box-shadow 0.3s ease;
-}
-header.sticky { box-shadow:0 4px 14px rgba(0,0,0,0.25);}
-header .logo img { height:50px; transition: transform 0.3s;}
-nav { display:flex; align-items:center; }
-nav a { margin-left:25px; font-weight:500; color:#222; transition: color 0.3s;}
-nav a:hover { color:#000; }
-header .quote-btn {
-  background:#b8966f; color:#fff; padding:10px 20px; border-radius:5px; margin-left:20px; cursor:pointer;
-  transition: background 0.3s, transform 0.3s;
-}
-header .quote-btn:hover { background:#9e7e57; transform:scale(1.05);}
-
-/* Hero Section */
-.hero {
-  position:relative;
-  height:550px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-.hero img { width:100%; height:100%; object-fit:cover; display:block; }
-.hero-content {
-  position:absolute;
-  text-align:left;
-  left:10%;
-  color:#222;
-  max-width:600px;
-}
-.hero-content h1 { font-size:48px; font-weight:bold; margin-bottom:20px; opacity:0; transform:translateY(20px); transition: all 0.6s ease;}
-.hero-content p { font-size:18px; margin-bottom:30px; opacity:0; transform:translateY(20px); transition: all 0.6s ease;}
-.hero-content button {
-  padding:12px 25px;
-  border:none;
-  border-radius:5px;
-  cursor:pointer;
-  font-weight:500;
-  margin-right:10px;
-  opacity:0; transform:translateY(20px); transition: all 0.6s ease;
-}
-.hero-content .btn-primary { background:#222; color:#fff; }
-.hero-content .btn-secondary { background:#fff; color:#222; border:1px solid #222; }
-.hero-content .btn-primary:hover { background:#000; transform:scale(1.05);}
-.hero-content .btn-secondary:hover { background:#eee; transform:scale(1.05);}
-
-/* Section Titles */
-.section-title { text-align:center; font-size:32px; color:#222; margin:60px 0 40px 0; opacity:0; transform:translateY(20px); transition: all 0.6s ease;}
-
-/* Categories */
-.categories {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  padding:0 20px;
-}
-.category-card {
-  width:180px;
-  margin:15px;
-  padding:15px;
-  background:#fff;
-  border-radius:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.06);
-  text-align:center;
-  transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s, translateY 0.6s;
-  opacity:0; transform:translateY(20px);
-}
-.category-card:hover { transform:translateY(-8px) scale(1.03); box-shadow:0 6px 18px rgba(0,0,0,0.15);}
-.category-card img { width:80px; height:80px; margin-bottom:10px; }
-.category-card h4 { margin-bottom:5px; font-weight:600; }
-.category-card p { font-size:14px; color:#555; }
-
-/* Factory Strength Section */
-.capabilities {
-  display:flex; flex-wrap:wrap; justify-content:center;
-  background:#f7f7f7;
-  padding:50px 20px;
-  text-align:center;
-}
-.cap-card {
-  flex:1 1 180px;
-  margin:15px;
-  padding:20px;
-  border-radius:10px;
-  background:#fff;
-  box-shadow:0 4px 12px rgba(0,0,0,0.05);
-  opacity:0; transform:translateY(20px); transition: all 0.6s ease;
-}
-.cap-card img { width:40px; height:40px; margin-bottom:10px; }
-.cap-card h3 { margin-bottom:8px; font-size:16px; color:#222; }
-.cap-card p { font-size:14px; color:#555; }
-
-/* Hot Products */
-.hot-products {
-  padding:60px 20px;
-  text-align:center;
-}
-.product-grid { display:flex; flex-wrap:wrap; justify-content:center; }
-.product-card {
-  width:180px;
-  margin:10px;
-  padding:15px;
-  background:#fff;
-  border-radius:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.06);
-  text-align:center;
-  opacity:0; transform:translateY(20px); transition: all 0.6s ease;
-}
-.product-card img { width:100px; height:100px; margin-bottom:10px; }
-
-/* Service / Features Section */
-.services {
-  display:flex; flex-wrap:wrap; justify-content:center;
-  padding:50px 20px;
-  background:#f7f7f7;
-  text-align:center;
-}
-.service-card {
-  width:250px; margin:15px;
-  padding:20px;
-  border-radius:10px; background:#fff;
-  box-shadow:0 4px 12px rgba(0,0,0,0.05);
-  opacity:0; transform:translateY(20px); transition: all 0.6s ease;
-}
-.service-card img { width:50px; height:50px; margin-bottom:10px; }
-.service-card h4 { font-size:16px; margin-bottom:8px; }
-.service-card p { font-size:14px; color:#555; }
-
-/* Footer */
-footer {
-  background:#222; color:#fff;
-  padding:40px 20px;
-  text-align:center;
-}
-footer a { color:#fff; text-decoration:underline; }
-
+body { margin:0; font-family:'Segoe UI', sans-serif; background:#fff; color:#222;}
+a { text-decoration:none; color:inherit;}
+.top-bar {background:#0b1b38;color:#fff;font-size:14px;padding:5px 50px;display:flex;justify-content:space-between;align-items:center;}
+.top-bar a{margin-left:15px;color:#fff;}
+.top-bar a:hover{text-decoration:underline;}
+header{display:flex;justify-content:space-between;align-items:center;padding:15px 50px;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.08);position:sticky;top:25px;z-index:100;transition:box-shadow 0.3s ease;}
+header.sticky{box-shadow:0 4px 14px rgba(0,0,0,0.25);}
+header .logo img{height:50px;}
+nav{display:flex;align-items:center;}
+nav a{margin-left:25px;font-weight:500;color:#222;transition:color 0.3s;}
+nav a:hover{color:#000;}
+header .quote-btn{background:#b8966f;color:#fff;padding:10px 20px;border-radius:5px;margin-left:20px;cursor:pointer;transition:background 0.3s, transform 0.3s;}
+header .quote-btn:hover{background:#9e7e57;transform:scale(1.05);}
+.hero{position:relative;height:550px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.hero img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-content{position:absolute;text-align:left;left:10%;color:#222;max-width:600px;}
+.hero-content h1{font-size:48px;font-weight:bold;margin-bottom:20px;opacity:0;transform:translateY(20px);transition:all 0.6s ease;}
+.hero-content p{font-size:18px;margin-bottom:30px;opacity:0;transform:translateY(20px);transition:all 0.6s ease;}
+.hero-content button{padding:12px 25px;border:none;border-radius:5px;cursor:pointer;font-weight:500;margin-right:10px;opacity:0;transform:translateY(20px);transition:all 0.6s ease;}
+.hero-content .btn-primary{background:#222;color:#fff;}
+.hero-content .btn-secondary{background:#fff;color:#222;border:1px solid #222;}
+.hero-content .btn-primary:hover{background:#000;transform:scale(1.05);}
+.hero-content .btn-secondary:hover{background:#eee;transform:scale(1.05);}
+.section-title{text-align:center;font-size:32px;color:#222;margin:60px 0 40px 0;opacity:0;transform:translateY(20px);transition:all 0.6s ease;}
+.categories{display:flex;flex-wrap:wrap;justify-content:center;padding:0 20px;}
+.category-card{width:180px;margin:15px;padding:15px;background:#fff;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.06);text-align:center;transition:transform 0.3s, box-shadow 0.3s, opacity 0.6s, translateY 0.6s;opacity:0;transform:translateY(20px);}
+.category-card:hover{transform:translateY(-8px) scale(1.03);box-shadow:0 6px 18px rgba(0,0,0,0.15);}
+.category-card img{width:80px;height:80px;margin-bottom:10px;}
+.category-card h4{margin-bottom:5px;font-weight:600;}
+.category-card p{font-size:14px;color:#555;}
+.capabilities{display:flex;flex-wrap:wrap;justify-content:center;background:#f7f7f7;padding:50px 20px;text-align:center;}
+.cap-card{flex:1 1 180px;margin:15px;padding:20px;border-radius:10px;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.05);opacity:0;transform:translateY(20px);transition:all 0.6s ease;}
+.cap-card img{width:40px;height:40px;margin-bottom:10px;}
+.cap-card h3{margin-bottom:8px;font-size:16px;color:#222;}
+.cap-card p{font-size:14px;color:#555;}
+.hot-products{padding:60px 20px;text-align:center;}
+.product-grid{display:flex;flex-wrap:wrap;justify-content:center;}
+.product-card{width:180px;margin:10px;padding:15px;background:#fff;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.06);text-align:center;opacity:0;transform:translateY(20px);transition:all 0.6s ease;}
+.product-card img{width:100px;height:100px;margin-bottom:10px;}
+.services{display:flex;flex-wrap:wrap;justify-content:center;padding:50px 20px;background:#f7f7f7;text-align:center;}
+.service-card{width:250px;margin:15px;padding:20px;border-radius:10px;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.05);opacity:0;transform:translateY(20px);transition:all 0.6s ease;}
+.service-card img{width:50px;height:50px;margin-bottom:10px;}
+.service-card h4{font-size:16px;margin-bottom:8px;}
+.service-card p{font-size:14px;color:#555;}
+.news-section{padding:50px 20px;text-align:center;background:#fff;}
+.news-card{width:250px;margin:15px;padding:15px;background:#f7f7f7;border-radius:10px;display:inline-block;box-shadow:0 4px 12px rgba(0,0,0,0.06);}
+.news-card img{width:100%;height:150px;object-fit:cover;margin-bottom:10px;}
+footer{background:#222;color:#fff;padding:40px 20px;text-align:center;}
+footer a{color:#fff;text-decoration:underline;}
 </style>
 </head>
 <body>
@@ -190,13 +75,14 @@ footer a { color:#fff; text-decoration:underline; }
     <a href="#">About</a>
     <a href="#">OEM/ODM</a>
     <a href="#">Applications</a>
+    <a href="#">News</a>
     <a href="#">Contact</a>
   </nav>
   <button class="quote-btn">Get A Quote</button>
 </header>
 
 <section class="hero">
-  <img src="https://via.placeholder.com/1600x500" alt="Hero Banner">
+  <img src="https://via.placeholder.com/1600x500?text=Hero+Banner" alt="Hero Banner">
   <div class="hero-content">
     <h1>PROFESSIONAL INK SOLUTION PROVIDER</h1>
     <p>High Quality | Stable Performance | Eco Friendly</p>
@@ -206,12 +92,17 @@ footer a { color:#fff; text-decoration:underline; }
 </section>
 
 <section id="categories">
-  <div class="section-title">Premium Ink Solutions for Every Print Need</div>
+  <div class="section-title">Our Product Categories</div>
   <div class="categories">
-    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>DTF Ink</h4><p>Vibrant colors and strong adhesion for fabrics.</p></div>
-    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>UV Ink</h4><p>Instant curing, excellent durability for versatile applications.</p></div>
-    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>Sublimation Ink</h4><p>Brilliant color reproduction and high transfer performance.</p></div>
-    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>Eco Solvent Ink</h4><p>Wide color gamut, outdoor durability, low odor, eco-friendly.</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>DTF Ink</h4><p>Vibrant colors and adhesion for fabrics.</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>UV Ink</h4><p>Instant curing, excellent durability.</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>Sublimation Ink</h4><p>Brilliant color reproduction and transfer.</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>Eco Solvent Ink</h4><p>Outdoor durability, low odor, eco-friendly.</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>DTF PET Film</h4><p>Multiple sizes for textile printing.</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>DTF Powder</h4><p>High-quality TPU powder for transfers.</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>Cleaning Solution</h4><p>Safe and effective maintenance fluids.</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>UV DTF Film</h4><p>Flexible films for UV printing.</p></div>
+    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>OEM/Private Label</h4><p>Custom branding solutions.</p></div>
   </div>
 </section>
 
@@ -225,6 +116,7 @@ footer a { color:#fff; text-decoration:underline; }
 </section>
 
 <section class="hot-products">
+  <div class="section-title">Hot Products</div>
   <div class="product-grid">
     <div class="product-card"><img src="https://via.placeholder.com/100"><h4>DTF Ink</h4><p>CMYK W Colors Standard / High / Super</p></div>
     <div class="product-card"><img src="https://via.placeholder.com/100"><h4>UV Ink</h4><p>For Epson / Industrial Heads Hard / Soft / Neutral</p></div>
@@ -240,6 +132,13 @@ footer a { color:#fff; text-decoration:underline; }
   <div class="service-card"><img src="https://via.placeholder.com/50"><h4>Global Shipping</h4><p>Fast delivery by sea, air, and express</p></div>
 </section>
 
+<section class="news-section">
+  <div class="section-title">News & Blog</div>
+  <div class="news-card"><img src="https://via.placeholder.com/250x150"><h4>2026-05-20</h4><p>Sublimation Ink Guide for Wide Format Epson Printers</p></div>
+  <div class="news-card"><img src="https://via.placeholder.com/250x150"><h4>2026-05-19</h4><p>DTF Ink & Printer Industrial Selection Guide</p></div>
+  <div class="news-card"><img src="https://via.placeholder.com/250x150"><h4>2026-05-13</h4><p>DTF Ink Usage & Powder Step-by-Step</p></div>
+</section>
+
 <footer>
   <p>Looking for a reliable ink solution partner? <a href="#">Get a Free Quote</a></p>
   <p>&copy; 2026 Inhaosin. All rights reserved.</p>
@@ -247,19 +146,13 @@ footer a { color:#fff; text-decoration:underline; }
 
 <script>
 // Sticky header
-window.addEventListener('scroll',()=> {
-  const header = document.querySelector('header');
-  if(window.scrollY>50){ header.classList.add('sticky'); } 
-  else { header.classList.remove('sticky'); }
-});
+window.addEventListener('scroll',()=> {document.querySelector('header').classList.toggle('sticky', window.scrollY>50);});
 
-// Fade-in on scroll
-const faders = document.querySelectorAll('.hero-content h1, .hero-content p, .hero-content button, .section-title, .category-card, .cap-card, .product-card, .service-card');
-const appearOptions = { threshold:0.1, rootMargin:"0px 0px -50px 0px"};
-const appearOnScroll = new IntersectionObserver((entries, appearOnScroll)=> {
-  entries.forEach(entry => { if(entry.isIntersecting){ entry.target.style.opacity="1"; entry.target.style.transform="translateY(0)"; appearOnScroll.unobserve(entry.target); } });
-}, appearOptions);
-faders.forEach(fader => { appearOnScroll.observe(fader); });
+// Fade-in scroll animation
+const faders=document.querySelectorAll('.hero-content h1,.hero-content p,.hero-content button,.section-title,.category-card,.cap-card,.product-card,.service-card,.news-card');
+const appearOptions={threshold:0.1,rootMargin:"0px 0px -50px 0px"};
+const appearOnScroll=new IntersectionObserver((entries, observer)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity="1";entry.target.style.transform="translateY(0)";observer.unobserve(entry.target);}}},appearOptions);
+faders.forEach(fader=>{appearOnScroll.observe(fader);});
 </script>
 </body>
 </html>
