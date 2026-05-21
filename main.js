@@ -86,13 +86,15 @@ if (contactForm) {
     btn.disabled = true;
 
     try {
+      const formData = new FormData(contactForm);
       const response = await fetch(contactForm.action, {
         method: 'POST',
-        body: new FormData(contactForm),
+        body: formData,
         headers: { 'Accept': 'application/json' }
       });
+      const data = await response.json();
 
-      if (response.ok) {
+      if (data.success) {
         btn.textContent = '✓ Message Sent!';
         btn.style.background = '#2dc653';
         contactForm.reset();
