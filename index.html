@@ -1,550 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inhaosin - Professional Ink Solution Provider</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #b6915e;
-      --dark: #17181c;
-      --gray-bg: #f7f8fa;
-    }
-    body { font-family: 'Inter', sans-serif; color: #1a1a1a; scroll-behavior: smooth; }
-    .text-primary { color: var(--primary); }
-    .bg-primary { background-color: var(--primary); }
-    .bg-dark { background-color: var(--dark); }
-    
-    /* Custom spacing and elements */
-    .container { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
-    .header-top { background: #17181c; color: #fff; font-size: 13px; padding: 10px 0; }
-    
-    .nav-link { font-weight: 500; color: #333; transition: color 0.3s; position: relative; }
-    .nav-link:hover { color: var(--primary); }
-    .nav-link.active { color: var(--primary); }
-    
-    .hero-section {
-      position: relative;
-      background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://sc01.alicdn.com/kf/A7981cbed252c4e2d88fa8551bd72b084h.png') center/cover no-repeat;
-      padding: 100px 0;
-    }
-    
-    .hero-list li { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-weight: 500; }
-    .hero-list li i { color: var(--primary); font-size: 18px; }
-    
-    .category-circle {
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      margin-bottom: 12px;
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-    .category-item:hover .category-circle { transform: translateY(-5px); }
-    
-    .stat-bar { background: #17181c; color: #fff; padding: 40px 0; }
-    .stat-item i { font-size: 32px; color: var(--primary); margin-bottom: 10px; }
-    
-    .section-title { font-size: 32px; font-weight: 800; position: relative; display: inline-block; padding-bottom: 15px; }
-    .section-title::after {
-      content: "";
-      position: absolute;
-      bottom: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 60px; height: 3px;
-      background: var(--primary);
-    }
-    
-    .product-card { background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: box-shadow 0.3s; }
-    .product-card:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-    
-    .feature-card { background: #fff; padding: 25px; border-radius: 12px; display: flex; gap: 20px; }
-    .feature-icon { width: 50px; height: 50px; flex-shrink: 0; color: #2563eb; font-size: 24px; }
-    
-    .footer-cta { background: #17181c; padding: 40px 0; color: #fff; }
-    
-    .floating-sidebar {
-      position: fixed;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 100;
-    }
-    .sidebar-item {
-      width: 54px; height: 54px;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      font-size: 20px;
-      color: #333;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    .sidebar-item:hover { background: var(--primary); color: #fff; }
-    .sidebar-item span { font-size: 10px; margin-top: 4px; font-weight: 600; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inhaosin | Professional Ink Solution</title>
+<style>
+:root{
+  --bg:#fff;
+  --text:#1a1d24;
+  --text-light:#6e7480;
+  --gold:#b9986c;
+  --shadow:0 15px 35px rgba(0,0,0,0.08);
+  --radius:16px;
+}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+.container{width:min(1200px,95%);margin:auto;}
+header{display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10;background:#fff;}
+header .logo img{height:52px;}
+nav a{margin:0 15px;font-weight:600;color:#333;transition:color .2s;}
+nav a:hover{color:var(--gold);}
+.hero{display:flex;align-items:flex-end;justify-content:space-between;padding:80px 0;background:#f9f9f9;gap:30px;}
+.hero-text{max-width:600px;}
+.hero-text h1{font-size:42px;margin-bottom:20px;line-height:1.2;}
+.hero-text p{font-size:16px;margin-bottom:20px;line-height:1.5;}
+.btn{padding:12px 24px;border-radius:10px;margin-right:10px;border:none;font-weight:700;cursor:pointer;transition:transform .25s, box-shadow .25s;}
+.btn:hover{transform:scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,.15);}
+.btn-primary{background:var(--gold);color:#fff;}
+.btn-outline{border:1px solid var(--gold);color:var(--gold);background:#fff;}
 
-    /* i18n support */
-    [data-i18n] { transition: opacity 0.2s; }
-    .lang-switching [data-i18n] { opacity: 0; }
-  </style>
+/* Hero瓶子 */
+.hero-image{display:flex;gap:15px;align-items:flex-end;}
+.bottle{
+  position:relative;width:80px;height:240px;border-radius:22px;background:linear-gradient(180deg,#fff,#f0f0f0);border:1px solid #e7e7e7;box-shadow:var(--shadow);transition:transform .5s, opacity .5s;opacity:0;transform:translateY(50px);
+}
+.bottle.show{opacity:1;transform:translateY(0);}
+.bottle:hover{transform:translateY(-10px);}
+.bottle-top{position:absolute;top:-30px;left:20px;width:40px;height:40px;background:#111;border-radius:10px;box-shadow:0 8px 18px rgba(0,0,0,0.18);}
+.bottle-label{position:absolute;top:60px;left:10px;right:10px;height:120px;background:#fff;border-radius:14px;border:1px solid #eee;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.bottle-label .type{font-size:12px;font-weight:700;color:#555;margin-top:6px;text-transform:uppercase;}
+.bottle-color{width:24px;height:24px;border-radius:50%;margin-top:8px;}
+
+/* 产品分类 */
+.categories{display:flex;justify-content:space-between;margin:50px 0;flex-wrap:wrap;gap:15px;}
+.category-card{flex:1 1 calc(12% - 10px);text-align:center;background:#fff;padding:10px;border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .25s,opacity .5s;opacity:0;transform:translateY(50px);}
+.category-card.show{opacity:1;transform:translateY(0);}
+.category-card:hover{transform:translateY(-5px);}
+.sim-bottle{width:60px;height:180px;margin:auto;border-radius:18px;background:linear-gradient(180deg,#fff,#f4f4f4);border:1px solid #e7e7e7;box-shadow:0 8px 18px rgba(0,0,0,.08);position:relative;}
+
+/* 工厂实力条 */
+.stats{display:flex;justify-content:space-between;background:#121317;color:#fff;padding:30px 20px;border-radius:var(--radius);margin-bottom:50px;flex-wrap:wrap;gap:15px;}
+.stat{flex:1;text-align:center;transition:transform .25s;}
+.stat:hover{transform:translateY(-5px);}
+.stat h2{margin:0;font-size:24px;}
+.stat p{margin:5px 0 0;font-size:14px;color:#ccc;}
+
+/* 热销产品 */
+.hot-products{margin-bottom:50px;}
+.hot-products h2{text-align:center;font-size:28px;margin-bottom:30px;}
+.product-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;}
+.product-card{width:calc(16.6% - 10px);background:#fff;border-radius:var(--radius);padding:15px;text-align:center;box-shadow:var(--shadow);transition:transform .25s,opacity .5s;opacity:0;transform:translateY(50px);}
+.product-card.show{opacity:1;transform:translateY(0);}
+.product-card:hover{transform:scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,.15);}
+.sim-bottle-small{width:60px;height:180px;margin:auto;border-radius:18px;background:linear-gradient(180deg,#fff,#f4f4f4);border:1px solid #e7e7e7;box-shadow:0 8px 18px rgba(0,0,0,.08);position:relative;}
+
+/* CTA */
+.cta{display:flex;justify-content:space-between;align-items:center;padding:40px 20px;background:#17181c;border-radius:var(--radius);margin-bottom:50px;color:#fff;flex-wrap:wrap;gap:15px;}
+.cta h2{font-size:24px;max-width:600px;}
+.btn-cta{background:var(--gold);color:#fff;transition:transform .25s;}
+.btn-cta:hover{transform:scale(1.05);}
+
+/* Footer */
+footer{background:#121317;color:#ccc;padding:40px 0;text-align:center;font-size:14px;}
+
+/* 响应式 */
+@media(max-width:1024px){.hero{flex-direction:column;}.product-card{width:calc(33% - 10px);}.category-card{flex:1 1 30%;}.stat{flex:1 1 30%;}}
+@media(max-width:640px){.product-card{width:calc(50% - 10px);}.stat{flex:1 1 100%;}.category-card{flex:1 1 100%;}}
+</style>
 </head>
-<body class="bg-white">
+<body>
 
-  <!-- Top Bar -->
-  <div class="header-top">
-    <div class="container flex justify-between items-center">
-      <div data-i18n="topbar_slogan">Professional Ink Solution Provider & Manufacturer Since 2012</div>
-      <div class="flex items-center gap-6">
-        <div class="flex items-center gap-2 cursor-pointer">
-          <span id="current-lang-label">English</span> <i class="fa-solid fa-chevron-down text-[10px]"></i>
-          <!-- Simple Dropdown -->
-          <div class="relative group">
-            <div class="hidden group-hover:block absolute top-full right-0 bg-white text-black shadow-lg rounded py-2 z-50 min-w-[100px]">
-              <div class="px-4 py-2 hover:bg-gray-100" onclick="setLang('en')">English</div>
-              <div class="px-4 py-2 hover:bg-gray-100" onclick="setLang('zh')">中文</div>
-              <div class="px-4 py-2 hover:bg-gray-100" onclick="setLang('es')">Español</div>
-              <div class="px-4 py-2 hover:bg-gray-100" onclick="setLang('ru')">Русский</div>
-            </div>
-          </div>
-        </div>
-        <div class="flex items-center gap-1 cursor-pointer">USD <i class="fa-solid fa-chevron-down text-[10px]"></i></div>
-        <div class="flex items-center gap-2"><i class="fa-solid fa-envelope text-primary"></i> info@inhaosin.com</div>
-        <div class="flex items-center gap-3 ml-4">
-          <i class="fa-brands fa-facebook-f cursor-pointer hover:text-primary"></i>
-          <i class="fa-brands fa-linkedin-in cursor-pointer hover:text-primary"></i>
-          <i class="fa-brands fa-whatsapp cursor-pointer hover:text-primary"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Navigation -->
-  <nav class="py-4 bg-white sticky top-0 z-40 shadow-sm">
-    <div class="container flex justify-between items-center">
-      <div class="flex flex-col">
-        <div class="text-3xl font-black tracking-tighter text-dark flex items-center">
-          Inha<span class="text-primary italic">o</span>sin
-        </div>
-        <div class="text-[9px] font-bold tracking-[2px] text-gray-500 uppercase">Professional Ink Solution</div>
-      </div>
-      
-      <div class="hidden lg:flex items-center gap-8">
-        <a href="#" class="nav-link active" data-i18n="nav_home">Home</a>
-        <div class="group relative">
-          <a href="#products" class="nav-link flex items-center gap-1" data-i18n="nav_products">Products <i class="fa-solid fa-chevron-down text-[10px]"></i></a>
-        </div>
-        <a href="#about" class="nav-link" data-i18n="nav_about">About Us</a>
-        <a href="#oem" class="nav-link" data-i18n="nav_oem">ODM/OEM</a>
-        <a href="#applications" class="nav-link" data-i18n="nav_apps">Application</a>
-        <div class="group relative">
-          <a href="#" class="nav-link flex items-center gap-1" data-i18n="nav_support">Support <i class="fa-solid fa-chevron-down text-[10px]"></i></a>
-        </div>
-        <a href="#news" class="nav-link" data-i18n="nav_news">News</a>
-        <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact Us</a>
-      </div>
-
-      <div class="flex items-center gap-4">
-        <i class="fa-solid fa-magnifying-glass cursor-pointer text-gray-600"></i>
-        <a href="#contact" class="bg-primary text-white px-6 py-2.5 rounded font-bold hover:opacity-90 transition" data-i18n="nav_quote">Get A Quote</a>
-      </div>
-    </div>
+<header class="container">
+  <div class="logo"><img src="assets/images/logo.png" alt="Inhaosin Logo"></div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">About</a>
+    <a href="#">ODM/OEM</a>
+    <a href="#">Application</a>
+    <a href="#">Support</a>
+    <a href="#">Contact</a>
   </nav>
+</header>
 
-  <!-- Hero Section -->
-  <section class="hero-section overflow-hidden">
-    <div class="container flex flex-col lg:flex-row items-center justify-between gap-12">
-      <div class="lg:w-1/2 reveal">
-        <h1 class="text-5xl font-black text-dark leading-tight mb-4 uppercase" data-i18n="hero_h1">Professional Ink<br>Solution Provider</h1>
-        <div class="flex items-center gap-4 text-sm font-bold text-gray-700 mb-8">
-          <span class="flex items-center gap-1"><i class="fa-solid fa-circle-check text-primary"></i> High Quality</span>
-          <span class="text-gray-300">|</span>
-          <span class="flex items-center gap-1"><i class="fa-solid fa-circle-check text-primary"></i> Stable Performance</span>
-          <span class="text-gray-300">|</span>
-          <span class="flex items-center gap-1"><i class="fa-solid fa-circle-check text-primary"></i> Eco Friendly</span>
-        </div>
-        
-        <ul class="hero-list mb-10 text-gray-800">
-          <li data-i18n="hero_li1"><i class="fa-solid fa-square-check"></i> 12+ Years Manufacturing Experience</li>
-          <li data-i18n="hero_li2"><i class="fa-solid fa-square-check"></i> 30,000m² Modern Production Base</li>
-          <li data-i18n="hero_li3"><i class="fa-solid fa-square-check"></i> Annual Output 10,000,000+ Liters</li>
-          <li data-i18n="hero_li4"><i class="fa-solid fa-square-check"></i> Exported to 80+ Countries & Regions</li>
-          <li data-i18n="hero_li5"><i class="fa-solid fa-square-check"></i> OEM / ODM & Private Label Service</li>
-        </ul>
-
-        <div class="flex items-center gap-4">
-          <a href="#products" class="bg-dark text-white px-8 py-4 rounded font-bold flex items-center gap-2 hover:bg-gray-800 transition">
-            <span data-i18n="hero_btn1">View Products</span> <i class="fa-solid fa-arrow-right"></i>
-          </a>
-          <a href="#contact" class="border-2 border-dark text-dark px-8 py-3.5 rounded font-bold flex items-center gap-2 hover:bg-dark hover:text-white transition">
-            <span data-i18n="nav_contact">Contact Us</span> <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="lg:w-1/2 relative reveal">
-        <img src="https://sc02.alicdn.com/kf/A0af95ccf181049308fe15b5f770f7163p.png" alt="Inhaosin Ink Bottles" class="max-w-full drop-shadow-2xl">
-      </div>
-    </div>
-  </section>
-
-  <!-- Categories Circle -->
-  <section class="py-12 bg-white border-b">
-    <div class="container">
-      <div class="flex justify-between items-start flex-wrap gap-8">
-        <!-- Item 1 -->
-        <div class="category-item flex flex-col items-center group cursor-pointer">
-          <div class="category-circle"><img src="https://sc02.alicdn.com/kf/A0af95ccf181049308fe15b5f770f7163p.png" class="w-16 h-16 object-contain" alt="DTF Ink"></div>
-          <div class="text-sm font-bold text-dark group-hover:text-primary transition" data-i18n="prod_dtf_title">DTF Ink</div>
-          <div class="text-[10px] text-gray-400 mt-1">View More ></div>
-        </div>
-        <!-- Item 2 -->
-        <div class="category-item flex flex-col items-center group cursor-pointer">
-          <div class="category-circle"><img src="https://sc02.alicdn.com/kf/A9675572fbc57404fb04fb7d4aee4b184h.png" class="w-16 h-16 object-contain" alt="UV Ink"></div>
-          <div class="text-sm font-bold text-dark group-hover:text-primary transition" data-i18n="prod_uv_title">UV Ink</div>
-          <div class="text-[10px] text-gray-400 mt-1">View More ></div>
-        </div>
-        <!-- Item 3 -->
-        <div class="category-item flex flex-col items-center group cursor-pointer">
-          <div class="category-circle"><img src="https://sc02.alicdn.com/kf/A9cbe8d3471874c60aee2f4a891b0b38b2.png" class="w-16 h-16 object-contain" alt="Eco Solvent"></div>
-          <div class="text-sm font-bold text-dark group-hover:text-primary transition" data-i18n="prod_eco_title">Eco Solvent Ink</div>
-          <div class="text-[10px] text-gray-400 mt-1">View More ></div>
-        </div>
-        <!-- Item 4 -->
-        <div class="category-item flex flex-col items-center group cursor-pointer">
-          <div class="category-circle"><img src="https://sc02.alicdn.com/kf/A9cbe8d3471874c60aee2f4a891b0b38b2.png" class="w-16 h-16 object-contain" alt="Sublimation"></div>
-          <div class="text-sm font-bold text-dark group-hover:text-primary transition" data-i18n="prod_sub_title">Sublimation Ink</div>
-          <div class="text-[10px] text-gray-400 mt-1">View More ></div>
-        </div>
-        <!-- Item 5 -->
-        <div class="category-item flex flex-col items-center group cursor-pointer">
-          <div class="category-circle"><img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" class="w-16 h-16 object-contain" alt="PET Film"></div>
-          <div class="text-sm font-bold text-dark group-hover:text-primary transition" data-i18n="prod_film_title">DTF PET Film</div>
-          <div class="text-[10px] text-gray-400 mt-1">View More ></div>
-        </div>
-        <!-- Item 6 -->
-        <div class="category-item flex flex-col items-center group cursor-pointer">
-          <div class="category-circle"><img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" class="w-16 h-16 object-contain" alt="Powder"></div>
-          <div class="text-sm font-bold text-dark group-hover:text-primary transition" data-i18n="prod_powder_title">DTF Powder</div>
-          <div class="text-[10px] text-gray-400 mt-1">View More ></div>
-        </div>
-        <!-- Item 7 -->
-        <div class="category-item flex flex-col items-center group cursor-pointer">
-          <div class="category-circle"><img src="https://sc02.alicdn.com/kf/A9cbe8d3471874c60aee2f4a891b0b38b2.png" class="w-16 h-16 object-contain" alt="Cleaning"></div>
-          <div class="text-sm font-bold text-dark group-hover:text-primary transition" data-i18n="prod_clean_title">Cleaning Solution</div>
-          <div class="text-[10px] text-gray-400 mt-1">View More ></div>
-        </div>
-        <!-- Item 8 -->
-        <div class="category-item flex flex-col items-center group cursor-pointer">
-          <div class="category-circle"><img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" class="w-16 h-16 object-contain" alt="UV DTF"></div>
-          <div class="text-sm font-bold text-dark group-hover:text-primary transition" data-i18n="prod_uvdtf_title">UV DTF Film</div>
-          <div class="text-[10px] text-gray-400 mt-1">View More ></div>
-        </div>
-        <!-- Item 9 -->
-        <div class="category-item flex flex-col items-center group cursor-pointer">
-          <div class="category-circle"><img src="https://sc02.alicdn.com/kf/A0af95ccf181049308fe15b5f770f7163p.png" class="w-16 h-16 object-contain" alt="OEM"></div>
-          <div class="text-sm font-bold text-dark group-hover:text-primary transition" data-i18n="prod_oem_title">OEM / Private Label</div>
-          <div class="text-[10px] text-gray-400 mt-1">View More ></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats Bar -->
-  <section class="stat-bar">
-    <div class="container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-      <div class="stat-item flex flex-col items-center text-center">
-        <i class="fa-solid fa-award"></i>
-        <div class="text-2xl font-bold">12+</div>
-        <div class="text-xs text-gray-400 uppercase tracking-wider" data-i18n="about_stat1_h">Years Experience</div>
-      </div>
-      <div class="stat-item flex flex-col items-center text-center">
-        <i class="fa-solid fa-industry"></i>
-        <div class="text-2xl font-bold">30,000 m²</div>
-        <div class="text-xs text-gray-400 uppercase tracking-wider">Factory Area</div>
-      </div>
-      <div class="stat-item flex flex-col items-center text-center">
-        <i class="fa-solid fa-flask"></i>
-        <div class="text-2xl font-bold">10,000,000+</div>
-        <div class="text-xs text-gray-400 uppercase tracking-wider">Liters Annual Output</div>
-      </div>
-      <div class="stat-item flex flex-col items-center text-center">
-        <i class="fa-solid fa-earth-americas"></i>
-        <div class="text-2xl font-bold">80+</div>
-        <div class="text-xs text-gray-400 uppercase tracking-wider">Export Countries</div>
-      </div>
-      <div class="stat-item flex flex-col items-center text-center">
-        <i class="fa-solid fa-users-gear"></i>
-        <div class="text-2xl font-bold">50+</div>
-        <div class="text-xs text-gray-400 uppercase tracking-wider">R&D Team</div>
-      </div>
-      <div class="stat-item flex flex-col items-center text-center">
-        <i class="fa-solid fa-certificate"></i>
-        <div class="text-2xl font-bold uppercase">ISO9001</div>
-        <div class="text-xs text-gray-400 uppercase tracking-wider">Quality Certified</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hot Products -->
-  <section class="py-20 bg-gray-50" id="products">
-    <div class="container text-center mb-12">
-      <h2 class="section-title uppercase mb-4" data-i18n="sec_hot_title">Hot Products</h2>
-    </div>
-    
-    <div class="container relative">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
-        <!-- Hot 1 -->
-        <div class="product-card reveal group">
-          <div class="h-48 flex items-center justify-center mb-4"><img src="https://sc02.alicdn.com/kf/A0af95ccf181049308fe15b5f770f7163p.png" class="max-h-full transition group-hover:scale-105" alt="DTF"></div>
-          <div class="text-center">
-            <h4 class="font-bold text-dark mb-1" data-i18n="prod_dtf_title">DTF Ink</h4>
-            <div class="text-[10px] text-gray-500 uppercase font-semibold mb-2">CMYK W S Colors</div>
-            <div class="text-[10px] text-primary font-bold">Standard / High / Super</div>
-          </div>
-        </div>
-        <!-- Hot 2 -->
-        <div class="product-card reveal group">
-          <div class="h-48 flex items-center justify-center mb-4"><img src="https://sc02.alicdn.com/kf/A9675572fbc57404fb04fb7d4aee4b184h.png" class="max-h-full transition group-hover:scale-105" alt="UV"></div>
-          <div class="text-center">
-            <h4 class="font-bold text-dark mb-1" data-i18n="prod_uv_title">UV Ink</h4>
-            <div class="text-[10px] text-gray-500 uppercase font-semibold mb-2">For Epson / Industrial Heads</div>
-            <div class="text-[10px] text-primary font-bold">Hard / Soft / Neutral</div>
-          </div>
-        </div>
-        <!-- Hot 3 -->
-        <div class="product-card reveal group">
-          <div class="h-48 flex items-center justify-center mb-4"><img src="https://sc02.alicdn.com/kf/A9cbe8d3471874c60aee2f4a891b0b38b2.png" class="max-h-full transition group-hover:scale-105" alt="Sub"></div>
-          <div class="text-center">
-            <h4 class="font-bold text-dark mb-1" data-i18n="prod_sub_title">Sublimation Ink</h4>
-            <div class="text-[10px] text-gray-500 uppercase font-semibold mb-2">Epson 1-16H / 1-35H / 8H</div>
-            <div class="text-[10px] text-primary font-bold">Kyocera / Starfire / J-NEXT</div>
-          </div>
-        </div>
-        <!-- Hot 4 -->
-        <div class="product-card reveal group">
-          <div class="h-48 flex items-center justify-center mb-4"><img src="https://sc02.alicdn.com/kf/A9cbe8d3471874c60aee2f4a891b0b38b2.png" class="max-h-full transition group-hover:scale-105" alt="Eco"></div>
-          <div class="text-center">
-            <h4 class="font-bold text-dark mb-1" data-i18n="prod_eco_title">Eco Solvent Ink</h4>
-            <div class="text-[10px] text-gray-500 uppercase font-semibold mb-2">Low Odor / Odorless</div>
-            <div class="text-[10px] text-primary font-bold">Eco / Premium / Leather / ECO</div>
-          </div>
-        </div>
-        <!-- Hot 5 -->
-        <div class="product-card reveal group">
-          <div class="h-48 flex items-center justify-center mb-4"><img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" class="max-h-full transition group-hover:scale-105" alt="Film"></div>
-          <div class="text-center">
-            <h4 class="font-bold text-dark mb-1" data-i18n="prod_film_title">DTF PET Film</h4>
-            <div class="text-[10px] text-gray-500 uppercase font-semibold mb-2">A3 / A4 Sheets</div>
-            <div class="text-[10px] text-primary font-bold">30cm / 33cm / 60cm Rolls</div>
-          </div>
-        </div>
-        <!-- Hot 6 -->
-        <div class="product-card reveal group">
-          <div class="h-48 flex items-center justify-center mb-4"><img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" class="max-h-full transition group-hover:scale-105" alt="Powder"></div>
-          <div class="text-center">
-            <h4 class="font-bold text-dark mb-1" data-i18n="prod_powder_title">DTF Powder</h4>
-            <div class="text-[10px] text-gray-500 uppercase font-semibold mb-2">White DTF Powder</div>
-            <div class="text-[10px] text-primary font-bold">Hot Melt TPU Powder</div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Arrows -->
-      <div class="hidden xl:flex absolute top-1/2 -left-12 -translate-y-1/2 w-10 h-10 bg-white shadow rounded-full items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition"><i class="fa-solid fa-chevron-left"></i></div>
-      <div class="hidden xl:flex absolute top-1/2 -right-12 -translate-y-1/2 w-10 h-10 bg-white shadow rounded-full items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition"><i class="fa-solid fa-chevron-right"></i></div>
-
-      <div class="flex justify-center mt-12">
-        <a href="#products" class="bg-dark text-white px-10 py-3.5 rounded font-bold flex items-center gap-2 hover:bg-gray-800 transition">
-          <span>View All Products</span> <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features / Services -->
-  <section class="py-20 bg-white">
-    <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="feature-card reveal shadow-sm border border-gray-100">
-        <div class="feature-icon"><i class="fa-solid fa-microscope"></i></div>
-        <div>
-          <h5 class="font-bold mb-2">Strong R&D Capability</h5>
-          <p class="text-[12px] text-gray-500 leading-relaxed">Professional R&D team with rich experience in ink formula innovation and application.</p>
-        </div>
-      </div>
-      <div class="feature-card reveal shadow-sm border border-gray-100">
-        <div class="feature-icon"><i class="fa-solid fa-shield-check"></i></div>
-        <div>
-          <h5 class="font-bold mb-2">Strict Quality Control</h5>
-          <p class="text-[12px] text-gray-500 leading-relaxed">Raw material inspection, production process control and finished product testing.</p>
-        </div>
-      </div>
-      <div class="feature-card reveal shadow-sm border border-gray-100">
-        <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
-        <div>
-          <h5 class="font-bold mb-2">OEM / ODM Service</h5>
-          <p class="text-[12px] text-gray-500 leading-relaxed">Support private label, custom formula, bottle, package and brand design.</p>
-        </div>
-      </div>
-      <div class="feature-card reveal shadow-sm border border-gray-100">
-        <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
-        <div>
-          <h5 class="font-bold mb-2">Global Shipping</h5>
-          <p class="text-[12px] text-gray-500 leading-relaxed">Fast delivery by sea, air and express to help your business grow worldwide.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Footer -->
-  <section class="footer-cta text-center">
-    <div class="container flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="text-left">
-        <h3 class="text-xl font-bold uppercase mb-1">Looking for a reliable ink solution partner?</h3>
-        <p class="text-sm text-gray-400">We are ready to support your business with high quality products and professional service.</p>
-      </div>
-      <a href="#contact" class="bg-primary text-white px-10 py-4 rounded font-bold flex items-center gap-2 hover:opacity-90 transition">
-        <span data-i18n="cta_btn">Get A Free Quote</span> <i class="fa-solid fa-arrow-right"></i>
-      </a>
-    </div>
-  </section>
-
-  <!-- Floating Sidebar -->
-  <div class="floating-sidebar">
-    <div class="sidebar-item">
-      <i class="fa-brands fa-whatsapp"></i>
-      <span>WhatsApp</span>
-    </div>
-    <div class="sidebar-item">
-      <i class="fa-solid fa-envelope"></i>
-      <span>Email</span>
-    </div>
-    <div class="sidebar-item">
-      <i class="fa-solid fa-file-invoice"></i>
-      <span>Request Quote</span>
-    </div>
-    <div class="sidebar-item" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-      <i class="fa-solid fa-arrow-up"></i>
-      <span>TOP</span>
-    </div>
+<section class="hero container">
+  <div class="hero-text">
+    <h1>Professional Ink Solution Provider</h1>
+    <p>High quality, stable performance and eco-friendly inks for DTF, UV, sublimation, eco-solvent and related consumables.</p>
+    <button class="btn btn-primary">View Products</button>
+    <button class="btn btn-outline">Contact Us</button>
   </div>
+  <div class="hero-image">
+    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">DTF Ink</div><div class="bottle-color" style="background:#00a9e8;"></div></div></div>
+    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">UV Ink</div><div class="bottle-color" style="background:#ff3f98;"></div></div></div>
+    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">Sublimation</div><div class="bottle-color" style="background:#f2bf14;"></div></div></div>
+    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">Eco Solvent</div><div class="bottle-color" style="background:#222a35;"></div></div></div>
+    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">White Ink</div><div class="bottle-color" style="background:#c9c9c9;"></div></div></div>
+  </div>
+</section>
 
-  <script>
-    const i18n = {
-      "en": {
-        "topbar_slogan": "Professional Ink Solution Provider & Manufacturer Since 2012",
-        "nav_home": "Home", "nav_products": "Products", "nav_about": "About Us", "nav_oem": "ODM/OEM", "nav_apps": "Application", "nav_support": "Support", "nav_news": "News", "nav_contact": "Contact Us", "nav_quote": "Get A Quote",
-        "hero_h1": "Professional Ink Solution Provider",
-        "hero_li1": "12+ Years Manufacturing Experience",
-        "hero_li2": "30,000m² Modern Production Base",
-        "hero_li3": "Annual Output 10,000,000+ Liters",
-        "hero_li4": "Exported to 80+ Countries & Regions",
-        "hero_li5": "OEM / ODM & Private Label Service",
-        "hero_btn1": "View Products",
-        "sec_hot_title": "Hot Products",
-        "prod_dtf_title": "DTF Ink", "prod_uv_title": "UV Ink", "prod_sub_title": "Sublimation Ink", "prod_eco_title": "Eco Solvent Ink", "prod_film_title": "DTF PET Film", "prod_powder_title": "DTF Powder", "prod_clean_title": "Cleaning Solution", "prod_uvdtf_title": "UV DTF Film", "prod_oem_title": "OEM / Private Label",
-        "about_stat1_h": "Years Experience",
-        "cta_btn": "Get A Free Quote"
-      },
-      "zh": {
-        "topbar_slogan": "专业喷墨墨水方案提供商与生产商 · 始于2012",
-        "nav_home": "首页", "nav_products": "产品中心", "nav_about": "关于我们", "nav_oem": "ODM/OEM", "nav_apps": "应用领域", "nav_support": "技术支持", "nav_news": "新闻资讯", "nav_contact": "联系我们", "nav_quote": "获取报价",
-        "hero_h1": "专业的墨水方案提供商",
-        "hero_li1": "12年以上生产制造经验",
-        "hero_li2": "30,000㎡ 现代化生产基地",
-        "hero_li3": "年产量超过 10,000,000 升",
-        "hero_li4": "出口至全球 80 多个国家和地区",
-        "hero_li5": "提供 OEM/ODM 及私有品牌服务",
-        "hero_btn1": "浏览产品",
-        "sec_hot_title": "热门产品",
-        "prod_dtf_title": "DTF 墨水", "prod_uv_title": "UV 墨水", "prod_sub_title": "热升华墨水", "prod_eco_title": "弱溶剂墨水", "prod_film_title": "DTF 胶片", "prod_powder_title": "DTF 抖粉", "prod_clean_title": "清洗液", "prod_uvdtf_title": "UV DTF 膜", "prod_oem_title": "OEM / 私有品牌",
-        "about_stat1_h": "年经验",
-        "cta_btn": "获取免费报价"
-      },
-      "es": {
-        "topbar_slogan": "Proveedor y Fabricante Profesional de Soluciones de Tinta desde 2012",
-        "nav_home": "Inicio", "nav_products": "Productos", "nav_about": "Nosotros", "nav_oem": "ODM/OEM", "nav_apps": "Aplicación", "nav_support": "Soporte", "nav_news": "Noticias", "nav_contact": "Contacto", "nav_quote": "Cotización",
-        "hero_h1": "Proveedor Profesional de Soluciones de Tinta",
-        "hero_li1": "12+ años de experiencia en fabricación",
-        "hero_li2": "Base de producción moderna de 30,000 m²",
-        "hero_li3": "Producción anual de 10,000,000+ litros",
-        "hero_li4": "Exportado a más de 80 países y regiones",
-        "hero_li5": "Servicio OEM / ODM y marca blanca",
-        "hero_btn1": "Ver Productos",
-        "sec_hot_title": "Productos Populares",
-        "prod_dtf_title": "Tinta DTF", "prod_uv_title": "Tinta UV", "prod_sub_title": "Tinta de Sublimación", "prod_eco_title": "Tinta Eco Solvente", "prod_film_title": "Película PET DTF", "prod_powder_title": "Polvo DTF", "prod_clean_title": "Solución Limpiadora", "prod_uvdtf_title": "Película UV DTF", "prod_oem_title": "OEM / Marca Blanca",
-        "about_stat1_h": "Años de experiencia",
-        "cta_btn": "Obtener Cotización Gratis"
-      },
-      "ru": {
-        "topbar_slogan": "Профессиональный поставщик и производитель чернил с 2012 года",
-        "nav_home": "Главная", "nav_products": "Продукция", "nav_about": "О нас", "nav_oem": "ODM/OEM", "nav_apps": "Применение", "nav_support": "Поддержка", "nav_news": "Новости", "nav_contact": "Контакты", "nav_quote": "Запросить цену",
-        "hero_h1": "Профессиональный поставщик чернил",
-        "hero_li1": "12+ лет производственного опыта",
-        "hero_li2": "30 000 м² современная производственная база",
-        "hero_li3": "Годовой объем производства 10 000 000+ литров",
-        "hero_li4": "Экспорт в 80+ стран и регионов",
-        "hero_li5": "OEM / ODM и услуги частной марки",
-        "hero_btn1": "Посмотреть продукцию",
-        "sec_hot_title": "Популярные товары",
-        "prod_dtf_title": "DTF чернила", "prod_uv_title": "UV чернила", "prod_sub_title": "Сублимационные чернила", "prod_eco_title": "Экосольвентные чернила", "prod_film_title": "DTF ПЭТ пленка", "prod_powder_title": "DTF порошок", "prod_clean_title": "Чистящий раствор", "prod_uvdtf_title": "UV DTF пленка", "prod_oem_title": "OEM / СТМ",
-        "about_stat1_h": "Лет опыта",
-        "cta_btn": "Получить бесплатный расчет"
-      }
-    };
+<section class="container categories">
+  <div class="category-card"><div class="sim-bottle"></div><span>DTF Ink</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>UV Ink</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>Sublimation</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>Eco Solvent</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>DTF PET Film</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>DTF Powder</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>Cleaning Solution</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>UV DTF Film</span></div>
+  <div class="category-card"><div class="sim-bottle"></div><span>OEM / Private Label</span></div>
+</section>
 
-    function setLang(lang) {
-      document.body.classList.add('lang-switching');
-      setTimeout(() => {
-        const t = i18n[lang];
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          const k = el.getAttribute('data-i18n');
-          if (t[k]) el.innerHTML = t[k];
-        });
-        localStorage.setItem('inhaosin_lang', lang);
-        document.getElementById('current-lang-label').innerText = lang === 'en' ? 'English' : lang === 'zh' ? '中文' : lang === 'es' ? 'Español' : 'Русский';
-        document.body.classList.remove('lang-switching');
-      }, 200);
+<section class="container stats">
+  <div class="stat"><h2>12+</h2><p>Years Experience</p></div>
+  <div class="stat"><h2>30,000 m³</h2><p>Factory Area</p></div>
+  <div class="stat"><h2>10,000,000+</h2><p>Liters Annual Output</p></div>
+  <div class="stat"><h2>80+</h2><p>Export Countries</p></div>
+  <div class="stat"><h2>50+</h2><p>R&D Team</p></div>
+  <div class="stat"><h2>ISO9001</h2><p>Quality Certified</p></div>
+</section>
+
+<section class="container hot-products">
+  <h2>HOT PRODUCTS</h2>
+  <div class="product-row">
+    <div class="product-card"><div class="sim-bottle-small"></div><h4>DTF Ink</h4><p>CMYK W Colors Standard/High/Super</p></div>
+    <div class="product-card"><div class="sim-bottle-small"></div><h4>UV Ink</h4><p>For Epson/Industrial Heads Hard/Soft/Neutral</p></div>
+    <div class="product-card"><div class="sim-bottle-small"></div><h4>Sublimation Ink</h4><p>Epson 1-16H / 1-35H / 8H Fluorescent</p></div>
+    <div class="product-card"><div class="sim-bottle-small"></div><h4>Eco Solvent Ink</h4><p>Low Odor / Odorless Eco / Premium / Leather / ECO</p></div>
+    <div class="product-card"><div class="sim-bottle-small"></div><h4>DTF PET Film</h4><p>A3 / A4 Sheets 30cm/33cm/60cm Rolls</p></div>
+    <div class="product-card"><div class="sim-bottle-small"></div><h4>DTF Powder</h4><p>White DTF Powder Hot Melt TPU Powder</p></div>
+  </div>
+</section>
+
+<section class="cta container">
+  <h2>LOOKING FOR A RELIABLE INK SOLUTION PARTNER?</h2>
+  <button class="btn btn-cta">Get A Free Quote</button>
+</section>
+
+<footer>
+<div class="container"><p>© 2026 Inhaosin. All rights reserved.</p></div>
+</footer>
+
+<script>
+/* 简单滚动动画 */
+const observerOptions = {
+  threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+      obs.unobserve(entry.target);
     }
+  });
+}, observerOptions);
 
-    // Initialize Language
-    document.addEventListener('DOMContentLoaded', () => {
-      const saved = localStorage.getItem('inhaosin_lang');
-      const bl = (navigator.language||'').toLowerCase().slice(0,2);
-      const detected = saved || (['zh','es','ru'].includes(bl) ? bl : 'en');
-      setLang(detected);
-    });
+document.querySelectorAll('.bottle, .category-card, .product-card').forEach(el => {
+  observer.observe(el);
+});
+</script>
 
-    // Reveal animation
-    const reveal = () => {
-      const reveals = document.querySelectorAll('.reveal');
-      reveals.forEach(el => {
-        const windowHeight = window.innerHeight;
-        const revealTop = el.getBoundingClientRect().top;
-        const revealPoint = 150;
-        if (revealTop < windowHeight - revealPoint) el.style.opacity = '1', el.style.transform = 'translateY(0)';
-      });
-    };
-    window.addEventListener('scroll', reveal);
-    document.querySelectorAll('.reveal').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'all 0.8s ease-out';
-    });
-    reveal();
-  </script>
 </body>
 </html>
