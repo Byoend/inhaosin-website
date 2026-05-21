@@ -1001,6 +1001,16 @@
     }
 
     /* Responsive */
+
+    /* ===== Language Switcher ===== */
+    .lang-switcher{position:relative;display:inline-block;}
+    .lang-btn{background:none;border:1px solid rgba(255,255,255,.35);color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:12px;display:flex;align-items:center;gap:5px;white-space:nowrap;font-family:inherit;}
+    .lang-btn:hover{background:rgba(255,255,255,.12);}
+    .lang-menu{display:none;position:absolute;right:0;top:calc(100% + 4px);background:#17181c;border:1px solid rgba(255,255,255,.12);border-radius:6px;min-width:140px;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,.35);overflow:hidden;}
+    .lang-menu.open{display:block;}
+    .lang-menu div{padding:9px 14px;cursor:pointer;font-size:12px;color:#e0e0e0;white-space:nowrap;transition:background .15s;}
+    .lang-menu div:hover{background:rgba(200,164,126,.25);color:#f5d7a9;}
+
     @media (max-width: 1180px){
       .hero-grid,
       .why-grid,
@@ -1076,12 +1086,24 @@
       <div class="topbar-left">
         <a href="mailto:yinkang222@gmail.com">yinkang222@gmail.com</a>
         <a href="https://wa.me/8618139260639" target="_blank">WhatsApp: +86 181 3926 0639</a>
-        <span>Professional Ink & Consumables Manufacturer · Est. 2012</span>
+        <span data-i18n="topbar_slogan">Professional Ink & Consumables Manufacturer · Est. 2012</span>
       </div>
       <div class="topbar-right">
-        <a href="#">English ▼</a>
+        <a class="lang-switcher" id="langSwitcher">
+          <button class="lang-btn" id="langBtn" onclick="toggleLangMenu(event)" aria-label="Language">
+            <span id="langFlag">🇬🇧</span>
+            <span id="langLabel">English</span>
+            <span style="font-size:9px">▼</span>
+          </button>
+          <div class="lang-menu" id="langMenu">
+            <div onclick="setLang('en')">🇬🇧 English</div>
+            <div onclick="setLang('es')">🇪🇸 Espa&ntilde;ol</div>
+            <div onclick="setLang('ru')">🇷🇺 Русский</div>
+            <div onclick="setLang('zh')">🇨🇳 中文</div>
+          </div>
+        </div
         <a href="#">USD ▼</a>
-        <a href="#contact">Send Inquiry</a>
+        <a href="#contact" data-i18n="topbar_inquiry">Send Inquiry</a>
       </div>
     </div>
   </div>
@@ -1095,17 +1117,17 @@
       </a>
 
       <nav class="nav-links" id="navLinks">
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#advantages">Why Us</a>
-        <a href="#applications">Applications</a>
-        <a href="#oem">OEM / ODM</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
+        <a href="#products" data-i18n="nav_products">Products</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#advantages" data-i18n="nav_why">Why Us</a>
+        <a href="#applications" data-i18n="nav_apps">Applications</a>
+        <a href="#oem" data-i18n="nav_oem">OEM / ODM</a>
+        <a href="#news" data-i18n="nav_news">News</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
       </nav>
 
       <div class="nav-actions">
-        <a class="btn btn-primary" href="#contact">Get A Quote</a>
+        <a class="btn btn-primary" href="#contact" data-i18n="nav_quote">Get A Quote</a>
         <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
       </div>
     </div>
@@ -1115,8 +1137,8 @@
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy reveal">
-        <div class="eyebrow">Factory Direct · Global Export Since 2012</div>
-        <h1>Professional Ink &amp; Consumables For Every Printer</h1>
+        <div class="eyebrow" data-i18n="hero_eyebrow">Factory Direct · Global Export Since 2012</div>
+        <h1 data-i18n="hero_h1">Professional Ink &amp; Consumables For Every Printer</h1>
         <p>
           Inhaosin is a China-based manufacturer specializing in DTF ink, UV ink, sublimation ink,
           eco solvent ink, DTF PET film and TPU hot melt powder — serving distributors, print shops
@@ -1131,8 +1153,8 @@
         </div>
 
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#products">Explore Products</a>
-          <a class="btn btn-outline" href="#contact">Get Free Quote</a>
+          <a class="btn btn-primary" href="#products" data-i18n="hero_btn1">Explore Products</a>
+          <a class="btn btn-outline" href="#contact" data-i18n="hero_btn2">Get Free Quote</a>
         </div>
 
         <div class="hero-badges">
@@ -1204,19 +1226,19 @@
       <div class="stats-grid">
         <div class="stat-card reveal">
           <div class="stat-number">12+</div>
-          <div class="stat-label">Years Of Ink Manufacturing Experience</div>
+          <div class="stat-label" data-i18n="stat1">Years Of Ink Manufacturing Experience</div>
         </div>
         <div class="stat-card reveal">
           <div class="stat-number">80+</div>
-          <div class="stat-label">Countries Served Worldwide</div>
+          <div class="stat-label" data-i18n="stat2">Countries Served Worldwide</div>
         </div>
         <div class="stat-card reveal">
           <div class="stat-number">10M+</div>
-          <div class="stat-label">Liters Estimated Annual Capacity</div>
+          <div class="stat-label" data-i18n="stat3">Liters Estimated Annual Capacity</div>
         </div>
         <div class="stat-card reveal">
           <div class="stat-number">OEM</div>
-          <div class="stat-label">Private Label, Packaging & Formula Support</div>
+          <div class="stat-label" data-i18n="stat4">Private Label, Packaging & Formula Support</div>
         </div>
       </div>
     </div>
@@ -1225,7 +1247,7 @@
   <!-- Product categories -->
   <section class="section" id="products">
     <div class="container">
-      <div class="section-title reveal">Our Product Categories</div>
+      <div class="section-title reveal" data-i18n="sec_products">Our Product Categories</div>
       <div class="section-subtitle reveal">
         From DTF and UV to sublimation and eco solvent ink — plus PET film, TPU powder, cleaning solutions and OEM service.
         Everything your print shop or distribution business needs, from one reliable factory source.
@@ -1461,7 +1483,7 @@
   <!-- About / capabilities -->
   <section class="section" id="about">
     <div class="container">
-      <div class="section-title reveal">Factory Strength &amp; Capabilities</div>
+      <div class="section-title reveal" data-i18n="sec_about">Factory Strength &amp; Capabilities</div>
       <div class="section-subtitle reveal">
         12+ years of dedicated manufacturing in digital printing consumables. Our modern facility
         supports high-volume production, strict quality control and rapid OEM customization for partners worldwide.
@@ -1495,7 +1517,7 @@
   <!-- Applications -->
   <section class="section section-soft" id="applications">
     <div class="container">
-      <div class="section-title reveal">Application Industries</div>
+      <div class="section-title reveal" data-i18n="sec_apps">Application Industries</div>
       <div class="section-subtitle reveal">
         Inhaosin products power printing businesses across apparel decoration, advertising, packaging, UV hard-surface printing and more.
         Our inks are designed to perform reliably across different printers, substrates and climates.
@@ -1575,7 +1597,7 @@
   <!-- Hot products -->
   <section class="section">
     <div class="container">
-      <div class="section-title reveal">Hot Products</div>
+      <div class="section-title reveal" data-i18n="sec_hot">Hot Products</div>
       <div class="section-subtitle reveal">
         Our most popular ink and consumable products — trusted by printing factories and distributors across North America, South America and Europe.
       </div>
@@ -1662,7 +1684,7 @@
   <!-- OEM process -->
   <section class="section section-soft" id="oem">
     <div class="container">
-      <div class="section-title reveal">OEM / ODM Cooperation Process</div>
+      <div class="section-title reveal" data-i18n="sec_oem">OEM / ODM Cooperation Process</div>
       <div class="section-subtitle reveal">
         Simple, transparent OEM cooperation steps. Whether you need custom labels, neutral packaging or full private-label branding, we make it easy to get started.
       </div>
@@ -1691,7 +1713,7 @@
   <!-- News -->
   <section class="section" id="news">
     <div class="container">
-      <div class="section-title reveal">News & Blog</div>
+      <div class="section-title reveal" data-i18n="sec_news">News & Blog</div>
       <div class="section-subtitle reveal">
         Industry insights, product guides and technical tips to help your business choose the right ink and grow faster.
       </div>
@@ -1766,13 +1788,13 @@
     <div class="container">
       <div class="cta-banner reveal">
         <div>
-          <h3>Looking For A Reliable Ink & Consumables Supplier?</h3>
+          <h3 data-i18n="cta_h">Looking For A Reliable Ink & Consumables Supplier?</h3>
           <p>
             Whether you need factory pricing, sample support, private label service, or help selecting the right product line for your market,
             our team is ready to assist.
           </p>
         </div>
-        <a href="#contact" class="btn btn-primary">Request A Quote</a>
+        <a href="#contact" class="btn btn-primary" data-i18n="cta_btn">Request A Quote</a>
       </div>
     </div>
   </section>
@@ -1828,7 +1850,7 @@
 
       <div class="form-wrap reveal">
         <div class="eyebrow">Send Inquiry</div>
-        <h2 style="margin:0 0 12px;font-size:32px;">Get A Quick Quote</h2>
+        <h2 style="margin:0 0 12px;font-size:32px;" data-i18n="form_h">Get A Quick Quote</h2>
         <p style="margin:0;color:var(--text-light);">Tell us your product needs, country, and quantity. Our sales team will reply within 24 hours.</p>
 
         <!-- 后期把 4ff52176-fb97-4246-a798-5cd49a194430 换成你自己的 web3forms key -->
@@ -1853,7 +1875,7 @@
               </select>
             </div>
             <div class="full"><textarea name="message" placeholder="Please tell us your product needs, quantity, packaging preference, or target market..."></textarea></div>
-            <div class="full"><button class="btn btn-primary" type="submit">Submit Inquiry</button></div>
+            <div class="full"><button class="btn btn-primary" type="submit" data-i18n="form_submit">Submit Inquiry</button></div>
           </div>
           <div class="form-note">Response time: within 24 hours · WhatsApp: +86 181 3926 0639 · Email: yinkang222@gmail.com</div>
         </form>
@@ -1901,7 +1923,7 @@
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 Inhaosin. All Rights Reserved.</div>
+        <div><span data-i18n="footer_copy">© 2026 Inhaosin. All Rights Reserved.</span></div>
         <div>Designed for Ink & Printing Consumables Business</div>
       </div>
     </div>
@@ -1947,5 +1969,191 @@
     },{threshold:0.12});
     reveals.forEach(el=>revealObserver.observe(el));
   </script>
+
+  <!-- ===== i18n Four-Language Switcher ===== -->
+  <script>
+  const i18n = {
+    en: {
+      topbar_slogan: 'Professional Ink & Consumables Manufacturer \u00b7 Est. 2012',
+      topbar_inquiry: 'Send Inquiry',
+      nav_products: 'Products', nav_about: 'About', nav_why: 'Why Us',
+      nav_apps: 'Applications', nav_oem: 'OEM / ODM', nav_news: 'News',
+      nav_contact: 'Contact', nav_quote: 'Get A Quote',
+      hero_eyebrow: 'Factory Direct \u00b7 Global Export Since 2012',
+      hero_h1: 'Professional Ink & Consumables For Every Printer',
+      hero_p: 'Inhaosin is a China-based manufacturer specializing in DTF ink, UV ink, sublimation ink, eco solvent ink, DTF PET film and TPU hot melt powder \u2014 serving distributors, print shops and OEM partners across 80+ countries worldwide.',
+      hero_li1: 'DTF Ink \u00b7 CMYKW \u00b7 Standard / High / Super Density',
+      hero_li2: 'UV Ink \u00b7 Hard / Soft / Neutral \u00b7 Epson & Industrial',
+      hero_li3: 'Sublimation Ink \u00b7 1\u201335 Heads \u00b7 J-NEXT / Kyocera',
+      hero_li4: 'OEM / ODM & Private Label Full Support',
+      hero_btn1: 'Explore Products', hero_btn2: 'Get Free Quote',
+      hero_badge1: 'ISO9001 Certified', hero_badge2: '80+ Export Countries',
+      hero_badge3: '10,000,000+ Liters / Year', hero_badge4: 'OEM Sampling in 3\u20135 Days',
+      stat1: 'Years Of Ink Manufacturing Experience', stat2: 'Countries Served Worldwide',
+      stat3: 'Liters Estimated Annual Capacity', stat4: 'Private Label, Packaging & Formula Support',
+      sec_products: 'Our Product Categories', sec_about: 'Factory Strength & Capabilities',
+      sec_apps: 'Application Industries', sec_hot: 'Hot Products',
+      sec_oem: 'OEM / ODM Cooperation Process', sec_news: 'News & Blog',
+      cta_h: 'Looking For A Reliable Ink & Consumables Supplier?',
+      cta_btn: 'Request A Quote', form_h: 'Get A Quick Quote', form_submit: 'Submit Inquiry',
+      footer_copy: '\u00a9 2026 Inhaosin. All Rights Reserved.',
+      lang_flag: '\U0001f1ec\U0001f1e7', lang_label: 'English',
+    },
+    es: {
+      topbar_slogan: 'Fabricante Profesional de Tintas y Consumibles \u00b7 Desde 2012',
+      topbar_inquiry: 'Enviar Consulta',
+      nav_products: 'Productos', nav_about: 'Nosotros', nav_why: 'Por Qu\u00e9 Nosotros',
+      nav_apps: 'Aplicaciones', nav_oem: 'OEM / ODM', nav_news: 'Noticias',
+      nav_contact: 'Contacto', nav_quote: 'Solicitar Cotizaci\u00f3n',
+      hero_eyebrow: 'F\u00e1brica Directa \u00b7 Exportaci\u00f3n Global Desde 2012',
+      hero_h1: 'Soluciones Profesionales de Tinta Para Toda Impresora',
+      hero_p: 'Inhaosin es un fabricante chino especializado en tinta DTF, tinta UV, tinta de sublimaci\u00f3n, tinta eco-solvente, film PET DTF y polvo TPU \u2014 atendiendo distribuidores y socios OEM en m\u00e1s de 80 pa\u00edses.',
+      hero_li1: 'Tinta DTF \u00b7 CMYKW \u00b7 Est\u00e1ndar / Alta / Ultra Concentraci\u00f3n',
+      hero_li2: 'Tinta UV \u00b7 Dura / Suave / Neutra \u00b7 Epson e Industrial',
+      hero_li3: 'Tinta de Sublimaci\u00f3n \u00b7 1\u201335 Cabezales \u00b7 J-NEXT / Kyocera',
+      hero_li4: 'Servicio Completo OEM / ODM y Marca Privada',
+      hero_btn1: 'Ver Productos', hero_btn2: 'Cotizaci\u00f3n Gratis',
+      hero_badge1: 'Certificado ISO9001', hero_badge2: '80+ Pa\u00edses de Exportaci\u00f3n',
+      hero_badge3: '10,000,000+ Litros / A\u00f1o', hero_badge4: 'Muestras OEM en 3\u20135 D\u00edas',
+      stat1: 'A\u00f1os de Experiencia en Fabricaci\u00f3n', stat2: 'Pa\u00edses Atendidos Mundialmente',
+      stat3: 'Litros de Capacidad Anual', stat4: 'Etiqueta Privada, Empaque y F\u00f3rmulas OEM',
+      sec_products: 'Nuestras Categor\u00edas de Productos', sec_about: 'Fortaleza de F\u00e1brica',
+      sec_apps: 'Industrias de Aplicaci\u00f3n', sec_hot: 'Productos M\u00e1s Vendidos',
+      sec_oem: 'Proceso de Cooperaci\u00f3n OEM / ODM', sec_news: 'Noticias y Blog',
+      cta_h: '\u00bfBusca un Proveedor Confiable de Tintas?',
+      cta_btn: 'Solicitar Cotizaci\u00f3n', form_h: 'Obtenga una Cotizaci\u00f3n R\u00e1pida',
+      form_submit: 'Enviar Consulta',
+      footer_copy: '\u00a9 2026 Inhaosin. Todos los Derechos Reservados.',
+      lang_flag: '\U0001f1ea\U0001f1f8', lang_label: 'Espa\u00f1ol',
+    },
+    ru: {
+      topbar_slogan: '\u041f\u0440\u043e\u0444\u0435\u0441\u0441\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c \u0447\u0435\u0440\u043d\u0438\u043b \u00b7 \u0421 2012 \u0433\u043e\u0434\u0430',
+      topbar_inquiry: '\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u043f\u0440\u043e\u0441',
+      nav_products: '\u041f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u044f',
+      nav_about: '\u041e \u043d\u0430\u0441',
+      nav_why: '\u041f\u043e\u0447\u0435\u043c\u0443 \u043c\u044b',
+      nav_apps: '\u041f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u0438\u044f',
+      nav_oem: 'OEM / ODM',
+      nav_news: '\u041d\u043e\u0432\u043e\u0441\u0442\u0438',
+      nav_contact: '\u041a\u043e\u043d\u0442\u0430\u043a\u0442',
+      nav_quote: '\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435',
+      hero_eyebrow: '\u041f\u0440\u044f\u043c\u043e \u0441 \u0437\u0430\u0432\u043e\u0434\u0430 \u00b7 \u042d\u043a\u0441\u043f\u043e\u0440\u0442 \u0441 2012 \u0433\u043e\u0434\u0430',
+      hero_h1: '\u041f\u0440\u043e\u0444\u0435\u0441\u0441\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0435 \u0427\u0435\u0440\u043d\u0438\u043b\u0430 \u0434\u043b\u044f \u041b\u044e\u0431\u044b\u0445 \u041f\u0440\u0438\u043d\u0442\u0435\u0440\u043e\u0432',
+      hero_p: 'Inhaosin \u2014 \u043a\u0438\u0442\u0430\u0439\u0441\u043a\u0438\u0439 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c DTF-\u0447\u0435\u0440\u043d\u0438\u043b, UV-\u0447\u0435\u0440\u043d\u0438\u043b, \u0441\u0443\u0431\u043b\u0438\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0445 \u0447\u0435\u0440\u043d\u0438\u043b, \u044d\u043a\u043e-\u0441\u043e\u043b\u044c\u0432\u0435\u043d\u0442\u043d\u044b\u0445 \u0447\u0435\u0440\u043d\u0438\u043b, \u043f\u043b\u0435\u043d\u043a\u0438 PET \u0438 \u043f\u043e\u0440\u043e\u0448\u043a\u0430 TPU \u2014 \u043e\u0431\u0441\u043b\u0443\u0436\u0438\u0432\u0430\u0435\u043c \u043a\u043b\u0438\u0435\u043d\u0442\u043e\u0432 \u0432 80+ \u0441\u0442\u0440\u0430\u043d\u0430\u0445.',
+      hero_li1: 'DTF-\u0447\u0435\u0440\u043d\u0438\u043b\u0430 CMYKW \u00b7 \u0421\u0442\u0430\u043d\u0434\u0430\u0440\u0442 / \u0412\u044b\u0441\u043e\u043a\u0430\u044f / \u0423\u043b\u044c\u0442\u0440\u0430',
+      hero_li2: 'UV-\u0447\u0435\u0440\u043d\u0438\u043b\u0430 \u00b7 \u0416\u0451\u0441\u0442\u043a\u0430\u044f/\u041c\u044f\u0433\u043a\u0430\u044f/\u041d\u0435\u0439\u0442\u0440\u0430\u043b\u044c\u043d\u0430\u044f \u00b7 Epson & \u041f\u0440\u043e\u043c',
+      hero_li3: '\u0421\u0443\u0431\u043b\u0438\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0435 \u00b7 1\u201335 \u0413\u043e\u043b\u043e\u0432\u043e\u043a \u00b7 J-NEXT / Kyocera',
+      hero_li4: '\u041f\u043e\u043b\u043d\u0430\u044f \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 OEM / ODM & Private Label',
+      hero_btn1: '\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u041f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u044e',
+      hero_btn2: '\u0411\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0439 \u0420\u0430\u0441\u0447\u0451\u0442',
+      hero_badge1: '\u0421\u0435\u0440\u0442\u0438\u0444\u0438\u043a\u0430\u0442 ISO9001',
+      hero_badge2: '80+ \u0421\u0442\u0440\u0430\u043d \u042d\u043a\u0441\u043f\u043e\u0440\u0442\u0430',
+      hero_badge3: '10\u00a0000\u00a0000+ \u041b\u0438\u0442\u0440\u043e\u0432 / \u0413\u043e\u0434',
+      hero_badge4: '\u041e\u0431\u0440\u0430\u0437\u0446\u044b OEM \u0437\u0430 3\u20135 \u0414\u043d\u0435\u0439',
+      stat1: '\u041b\u0435\u0442 \u041e\u043f\u044b\u0442\u0430 \u0432 \u041f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0441\u0442\u0432\u0435 \u0427\u0435\u0440\u043d\u0438\u043b',
+      stat2: '\u0421\u0442\u0440\u0430\u043d \u043f\u043e \u0432\u0441\u0435\u043c\u0443 \u041c\u0438\u0440\u0443',
+      stat3: '\u041b\u0438\u0442\u0440\u043e\u0432 \u0413\u043e\u0434\u043e\u0432\u043e\u0439 \u041c\u043e\u0449\u043d\u043e\u0441\u0442\u0438',
+      stat4: '\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 OEM & Private Label',
+      sec_products: '\u041d\u0430\u0448\u0438 \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438 \u041f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u0438',
+      sec_about: '\u041c\u043e\u0449\u044c \u0417\u0430\u0432\u043e\u0434\u0430 \u0438 \u0412\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u0438',
+      sec_apps: '\u041e\u0442\u0440\u0430\u0441\u043b\u0438 \u041f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u0438\u044f',
+      sec_hot: '\u041f\u043e\u043f\u0443\u043b\u044f\u0440\u043d\u044b\u0435 \u041f\u0440\u043e\u0434\u0443\u043a\u0442\u044b',
+      sec_oem: '\u041f\u0440\u043e\u0446\u0435\u0441\u0441 \u0421\u043e\u0442\u0440\u0443\u0434\u043d\u0438\u0447\u0435\u0441\u0442\u0432\u0430 OEM / ODM',
+      sec_news: '\u041d\u043e\u0432\u043e\u0441\u0442\u0438 \u0438 \u0411\u043b\u043e\u0433',
+      cta_h: '\u0418\u0449\u0435\u0442\u0435 \u041d\u0430\u0434\u0451\u0436\u043d\u043e\u0433\u043e \u041f\u043e\u0441\u0442\u0430\u0432\u0449\u0438\u043a\u0430 \u0427\u0435\u0440\u043d\u0438\u043b?',
+      cta_btn: '\u0417\u0430\u043f\u0440\u043e\u0441\u0438\u0442\u044c \u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435',
+      form_h: '\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u0411\u044b\u0441\u0442\u0440\u044b\u0439 \u0420\u0430\u0441\u0447\u0451\u0442',
+      form_submit: '\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0417\u0430\u043f\u0440\u043e\u0441',
+      footer_copy: '\u00a9 2026 Inhaosin. \u0412\u0441\u0435 \u041f\u0440\u0430\u0432\u0430 \u0417\u0430\u0449\u0438\u0449\u0435\u043d\u044b.',
+      lang_flag: '\U0001f1f7\U0001f1fa', lang_label: '\u0420\u0443\u0441\u0441\u043a\u0438\u0439',
+    },
+    zh: {
+      topbar_slogan: '\u4e13\u4e1a\u5899\u514b\u4e0e\u8017\u6750\u5236\u9020\u5546 \u00b7 2012\u5e74\u521b\u7acb',
+      topbar_inquiry: '\u53d1\u9001\u8be2\u4ef7',
+      nav_products: '\u4ea7\u54c1', nav_about: '\u5173\u4e8e\u6211\u4eec',
+      nav_why: '\u4e3a\u4ec0\u4e48\u9009\u6211\u4eec', nav_apps: '\u5e94\u7528\u9886\u57df',
+      nav_oem: 'OEM / ODM', nav_news: '\u65b0\u95fb\u8d44\u8baf',
+      nav_contact: '\u8054\u7cfb\u6211\u4eec', nav_quote: '\u83b7\u53d6\u62a5\u4ef7',
+      hero_eyebrow: '\u5de5\u5382\u76f4\u9500 \u00b7 2012\u5e74\u8d77\u5168\u7403\u51fa\u53e3',
+      hero_h1: '\u4e13\u4e1a\u5899\u514b\u4e0e\u8017\u6750\uff0c\u9002\u914d\u5404\u7c7b\u6253\u5370\u673a\u578b',
+      hero_p: 'Inhaosin\u662f\u4e2d\u56fd\u4e13\u4e1a\u5899\u514b\u5236\u9020\u5546\uff0c\u4e3b\u8981\u4ea7\u54c1\u5305\u62ecDTF\u5899\u514b\u3001UV\u5899\u514b\u3001\u70ed\u5347\u534e\u5899\u514b\u3001\u5f31\u6ea2\u5899\u514b\u3001DTF PET\u819c\u53caTPU\u70ed\u7194\u7c89\uff0c\u5e74\u4ea7\u80fd\u8d85\u51001000\u4e07\u5347\uff0c\u51fa\u53e3\u81f380+\u4e2a\u56fd\u5bb6\u548c\u5730\u533a\u3002',
+      hero_li1: 'DTF\u5899\u514b CMYKW\u4e94\u8272 \u00b7 \u6807\u51c6\u6b3e/\u9ad8\u6d53\u7248/\u8d85\u6d53\u7248',
+      hero_li2: 'UV\u5899\u514b \u00b7 \u786c\u6027/\u8f6f\u6027/\u4e2d\u6027 \u00b7 EPSON\u5934&\u5de5\u4e1a\u5934\u901a\u7528',
+      hero_li3: '\u70ed\u5347\u534e\u5899\u514b \u00b7 1\u201335\u5934\u673a \u00b7 J-NEXT/\u4eac\u74f7\u559c\u5c14\u5965',
+      hero_li4: '\u5168\u5957OEM/ODM\u5b9a\u5236\u53ca\u8d34\u724c\u670d\u52a1',
+      hero_btn1: '\u67e5\u770b\u4ea7\u54c1', hero_btn2: '\u514d\u8d39\u62a5\u4ef7',
+      hero_badge1: 'ISO9001\u8ba4\u8bc1', hero_badge2: '\u51fa\u53e380+\u4e2a\u56fd\u5bb6',
+      hero_badge3: '\u5e74\u4ea7\u80fd1000\u4e07+\u5347', hero_badge4: 'OEM\u6253\u6837 3\u20135\u5929',
+      stat1: '\u5e74\u5899\u514b\u5236\u9020\u7ecf\u9a8c', stat2: '\u51fa\u53e3\u56fd\u5bb6\u548c\u5730\u533a',
+      stat3: '\u5347\u5e74\u4ea7\u80fd\u4f30\u7b97', stat4: 'OEM\u8d34\u724c\u3001\u5305\u88c5\u4e0e\u914d\u65b9\u5b9a\u5236',
+      sec_products: '\u4ea7\u54c1\u5206\u7c7b', sec_about: '\u5de5\u5382\u5b9e\u529b\u4e0e\u6280\u672f\u80fd\u529b',
+      sec_apps: '\u5e94\u7528\u884c\u4e1a', sec_hot: '\u70ed\u9500\u4ea7\u54c1',
+      sec_oem: 'OEM / ODM \u5408\u4f5c\u6d41\u7a0b', sec_news: '\u65b0\u95fb\u4e0e\u535a\u5ba2',
+      cta_h: '\u5bfb\u627e\u53ef\u9760\u7684\u5899\u514b\u4e0e\u8017\u6750\u4f9b\u5e94\u5546\uff1f',
+      cta_btn: '\u7acb\u5373\u8be2\u4ef7', form_h: '\u5feb\u901f\u83b7\u53d6\u62a5\u4ef7',
+      form_submit: '\u63d0\u4ea4\u8be2\u4ef7',
+      footer_copy: '\u00a9 2026 Inhaosin \u7248\u6743\u6240\u6709\u3002',
+      lang_flag: '\U0001f1e8\U0001f1f3', lang_label: '\u4e2d\u6587',
+    }
+  };
+
+  const _q  = (s) => document.querySelector(s);
+  const _qa = (s) => document.querySelectorAll(s);
+
+  function applyLang(lang) {
+    const t = i18n[lang];
+    if (!t) return;
+    // Translate all tagged elements
+    _qa('[data-i18n]').forEach(el => {
+      const k = el.getAttribute('data-i18n');
+      if (t[k] !== undefined) el.innerHTML = t[k];
+    });
+    // Hero paragraph (no data-i18n needed, select by position)
+    const hp = _q('.hero-copy > p');
+    if (hp) hp.textContent = t.hero_p;
+    // Hero list items
+    const hli = _qa('.hero-list div');
+    ['hero_li1','hero_li2','hero_li3','hero_li4'].forEach((k,i)=>{
+      if (hli[i] && t[k]) hli[i].textContent = t[k];
+    });
+    // Hero badges
+    const hb = _qa('.hero-badge');
+    ['hero_badge1','hero_badge2','hero_badge3','hero_badge4'].forEach((k,i)=>{
+      if (hb[i] && t[k]) hb[i].textContent = t[k];
+    });
+    // Update lang button
+    const flagEl = _q('#langFlag'), labelEl = _q('#langLabel');
+    if (flagEl)  flagEl.textContent  = t.lang_flag;
+    if (labelEl) labelEl.textContent = t.lang_label;
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('inhaosin_lang', lang); } catch(e){}
+  }
+
+  function setLang(lang) {
+    applyLang(lang);
+    const m = _q('#langMenu');
+    if (m) m.classList.remove('open');
+  }
+
+  function toggleLangMenu(e) {
+    e.stopPropagation();
+    const m = _q('#langMenu');
+    if (m) m.classList.toggle('open');
+  }
+
+  document.addEventListener('click', () => {
+    const m = _q('#langMenu');
+    if (m) m.classList.remove('open');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    let saved = null;
+    try { saved = localStorage.getItem('inhaosin_lang'); } catch(e){}
+    const bl = (navigator.language||'').toLowerCase().slice(0,2);
+    const detected = saved || (['es','ru','zh'].includes(bl) ? bl : 'en');
+    if (detected !== 'en') applyLang(detected);
+  });
+  </script>
+
 </body>
 </html>
