@@ -1,158 +1,1949 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inhaosin - Professional Ink Solution</title>
-<style>
-body { margin:0; font-family:'Segoe UI', sans-serif; background:#fff; color:#222;}
-a { text-decoration:none; color:inherit;}
-.top-bar {background:#0b1b38;color:#fff;font-size:14px;padding:5px 50px;display:flex;justify-content:space-between;align-items:center;}
-.top-bar a{margin-left:15px;color:#fff;}
-.top-bar a:hover{text-decoration:underline;}
-header{display:flex;justify-content:space-between;align-items:center;padding:15px 50px;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.08);position:sticky;top:25px;z-index:100;transition:box-shadow 0.3s ease;}
-header.sticky{box-shadow:0 4px 14px rgba(0,0,0,0.25);}
-header .logo img{height:50px;}
-nav{display:flex;align-items:center;}
-nav a{margin-left:25px;font-weight:500;color:#222;transition:color 0.3s;}
-nav a:hover{color:#000;}
-header .quote-btn{background:#b8966f;color:#fff;padding:10px 20px;border-radius:5px;margin-left:20px;cursor:pointer;transition:background 0.3s, transform 0.3s;}
-header .quote-btn:hover{background:#9e7e57;transform:scale(1.05);}
-.hero{position:relative;height:550px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.hero img{width:100%;height:100%;object-fit:cover;display:block;}
-.hero-content{position:absolute;text-align:left;left:10%;color:#222;max-width:600px;}
-.hero-content h1{font-size:48px;font-weight:bold;margin-bottom:20px;opacity:0;transform:translateY(20px);transition:all 0.6s ease;}
-.hero-content p{font-size:18px;margin-bottom:30px;opacity:0;transform:translateY(20px);transition:all 0.6s ease;}
-.hero-content button{padding:12px 25px;border:none;border-radius:5px;cursor:pointer;font-weight:500;margin-right:10px;opacity:0;transform:translateY(20px);transition:all 0.6s ease;}
-.hero-content .btn-primary{background:#222;color:#fff;}
-.hero-content .btn-secondary{background:#fff;color:#222;border:1px solid #222;}
-.hero-content .btn-primary:hover{background:#000;transform:scale(1.05);}
-.hero-content .btn-secondary:hover{background:#eee;transform:scale(1.05);}
-.section-title{text-align:center;font-size:32px;color:#222;margin:60px 0 40px 0;opacity:0;transform:translateY(20px);transition:all 0.6s ease;}
-.categories{display:flex;flex-wrap:wrap;justify-content:center;padding:0 20px;}
-.category-card{width:180px;margin:15px;padding:15px;background:#fff;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.06);text-align:center;transition:transform 0.3s, box-shadow 0.3s, opacity 0.6s, translateY 0.6s;opacity:0;transform:translateY(20px);}
-.category-card:hover{transform:translateY(-8px) scale(1.03);box-shadow:0 6px 18px rgba(0,0,0,0.15);}
-.category-card img{width:80px;height:80px;margin-bottom:10px;}
-.category-card h4{margin-bottom:5px;font-weight:600;}
-.category-card p{font-size:14px;color:#555;}
-.capabilities{display:flex;flex-wrap:wrap;justify-content:center;background:#f7f7f7;padding:50px 20px;text-align:center;}
-.cap-card{flex:1 1 180px;margin:15px;padding:20px;border-radius:10px;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.05);opacity:0;transform:translateY(20px);transition:all 0.6s ease;}
-.cap-card img{width:40px;height:40px;margin-bottom:10px;}
-.cap-card h3{margin-bottom:8px;font-size:16px;color:#222;}
-.cap-card p{font-size:14px;color:#555;}
-.hot-products{padding:60px 20px;text-align:center;}
-.product-grid{display:flex;flex-wrap:wrap;justify-content:center;}
-.product-card{width:180px;margin:10px;padding:15px;background:#fff;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.06);text-align:center;opacity:0;transform:translateY(20px);transition:all 0.6s ease;}
-.product-card img{width:100px;height:100px;margin-bottom:10px;}
-.services{display:flex;flex-wrap:wrap;justify-content:center;padding:50px 20px;background:#f7f7f7;text-align:center;}
-.service-card{width:250px;margin:15px;padding:20px;border-radius:10px;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.05);opacity:0;transform:translateY(20px);transition:all 0.6s ease;}
-.service-card img{width:50px;height:50px;margin-bottom:10px;}
-.service-card h4{font-size:16px;margin-bottom:8px;}
-.service-card p{font-size:14px;color:#555;}
-.news-section{padding:50px 20px;text-align:center;background:#fff;}
-.news-card{width:250px;margin:15px;padding:15px;background:#f7f7f7;border-radius:10px;display:inline-block;box-shadow:0 4px 12px rgba(0,0,0,0.06);}
-.news-card img{width:100%;height:150px;object-fit:cover;margin-bottom:10px;}
-footer{background:#222;color:#fff;padding:40px 20px;text-align:center;}
-footer a{color:#fff;text-decoration:underline;}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inhaosin | Professional Ink Solution Provider</title>
+  <meta name="description" content="Inhaosin is a professional ink and consumables manufacturer for DTF ink, UV ink, sublimation ink, eco solvent ink, DTF film, DTF powder, UV DTF film and OEM private label solutions." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --bg-soft:#f6f3ee;
+      --bg-dark:#17181c;
+      --card:#ffffff;
+      --text:#1a1d24;
+      --text-light:#6e7480;
+      --line:#e9e5dd;
+      --gold:#b9986c;
+      --gold-dark:#9f7f56;
+      --shadow:0 18px 45px rgba(15, 18, 28, 0.08);
+      --radius:20px;
+      --container:1240px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--container), calc(100% - 32px)); margin:auto}
+    .section{padding:88px 0}
+    .section-soft{background:var(--bg-soft)}
+    .section-title{
+      text-align:center;
+      margin-bottom:16px;
+      font-size:38px;
+      line-height:1.2;
+      letter-spacing:.3px;
+    }
+    .section-subtitle{
+      max-width:760px;
+      margin:0 auto 46px;
+      text-align:center;
+      color:var(--text-light);
+      font-size:16px;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#f1ece4;
+      color:#7d6443;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.4px;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+    .eyebrow:before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--gold);
+      display:inline-block;
+    }
+
+    /* Topbar */
+    .topbar{
+      background:#121317;
+      color:#fff;
+      font-size:13px;
+    }
+    .topbar-inner{
+      min-height:42px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .topbar-left, .topbar-right{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .topbar a{opacity:.92}
+    .topbar a:hover{opacity:1; color:#f5d7a9}
+
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:120;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(233,229,221,.8);
+      transition:.3s ease;
+    }
+    header.scrolled{
+      box-shadow:0 10px 28px rgba(0,0,0,.06);
+    }
+    .nav{
+      min-height:84px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:200px;
+    }
+    .brand img{
+      height:52px;
+      width:auto;
+      object-fit:contain;
+    }
+    .brand-fallback{
+      font-size:28px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .brand-fallback span{color:var(--gold)}
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      font-size:15px;
+      color:#323844;
+      font-weight:600;
+    }
+    .nav-links a{position:relative}
+    .nav-links a:after{
+      content:"";
+      position:absolute;
+      left:0; bottom:-8px;
+      width:0; height:2px;
+      background:var(--gold);
+      transition:.25s ease;
+    }
+    .nav-links a:hover:after{width:100%}
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:50px;
+      padding:0 24px;
+      border-radius:14px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.28s ease;
+      border:none;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      background:linear-gradient(180deg, #c5a27a, #a9865d);
+      color:#fff;
+      box-shadow:0 12px 30px rgba(185, 152, 108, .28);
+    }
+    .btn-primary:hover{box-shadow:0 16px 32px rgba(185, 152, 108, .34)}
+    .btn-outline{
+      background:#fff;
+      border:1px solid var(--line);
+      color:#28303d;
+    }
+    .btn-dark{
+      background:#17181c;
+      color:#fff;
+      box-shadow:0 12px 24px rgba(18,19,23,.16);
+    }
+
+    .menu-toggle{
+      display:none;
+      width:46px;
+      height:46px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#fff;
+      cursor:pointer;
+    }
+
+    /* Hero */
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 10% 15%, rgba(185,152,108,.18), transparent 26%),
+        radial-gradient(circle at 85% 10%, rgba(23,24,28,.06), transparent 18%),
+        linear-gradient(180deg,#fbfaf7 0%, #f7f3ed 100%);
+      padding:70px 0 58px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      align-items:center;
+      gap:40px;
+    }
+    .hero h1{
+      font-size:58px;
+      line-height:1.04;
+      margin:0 0 18px;
+      letter-spacing:.2px;
+    }
+    .hero p{
+      color:var(--text-light);
+      font-size:18px;
+      max-width:620px;
+      margin:0 0 26px;
+    }
+    .hero-list{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px 22px;
+      margin:26px 0 30px;
+      max-width:620px;
+    }
+    .hero-list div{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:600;
+      color:#303744;
+      font-size:15px;
+    }
+    .hero-list div:before{
+      content:"";
+      width:10px; height:10px;
+      border-radius:50%;
+      background:var(--gold);
+      box-shadow:0 0 0 6px rgba(185,152,108,.16);
+      flex:0 0 auto;
+    }
+    .hero-cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:26px;
+    }
+    .hero-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:12px;
+    }
+    .hero-badge{
+      padding:10px 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid #ece7dd;
+      box-shadow:0 8px 18px rgba(0,0,0,.04);
+      font-size:13px;
+      font-weight:700;
+      color:#4c5561;
+    }
+
+    /* Hero visual */
+    .hero-visual{
+      position:relative;
+      min-height:600px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .visual-bg{
+      position:absolute;
+      inset:48px 30px 30px 30px;
+      border-radius:36px;
+      background:
+        linear-gradient(160deg, rgba(255,255,255,.9), rgba(244,239,230,.92)),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650"><defs><linearGradient id="a" x1="0" x2="1"><stop stop-color="%23f3efe7"/><stop offset="1" stop-color="%23ece5da"/></linearGradient></defs><rect width="900" height="650" fill="url(%23a)"/><circle cx="140" cy="120" r="90" fill="%23d6c0a1" opacity=".18"/><circle cx="730" cy="140" r="120" fill="%2317181c" opacity=".04"/><rect x="80" y="420" width="740" height="90" rx="24" fill="%23ffffff" opacity=".55"/></svg>') center/cover no-repeat;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(236,231,221,.85);
+    }
+    .visual-card{
+      position:absolute;
+      background:#fff;
+      border:1px solid #eee6da;
+      box-shadow:0 18px 40px rgba(25,27,35,.08);
+      border-radius:22px;
+    }
+    .floating-tag{
+      position:absolute;
+      padding:12px 16px;
+      border-radius:16px;
+      background:#fff;
+      box-shadow:0 16px 32px rgba(0,0,0,.07);
+      border:1px solid #efe7db;
+      font-size:13px;
+      font-weight:700;
+      color:#4d5562;
+    }
+    .tag-1{top:54px; left:24px}
+    .tag-2{top:120px; right:22px}
+    .tag-3{bottom:52px; right:30px}
+
+    .main-bottle-stage{
+      position:relative;
+      z-index:2;
+      width:100%;
+      height:100%;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      gap:16px;
+      padding-top:120px;
+    }
+    .bottle{
+      position:relative;
+      width:92px;
+      height:280px;
+      border-radius:28px 28px 22px 22px;
+      background:linear-gradient(180deg,#ffffff 0%, #f4f6f8 100%);
+      box-shadow:
+        inset 0 2px 10px rgba(255,255,255,.9),
+        inset 0 -10px 24px rgba(17,20,29,.05),
+        0 20px 40px rgba(18,19,23,.12);
+      border:1px solid #e7eaef;
+    }
+    .bottle:before{
+      content:"";
+      position:absolute;
+      top:-34px; left:26px;
+      width:40px; height:44px;
+      border-radius:10px 10px 12px 12px;
+      background:linear-gradient(180deg,#272c35,#121317);
+      box-shadow:0 8px 18px rgba(0,0,0,.18);
+    }
+    .bottle:after{
+      content:"";
+      position:absolute;
+      top:-46px; left:33px;
+      width:26px; height:18px;
+      border-radius:8px 8px 4px 4px;
+      background:#111318;
+    }
+    .bottle-label{
+      position:absolute;
+      left:10px; right:10px; top:82px;
+      height:120px;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid #ebe6dc;
+      box-shadow:inset 0 1px 6px rgba(255,255,255,.8);
+      overflow:hidden;
+    }
+    .bottle-band{
+      height:18px;
+      background:var(--c, #999);
+    }
+    .bottle-logo{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:14px;
+      font-weight:800;
+      letter-spacing:.4px;
+      margin-top:18px;
+      color:#20242d;
+    }
+    .bottle-type{
+      text-align:center;
+      font-size:11px;
+      color:#6b7380;
+      font-weight:700;
+      margin-top:6px;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+      padding:0 8px;
+    }
+    .bottle-color{
+      position:absolute;
+      left:16px;
+      right:16px;
+      bottom:16px;
+      height:28px;
+      border-radius:999px;
+      background:var(--c, #999);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:1px;
+      box-shadow:0 8px 16px rgba(0,0,0,.12);
+    }
+    .bottle.small{width:84px;height:250px; transform:translateY(14px)}
+    .bottle.mid{width:94px;height:292px}
+    .bottle.large{width:102px;height:315px}
+    .shadow-floor{
+      position:absolute;
+      bottom:46px;
+      width:72%;
+      height:40px;
+      border-radius:50%;
+      background:radial-gradient(ellipse at center, rgba(0,0,0,.15), transparent 70%);
+      filter:blur(6px);
+      z-index:1;
+    }
+
+    /* Stats */
+    .stats-row{
+      margin-top:-20px;
+      position:relative;
+      z-index:3;
+    }
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+    .stat-card{
+      background:#fff;
+      border:1px solid #eee8df;
+      border-radius:20px;
+      padding:26px 22px;
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+    .stat-number{
+      font-size:34px;
+      line-height:1;
+      font-weight:800;
+      color:#121317;
+      margin-bottom:10px;
+    }
+    .stat-label{
+      font-size:14px;
+      color:var(--text-light);
+      font-weight:600;
+    }
+
+    /* Product categories */
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+    .category-card{
+      background:#fff;
+      border:1px solid #eee8df;
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:.28s ease;
+    }
+    .category-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 20px 42px rgba(14,18,28,.12);
+    }
+    .card-visual{
+      position:relative;
+      min-height:220px;
+      background:
+        radial-gradient(circle at 25% 25%, rgba(185,152,108,.18), transparent 20%),
+        linear-gradient(180deg,#f9f6f0,#f1ece4);
+      padding:18px;
+      overflow:hidden;
+    }
+    .card-body{
+      padding:22px 22px 24px;
+    }
+    .card-title{
+      font-size:22px;
+      font-weight:800;
+      margin:0 0 10px;
+    }
+    .card-text{
+      color:var(--text-light);
+      font-size:14px;
+      margin-bottom:16px;
+    }
+    .chip-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .chip{
+      padding:7px 10px;
+      border-radius:999px;
+      background:#f6f3ee;
+      color:#4f5864;
+      font-size:12px;
+      font-weight:700;
+      border:1px solid #ece4d9;
+    }
+
+    /* Mini mockup visuals */
+    .mini-bottles, .mini-rolls, .mini-powder, .mini-cleaning, .mini-private{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      gap:10px;
+      padding:24px;
+    }
+    .mini-bottle{
+      position:relative;
+      width:54px;
+      height:150px;
+      border-radius:18px;
+      background:linear-gradient(180deg,#fff,#eef1f4);
+      border:1px solid #e7eaef;
+      box-shadow:0 10px 20px rgba(0,0,0,.08);
+    }
+    .mini-bottle:before{
+      content:"";
+      position:absolute;
+      top:-21px; left:15px;
+      width:24px; height:28px;
+      border-radius:8px;
+      background:#16181e;
+    }
+    .mini-bottle .band{
+      position:absolute; left:6px; right:6px; top:52px;
+      height:56px; background:#fff; border-radius:12px; border:1px solid #eee5db;
+    }
+    .mini-bottle .color{
+      position:absolute; left:10px; right:10px; bottom:10px; height:18px;
+      border-radius:999px; background:var(--c,#999);
+    }
+    .roll{
+      width:84px;
+      height:120px;
+      border-radius:16px;
+      background:linear-gradient(180deg,#ffffff,#ececec);
+      box-shadow:0 14px 24px rgba(0,0,0,.08);
+      border:1px solid #e7e7e7;
+      position:relative;
+    }
+    .roll:before{
+      content:"";
+      position:absolute;
+      left:26px; top:18px;
+      width:32px; height:32px;
+      border-radius:50%;
+      border:8px solid #d9d9d9;
+      background:#fafafa;
+    }
+    .roll:after{
+      content:"";
+      position:absolute;
+      bottom:12px; left:10px; right:10px;
+      height:14px; border-radius:999px;
+      background:linear-gradient(90deg,#17181c,#b9986c);
+      opacity:.9;
+    }
+    .powder-bag{
+      width:132px; height:160px;
+      border-radius:16px;
+      background:linear-gradient(180deg,#fff,#f3f3f3);
+      border:1px solid #e9e9e9;
+      box-shadow:0 14px 24px rgba(0,0,0,.08);
+      position:relative;
+    }
+    .powder-bag:before{
+      content:"";
+      position:absolute;
+      left:16px; right:16px; top:18px;
+      height:46px; border-radius:12px;
+      background:linear-gradient(90deg,#17181c,#b9986c);
+    }
+    .powder-bag:after{
+      content:"TPU POWDER";
+      position:absolute;
+      left:0; right:0; top:86px;
+      text-align:center;
+      font-size:14px; font-weight:800;
+      color:#1c212b;
+      letter-spacing:.6px;
+    }
+    .clean-bottle{
+      width:96px;height:156px;border-radius:20px;background:linear-gradient(180deg,#ffffff,#eef4f8);border:1px solid #e3ebf1;box-shadow:0 12px 24px rgba(0,0,0,.08);position:relative;
+    }
+    .clean-bottle:before{
+      content:""; position:absolute; top:-22px; left:28px; width:40px; height:30px; border-radius:10px; background:#1a2029;
+    }
+    .clean-bottle:after{
+      content:"Cleaning"; position:absolute; left:10px; right:10px; top:60px; text-align:center; font-size:15px; font-weight:800; color:#2c353f;
+    }
+    .private-pack{
+      width:160px;height:120px;border-radius:18px;background:linear-gradient(180deg,#fff,#f3efe8);border:1px solid #ebdfcf;box-shadow:0 14px 28px rgba(0,0,0,.08);position:relative;
+    }
+    .private-pack:before{
+      content:"OEM / PRIVATE LABEL"; position:absolute; left:12px; right:12px; top:42px; text-align:center; font-size:16px; font-weight:800; color:#2b2e36;
+    }
+
+    /* Why choose us */
+    .why-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:26px;
+      align-items:stretch;
+    }
+    .why-main{
+      background:#17181c;
+      color:#fff;
+      padding:34px;
+      border-radius:28px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 22px 46px rgba(23,24,28,.18);
+    }
+    .why-main:before{
+      content:"";
+      position:absolute;
+      right:-80px; top:-60px;
+      width:240px; height:240px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(185,152,108,.25), transparent 70%);
+    }
+    .why-main h3{
+      font-size:30px;
+      margin:0 0 16px;
+      line-height:1.2;
+    }
+    .why-main p{color:rgba(255,255,255,.75); max-width:600px}
+    .why-list{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+      margin-top:26px;
+    }
+    .why-item{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      padding:18px 16px;
+    }
+    .why-item h4{margin:0 0 8px; font-size:16px}
+    .why-item p{margin:0; font-size:13px; color:rgba(255,255,255,.72)}
+
+    .why-cards{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .simple-card{
+      background:#fff;
+      border:1px solid #efe8df;
+      border-radius:22px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+    .simple-icon{
+      width:54px;height:54px;border-radius:16px;
+      background:linear-gradient(180deg,#d5bb96,#b9986c);
+      box-shadow:0 12px 22px rgba(185,152,108,.24);
+      margin-bottom:16px;
+      position:relative;
+    }
+    .simple-icon:before{
+      content:"";
+      position:absolute;
+      inset:15px;
+      border-radius:10px;
+      border:2px solid #fff;
+    }
+    .simple-card h4{margin:0 0 8px; font-size:18px}
+    .simple-card p{margin:0; color:var(--text-light); font-size:14px}
+
+    /* Applications */
+    .apps-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+    .app-card{
+      border-radius:22px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid #eee8df;
+      box-shadow:var(--shadow);
+    }
+    .app-thumb{
+      height:180px;
+      position:relative;
+      overflow:hidden;
+    }
+    .app-thumb.one{background:linear-gradient(135deg,#f8f2e8,#e9d9be)}
+    .app-thumb.two{background:linear-gradient(135deg,#efeef6,#ddd9ea)}
+    .app-thumb.three{background:linear-gradient(135deg,#eef5ef,#d8eadb)}
+    .app-thumb.four{background:linear-gradient(135deg,#f9efe9,#ead5c5)}
+    .app-thumb svg{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+    }
+    .app-body{padding:18px}
+    .app-body h4{margin:0 0 8px; font-size:18px}
+    .app-body p{margin:0; color:var(--text-light); font-size:14px}
+
+    /* Product showcase */
+    .showcase-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+    .showcase-card{
+      background:#fff;
+      border-radius:22px;
+      border:1px solid #eee8df;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:.28s ease;
+    }
+    .showcase-card:hover{transform:translateY(-6px)}
+    .showcase-thumb{
+      min-height:210px;
+      position:relative;
+      background:linear-gradient(180deg,#f8f5ef,#f0ebe2);
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      padding:22px;
+    }
+    .showcase-body{padding:20px}
+    .showcase-body h4{margin:0 0 8px; font-size:20px}
+    .showcase-body p{margin:0 0 14px; font-size:14px; color:var(--text-light)}
+    .price-tag{
+      display:inline-flex;
+      padding:8px 12px;
+      background:#f6f3ee;
+      border:1px solid #ece4d8;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      color:#6f593c;
+    }
+
+    /* OEM process */
+    .process{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      counter-reset:step;
+    }
+    .process-card{
+      background:#fff;
+      border:1px solid #eee8df;
+      border-radius:22px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+    .process-card:before{
+      counter-increment:step;
+      content:"0" counter(step);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:56px; height:56px;
+      border-radius:18px;
+      background:linear-gradient(180deg,#c3a17a,#ab885d);
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 14px 24px rgba(185,152,108,.24);
+      margin-bottom:16px;
+      font-size:18px;
+    }
+    .process-card h4{margin:0 0 8px}
+    .process-card p{margin:0; color:var(--text-light); font-size:14px}
+
+    /* News */
+    .news-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .news-card{
+      background:#fff;
+      border:1px solid #eee8df;
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:.28s ease;
+    }
+    .news-card:hover{transform:translateY(-5px)}
+    .news-thumb{
+      height:190px;
+      background:linear-gradient(135deg,#f7f2ea,#ece3d6);
+      position:relative;
+    }
+    .news-thumb svg{
+      position:absolute; inset:0; width:100%; height:100%;
+    }
+    .news-content{padding:20px}
+    .news-meta{
+      font-size:12px;
+      font-weight:800;
+      color:#8b6e49;
+      margin-bottom:10px;
+      text-transform:uppercase;
+      letter-spacing:.8px;
+    }
+    .news-content h4{
+      margin:0 0 10px;
+      font-size:20px;
+      line-height:1.35;
+    }
+    .news-content p{
+      margin:0;
+      color:var(--text-light);
+      font-size:14px;
+    }
+
+    /* FAQ + Form */
+    .bottom-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      align-items:start;
+    }
+    .faq-wrap, .form-wrap{
+      background:#fff;
+      border:1px solid #eee8df;
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+    .faq-item{
+      border-top:1px solid #eee8df;
+    }
+    .faq-item:first-child{border-top:none}
+    .faq-q{
+      width:100%;
+      background:none;
+      border:none;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      padding:18px 0;
+      text-align:left;
+      font-size:16px;
+      font-weight:700;
+      cursor:pointer;
+      color:#202530;
+    }
+    .faq-q span:last-child{
+      width:34px; height:34px;
+      border-radius:12px;
+      border:1px solid #e8dfd1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
+      color:#8a6d47;
+      flex:0 0 auto;
+    }
+    .faq-a{
+      display:none;
+      padding:0 0 18px;
+      color:var(--text-light);
+      font-size:14px;
+    }
+    .faq-item.active .faq-a{display:block}
+    .faq-item.active .faq-q span:last-child{transform:rotate(45deg)}
+
+    form .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:16px;
+    }
+    input, textarea, select{
+      width:100%;
+      min-height:52px;
+      border-radius:14px;
+      border:1px solid #e7e2d8;
+      background:#fbfaf8;
+      padding:14px 16px;
+      font:inherit;
+      color:#202530;
+      outline:none;
+      transition:.22s ease;
+    }
+    input:focus, textarea:focus, select:focus{
+      border-color:#b9986c;
+      background:#fff;
+      box-shadow:0 0 0 4px rgba(185,152,108,.10);
+    }
+    textarea{min-height:140px; resize:vertical}
+    .full{grid-column:1/-1}
+    .form-note{
+      color:var(--text-light);
+      font-size:13px;
+      margin-top:12px;
+    }
+
+    /* CTA banner */
+    .cta-banner{
+      background:
+        linear-gradient(135deg,#1b1d23 0%, #121317 100%);
+      border-radius:30px;
+      padding:42px;
+      color:#fff;
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      align-items:center;
+      box-shadow:0 24px 48px rgba(0,0,0,.16);
+      overflow:hidden;
+      position:relative;
+    }
+    .cta-banner:before{
+      content:"";
+      position:absolute;
+      right:-120px; top:-60px;
+      width:320px; height:320px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(185,152,108,.24), transparent 65%);
+    }
+    .cta-banner h3{
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.15;
+      position:relative;
+      z-index:1;
+    }
+    .cta-banner p{
+      margin:0;
+      color:rgba(255,255,255,.74);
+      max-width:720px;
+      position:relative;
+      z-index:1;
+    }
+    .cta-banner .btn{position:relative; z-index:1; flex:0 0 auto}
+
+    /* Footer */
+    footer{
+      background:#121317;
+      color:#fff;
+      margin-top:88px;
+      padding-top:72px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr 1fr 1fr;
+      gap:28px;
+      padding-bottom:44px;
+    }
+    .footer-title{
+      font-size:16px;
+      font-weight:800;
+      margin-bottom:16px;
+    }
+    .footer-brand p,
+    .footer-col a,
+    .footer-col div{
+      color:rgba(255,255,255,.72);
+      font-size:14px;
+      margin-bottom:10px;
+    }
+    .footer-col a:hover{color:#f5d7a9}
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:20px 0 30px;
+      font-size:13px;
+      color:rgba(255,255,255,.58);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    /* reveal */
+    .reveal{
+      opacity:0;
+      transform:translateY(22px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+    .reveal.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 1180px){
+      .hero-grid,
+      .why-grid,
+      .bottom-grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .grid-4,
+      .apps-grid,
+      .showcase-grid,
+      .process,
+      .news-grid{grid-template-columns:repeat(2,1fr)}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .hero h1{font-size:48px}
+      .hero-visual{min-height:520px}
+    }
+    @media (max-width: 920px){
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:84px; left:0; right:0;
+        background:#fff;
+        border-bottom:1px solid var(--line);
+        padding:18px 16px 20px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
+      }
+      .nav-links.open{display:flex}
+      .nav-actions .btn-primary{display:none}
+      .menu-toggle{display:inline-flex; align-items:center; justify-content:center}
+      .hero{padding-top:46px}
+      .hero h1{font-size:40px}
+      .hero-list{grid-template-columns:1fr}
+      .why-list, .why-cards{grid-template-columns:1fr}
+      .topbar-inner{justify-content:center}
+    }
+    @media (max-width: 640px){
+      .section{padding:68px 0}
+      .section-title{font-size:30px}
+      .hero h1{font-size:34px}
+      .hero p{font-size:16px}
+      .grid-3,
+      .grid-4,
+      .apps-grid,
+      .showcase-grid,
+      .process,
+      .news-grid,
+      .stats-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .topbar, header .container{width:min(var(--container), calc(100% - 20px))}
+      .nav{min-height:76px}
+      .cta-banner{
+        padding:28px;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .cta-banner h3{font-size:28px}
+      form .form-grid{grid-template-columns:1fr}
+      .hero-visual{min-height:460px}
+      .visual-bg{inset:26px 6px 20px 6px}
+      .tag-1{left:8px}
+      .tag-2{right:8px}
+      .tag-3{right:10px}
+      .topbar{padding:6px 0}
+    }
+  </style>
 </head>
 <body>
 
-<div class="top-bar">
-  <div>Professional Ink Solution Provider & Manufacturer Since 2012</div>
-  <div>
-    <a href="#">English ▼</a>
-    <a href="#">USD ▼</a>
-    <a href="mailto:info@inhaosin.com">info@inhaosin.com</a>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <a href="mailto:info@inhaosin.com">info@inhaosin.com</a>
+        <a href="tel:+8613800000000">+86 138 0000 0000</a>
+        <span>Professional Ink & Consumables Manufacturer Since 2012</span>
+      </div>
+      <div class="topbar-right">
+        <a href="#">English ▼</a>
+        <a href="#">USD ▼</a>
+        <a href="#contact">Send Inquiry</a>
+      </div>
+    </div>
   </div>
-</div>
 
-<header>
-  <div class="logo"><img src="assets/images/bold_logo_with_colorful_circular_emblem.png" alt="Inhaosin Logo"></div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Products</a>
-    <a href="#">About</a>
-    <a href="#">OEM/ODM</a>
-    <a href="#">Applications</a>
-    <a href="#">News</a>
-    <a href="#">Contact</a>
-  </nav>
-  <button class="quote-btn">Get A Quote</button>
-</header>
+  <!-- Header -->
+  <header id="siteHeader">
+    <div class="container nav">
+      <a href="#" class="brand">
+        <!-- 把这里换成你的logo路径 -->
+        <img src="assets/images/logo.png" alt="Inhaosin Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="brand-fallback" style="display:none;">Inhao<span>sin</span></div>
+      </a>
 
-<section class="hero">
-  <img src="https://via.placeholder.com/1600x500?text=Hero+Banner" alt="Hero Banner">
-  <div class="hero-content">
-    <h1>PROFESSIONAL INK SOLUTION PROVIDER</h1>
-    <p>High Quality | Stable Performance | Eco Friendly</p>
-    <button class="btn-primary">View Products</button>
-    <button class="btn-secondary">Contact Us</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#advantages">Why Us</a>
+        <a href="#applications">Applications</a>
+        <a href="#oem">OEM / ODM</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#contact">Get A Quote</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">Premium Ink Manufacturing</div>
+        <h1>Professional Ink Solutions For Every Print Need</h1>
+        <p>
+          Inhaosin supplies stable, high-performance digital printing consumables for global distributors,
+          printers, and private-label customers. From DTF and UV to sublimation and eco solvent, we help you print better and grow faster.
+        </p>
+
+        <div class="hero-list">
+          <div>DTF Ink / Film / Powder Complete Solution</div>
+          <div>UV Ink For Epson & Industrial Heads</div>
+          <div>Sublimation Ink For Textile & Signage</div>
+          <div>OEM / ODM & Private Label Support</div>
+        </div>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#products">Explore Products</a>
+          <a class="btn btn-outline" href="#contact">Talk To Sales</a>
+        </div>
+
+        <div class="hero-badges">
+          <div class="hero-badge">ISO9001 Quality Control</div>
+          <div class="hero-badge">80+ Export Countries</div>
+          <div class="hero-badge">Fast OEM Sampling</div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="visual-bg"></div>
+
+        <div class="floating-tag tag-1">OEM / Private Label Available</div>
+        <div class="floating-tag tag-2">DTF · UV · Sublimation · Eco Solvent</div>
+        <div class="floating-tag tag-3">1000ml Bottles · Stable Batch Consistency</div>
+
+        <div class="shadow-floor"></div>
+
+        <div class="main-bottle-stage">
+          <div class="bottle small" style="--c:#00a9e8;">
+            <div class="bottle-label">
+              <div class="bottle-band"></div>
+              <div class="bottle-logo">INHAOSIN</div>
+              <div class="bottle-type">DTF INK</div>
+              <div class="bottle-color">CYAN</div>
+            </div>
+          </div>
+          <div class="bottle mid" style="--c:#ff3f98;">
+            <div class="bottle-label">
+              <div class="bottle-band"></div>
+              <div class="bottle-logo">INHAOSIN</div>
+              <div class="bottle-type">DTF INK</div>
+              <div class="bottle-color">MAGENTA</div>
+            </div>
+          </div>
+          <div class="bottle large" style="--c:#f2bf14;">
+            <div class="bottle-label">
+              <div class="bottle-band"></div>
+              <div class="bottle-logo">INHAOSIN</div>
+              <div class="bottle-type">DTF INK</div>
+              <div class="bottle-color">YELLOW</div>
+            </div>
+          </div>
+          <div class="bottle mid" style="--c:#222a35;">
+            <div class="bottle-label">
+              <div class="bottle-band"></div>
+              <div class="bottle-logo">INHAOSIN</div>
+              <div class="bottle-type">DTF INK</div>
+              <div class="bottle-color">BLACK</div>
+            </div>
+          </div>
+          <div class="bottle small" style="--c:#c9c9c9;">
+            <div class="bottle-label">
+              <div class="bottle-band"></div>
+              <div class="bottle-logo">INHAOSIN</div>
+              <div class="bottle-type">DTF INK</div>
+              <div class="bottle-color">WHITE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-number">12+</div>
+          <div class="stat-label">Years Of Ink Manufacturing Experience</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number">80+</div>
+          <div class="stat-label">Countries Served Worldwide</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number">10M+</div>
+          <div class="stat-label">Liters Estimated Annual Capacity</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number">OEM</div>
+          <div class="stat-label">Private Label, Packaging & Formula Support</div>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
 
-<section id="categories">
-  <div class="section-title">Our Product Categories</div>
-  <div class="categories">
-    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>DTF Ink</h4><p>Vibrant colors and adhesion for fabrics.</p></div>
-    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>UV Ink</h4><p>Instant curing, excellent durability.</p></div>
-    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>Sublimation Ink</h4><p>Brilliant color reproduction and transfer.</p></div>
-    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>Eco Solvent Ink</h4><p>Outdoor durability, low odor, eco-friendly.</p></div>
-    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>DTF PET Film</h4><p>Multiple sizes for textile printing.</p></div>
-    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>DTF Powder</h4><p>High-quality TPU powder for transfers.</p></div>
-    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>Cleaning Solution</h4><p>Safe and effective maintenance fluids.</p></div>
-    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>UV DTF Film</h4><p>Flexible films for UV printing.</p></div>
-    <div class="category-card"><img src="https://via.placeholder.com/80"><h4>OEM/Private Label</h4><p>Custom branding solutions.</p></div>
-  </div>
-</section>
+  <!-- Product categories -->
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section-title reveal">Our Product Categories</div>
+      <div class="section-subtitle reveal">
+        Inspired by the product architecture of leading industry websites, this homepage covers the most important categories buyers care about:
+        core ink series, transfer consumables, maintenance solutions, and private-label service support.
+      </div>
 
-<section class="capabilities">
-  <div class="cap-card"><img src="https://via.placeholder.com/40"><h3>12+ Years Experience</h3><p>Professional manufacturing expertise</p></div>
-  <div class="cap-card"><img src="https://via.placeholder.com/40"><h3>30,000 m³ Factory</h3><p>Modern production base</p></div>
-  <div class="cap-card"><img src="https://via.placeholder.com/40"><h3>10,000,000+ Liters</h3><p>Annual ink output</p></div>
-  <div class="cap-card"><img src="https://via.placeholder.com/40"><h3>80+ Countries</h3><p>Global customers</p></div>
-  <div class="cap-card"><img src="https://via.placeholder.com/40"><h3>50+ R&D Team</h3><p>Innovative formulas</p></div>
-  <div class="cap-card"><img src="https://via.placeholder.com/40"><h3>ISO9001 Certified</h3><p>Quality assurance</p></div>
-</section>
+      <div class="grid-3">
+        <div class="category-card reveal">
+          <div class="card-visual">
+            <div class="mini-bottles">
+              <div class="mini-bottle" style="--c:#00a9e8"><div class="band"></div><div class="color"></div></div>
+              <div class="mini-bottle" style="--c:#ff3f98"><div class="band"></div><div class="color"></div></div>
+              <div class="mini-bottle" style="--c:#f2bf14"><div class="band"></div><div class="color"></div></div>
+              <div class="mini-bottle" style="--c:#222a35"><div class="band"></div><div class="color"></div></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">DTF Ink</h3>
+            <div class="card-text">CMYKW color set with standard, high concentration, and ultra concentration options for textile transfer printing.</div>
+            <div class="chip-row">
+              <span class="chip">CMYKW</span>
+              <span class="chip">1L / 1000g</span>
+              <span class="chip">Stable Flow</span>
+            </div>
+          </div>
+        </div>
 
-<section class="hot-products">
-  <div class="section-title">Hot Products</div>
-  <div class="product-grid">
-    <div class="product-card"><img src="https://via.placeholder.com/100"><h4>DTF Ink</h4><p>CMYK W Colors Standard / High / Super</p></div>
-    <div class="product-card"><img src="https://via.placeholder.com/100"><h4>UV Ink</h4><p>For Epson / Industrial Heads Hard / Soft / Neutral</p></div>
-    <div class="product-card"><img src="https://via.placeholder.com/100"><h4>Sublimation Ink</h4><p>Epson / J-NEXT / Starfire / 16H/35H</p></div>
-    <div class="product-card"><img src="https://via.placeholder.com/100"><h4>Eco Solvent Ink</h4><p>Low Odor / Odorless / Leather / ECO</p></div>
-  </div>
-</section>
+        <div class="category-card reveal">
+          <div class="card-visual">
+            <div class="mini-bottles">
+              <div class="mini-bottle" style="--c:#64b5ff"><div class="band"></div><div class="color"></div></div>
+              <div class="mini-bottle" style="--c:#95d9b2"><div class="band"></div><div class="color"></div></div>
+              <div class="mini-bottle" style="--c:#7d8590"><div class="band"></div><div class="color"></div></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">UV Ink</h3>
+            <div class="card-text">Neutral, soft, and hard UV inks suitable for Epson printheads and multiple industrial printhead platforms.</div>
+            <div class="chip-row">
+              <span class="chip">Soft / Hard / Neutral</span>
+              <span class="chip">Epson Heads</span>
+              <span class="chip">Industrial Heads</span>
+            </div>
+          </div>
+        </div>
 
-<section class="services">
-  <div class="service-card"><img src="https://via.placeholder.com/50"><h4>Strong R&D Capability</h4><p>Professional R&D team with formula innovation experience</p></div>
-  <div class="service-card"><img src="https://via.placeholder.com/50"><h4>Strict Quality Control</h4><p>Raw material inspection and product testing</p></div>
-  <div class="service-card"><img src="https://via.placeholder.com/50"><h4>OEM / ODM Service</h4><p>Custom bottles, packaging, and formulas</p></div>
-  <div class="service-card"><img src="https://via.placeholder.com/50"><h4>Global Shipping</h4><p>Fast delivery by sea, air, and express</p></div>
-</section>
+        <div class="category-card reveal">
+          <div class="card-visual">
+            <div class="mini-bottles">
+              <div class="mini-bottle" style="--c:#3bc1ff"><div class="band"></div><div class="color"></div></div>
+              <div class="mini-bottle" style="--c:#ff5fae"><div class="band"></div><div class="color"></div></div>
+              <div class="mini-bottle" style="--c:#f7c845"><div class="band"></div><div class="color"></div></div>
+              <div class="mini-bottle" style="--c:#1a1e26"><div class="band"></div><div class="color"></div></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Sublimation Ink</h3>
+            <div class="card-text">Solutions for Epson 1–16 head / 1–35 head machines, fluorescent sublimation, Kyocera, J-NEXT style systems and more.</div>
+            <div class="chip-row">
+              <span class="chip">Wide Format</span>
+              <span class="chip">Fluorescent</span>
+              <span class="chip">Textile Transfer</span>
+            </div>
+          </div>
+        </div>
 
-<section class="news-section">
-  <div class="section-title">News & Blog</div>
-  <div class="news-card"><img src="https://via.placeholder.com/250x150"><h4>2026-05-20</h4><p>Sublimation Ink Guide for Wide Format Epson Printers</p></div>
-  <div class="news-card"><img src="https://via.placeholder.com/250x150"><h4>2026-05-19</h4><p>DTF Ink & Printer Industrial Selection Guide</p></div>
-  <div class="news-card"><img src="https://via.placeholder.com/250x150"><h4>2026-05-13</h4><p>DTF Ink Usage & Powder Step-by-Step</p></div>
-</section>
+        <div class="category-card reveal">
+          <div class="card-visual">
+            <div class="mini-bottles">
+              <div class="mini-bottle" style="--c:#6ec28f"><div class="band"></div><div class="color"></div></div>
+              <div class="mini-bottle" style="--c:#a7b4be"><div class="band"></div><div class="color"></div></div>
+              <div class="mini-bottle" style="--c:#1f2630"><div class="band"></div><div class="color"></div></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Eco Solvent Ink</h3>
+            <div class="card-text">Low odor, odorless, environmentally friendly, premium grade, leather-specific and Galaxy eco solvent series.</div>
+            <div class="chip-row">
+              <span class="chip">Outdoor Durable</span>
+              <span class="chip">Low Odor</span>
+              <span class="chip">Eco Friendly</span>
+            </div>
+          </div>
+        </div>
 
-<footer>
-  <p>Looking for a reliable ink solution partner? <a href="#">Get a Free Quote</a></p>
-  <p>&copy; 2026 Inhaosin. All rights reserved.</p>
-</footer>
+        <div class="category-card reveal">
+          <div class="card-visual">
+            <div class="mini-rolls">
+              <div class="roll"></div>
+              <div class="roll"></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">DTF PET Film</h3>
+            <div class="card-text">A3 / A4 sheets and roll formats including 30cm × 100m, 33cm × 100m and 60cm × 100m hot peel transfer film options.</div>
+            <div class="chip-row">
+              <span class="chip">Sheets & Rolls</span>
+              <span class="chip">Matte Finish</span>
+              <span class="chip">Hot Peel</span>
+            </div>
+          </div>
+        </div>
 
-<script>
-// Sticky header
-window.addEventListener('scroll',()=> {document.querySelector('header').classList.toggle('sticky', window.scrollY>50);});
+        <div class="category-card reveal">
+          <div class="card-visual">
+            <div class="mini-powder">
+              <div class="powder-bag"></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">TPU DTF Powder</h3>
+            <div class="card-text">White TPU hot melt adhesive powder with anti-static improvement and high temperature transfer stability for garment printing.</div>
+            <div class="chip-row">
+              <span class="chip">TPU White</span>
+              <span class="chip">Anti-Static</span>
+              <span class="chip">Strong Adhesion</span>
+            </div>
+          </div>
+        </div>
 
-// Fade-in scroll animation
-const faders=document.querySelectorAll('.hero-content h1,.hero-content p,.hero-content button,.section-title,.category-card,.cap-card,.product-card,.service-card,.news-card');
-const appearOptions={threshold:0.1,rootMargin:"0px 0px -50px 0px"};
-const appearOnScroll=new IntersectionObserver((entries, observer)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity="1";entry.target.style.transform="translateY(0)";observer.unobserve(entry.target);}}},appearOptions);
-faders.forEach(fader=>{appearOnScroll.observe(fader);});
-</script>
+        <div class="category-card reveal">
+          <div class="card-visual">
+            <div class="mini-cleaning">
+              <div class="clean-bottle"></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Cleaning Solution</h3>
+            <div class="card-text">Daily maintenance and printhead cleaning solutions engineered to help reduce blockage and keep output more stable.</div>
+            <div class="chip-row">
+              <span class="chip">Head Cleaning</span>
+              <span class="chip">Maintenance</span>
+              <span class="chip">Printer Care</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="card-visual">
+            <div class="mini-rolls">
+              <div class="roll"></div>
+              <div class="roll"></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">UV DTF Film</h3>
+            <div class="card-text">A/B film solution for UV transfer applications, supporting decorative graphics, labels, and hard-surface customization.</div>
+            <div class="chip-row">
+              <span class="chip">A/B Film</span>
+              <span class="chip">Transfer Ready</span>
+              <span class="chip">Decoration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="card-visual">
+            <div class="mini-private">
+              <div class="private-pack"></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">OEM / Private Label</h3>
+            <div class="card-text">Customized bottle labels, cartons, neutral packaging, and complete private-label support for distributors and resellers.</div>
+            <div class="chip-row">
+              <span class="chip">Custom Label</span>
+              <span class="chip">Neutral Packing</span>
+              <span class="chip">Brand Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section class="section section-soft" id="advantages">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-main reveal">
+          <div class="eyebrow" style="background:rgba(255,255,255,.08); color:#f5d7a9;">Why Choose Inhaosin</div>
+          <h3>Factory Strength + Product Stability + Business-Friendly Service</h3>
+          <p>
+            Taking inspiration from INKBANK’s “Why Choose Us” presentation and UVINK’s capacity/quality-focused messaging,
+            this block highlights the exact factors most B2B buyers care about: stable formulation, batch consistency, OEM flexibility, and reliable after-sales support.
+          </p>
+          <div class="why-list">
+            <div class="why-item">
+              <h4>R&D Capabilities</h4>
+              <p>Continuous formula optimization for printhead compatibility, color strength, and smooth output performance.</p>
+            </div>
+            <div class="why-item">
+              <h4>Quality Eco-Friendly</h4>
+              <p>Stable raw material control and strict testing to support a cleaner, more consistent ink solution.</p>
+            </div>
+            <div class="why-item">
+              <h4>OEM / ODM Support</h4>
+              <p>From labels to full packaging and market-specific positioning, we help partners build their own brand.</p>
+            </div>
+            <div class="why-item">
+              <h4>Global Export Experience</h4>
+              <p>Strong experience serving customers from the United States, Russia, Colombia, Mexico, Brazil and beyond.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-cards">
+          <div class="simple-card reveal">
+            <div class="simple-icon"></div>
+            <h4>Strong Production Capacity</h4>
+            <p>Suitable for wholesalers, distributors, and repeated long-term procurement programs.</p>
+          </div>
+          <div class="simple-card reveal">
+            <div class="simple-icon"></div>
+            <h4>Cost-Effective Sourcing</h4>
+            <p>Factory direct supply structure helps improve margin space for your local market.</p>
+          </div>
+          <div class="simple-card reveal">
+            <div class="simple-icon"></div>
+            <h4>Consistent Batch Quality</h4>
+            <p>More stable viscosity, better filtration, and smoother color repeatability between batches.</p>
+          </div>
+          <div class="simple-card reveal">
+            <div class="simple-icon"></div>
+            <h4>Responsive Sales Support</h4>
+            <p>Quotation follow-up, sample arrangement, shipping suggestions and after-sales coordination.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / capabilities -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-title reveal">Factory Capability & Company Overview</div>
+      <div class="section-subtitle reveal">
+        Following the style of industrial ink suppliers, this section highlights the core credibility indicators:
+        manufacturing base, estimated output capacity, R&D capability, export coverage and quality management.
+      </div>
+
+      <div class="grid-4">
+        <div class="simple-card reveal">
+          <div class="simple-icon"></div>
+          <h4>12+ Years Experience</h4>
+          <p>Long-term focus on digital printing ink and consumable categories for export business.</p>
+        </div>
+        <div class="simple-card reveal">
+          <div class="simple-icon"></div>
+          <h4>Annual Capacity Advantage</h4>
+          <p>Designed to support volume orders and recurring distributor replenishment demand.</p>
+        </div>
+        <div class="simple-card reveal">
+          <div class="simple-icon"></div>
+          <h4>R&D & Customization</h4>
+          <p>Support for performance upgrades, concentration levels, and market-oriented solution planning.</p>
+        </div>
+        <div class="simple-card reveal">
+          <div class="simple-icon"></div>
+          <h4>Quality Control System</h4>
+          <p>Raw material selection, production control, filling consistency and final packaging inspection.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications -->
+  <section class="section section-soft" id="applications">
+    <div class="container">
+      <div class="section-title reveal">Application Industries</div>
+      <div class="section-subtitle reveal">
+        Like the application navigation found on larger ink supplier websites, this section shows where your products fit:
+        garment decoration, sign graphics, labeling, and promotional customization.
+      </div>
+
+      <div class="apps-grid">
+        <div class="app-card reveal">
+          <div class="app-thumb one">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="45" width="340" height="150" rx="24" fill="rgba(255,255,255,.55)"/>
+              <path d="M120 70h60l18 30h64l18-30h60v110h-70v-48H170v48H100V70z" fill="#ffffff"/>
+              <rect x="150" y="105" width="100" height="58" rx="10" fill="#17181c"/>
+              <rect x="166" y="120" width="68" height="8" rx="4" fill="#b9986c"/>
+              <rect x="166" y="136" width="50" height="8" rx="4" fill="#ffffff" opacity=".7"/>
+            </svg>
+          </div>
+          <div class="app-body">
+            <h4>Garment Decoration</h4>
+            <p>DTF ink, PET film and powder for t-shirts, uniforms, workwear and custom apparel printing.</p>
+          </div>
+        </div>
+
+        <div class="app-card reveal">
+          <div class="app-thumb two">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+              <rect x="35" y="38" width="330" height="144" rx="22" fill="rgba(255,255,255,.6)"/>
+              <rect x="68" y="62" width="110" height="88" rx="10" fill="#17181c"/>
+              <rect x="90" y="82" width="66" height="10" rx="5" fill="#b9986c"/>
+              <rect x="90" y="102" width="50" height="8" rx="4" fill="#fff"/>
+              <rect x="205" y="62" width="126" height="88" rx="10" fill="#fff"/>
+              <rect x="225" y="80" width="86" height="48" rx="8" fill="#cdb28f"/>
+            </svg>
+          </div>
+          <div class="app-body">
+            <h4>Advertising & Graphics</h4>
+            <p>Eco solvent and sublimation solutions for light boxes, banners, signage and visual display output.</p>
+          </div>
+        </div>
+
+        <div class="app-card reveal">
+          <div class="app-thumb three">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+              <rect x="28" y="42" width="344" height="142" rx="22" fill="rgba(255,255,255,.58)"/>
+              <rect x="72" y="62" width="84" height="96" rx="14" fill="#ffffff"/>
+              <rect x="172" y="62" width="84" height="96" rx="14" fill="#ffffff"/>
+              <rect x="272" y="62" width="56" height="96" rx="14" fill="#ffffff"/>
+              <rect x="84" y="82" width="60" height="10" rx="5" fill="#b9986c"/>
+              <rect x="184" y="82" width="60" height="10" rx="5" fill="#b9986c"/>
+              <rect x="284" y="82" width="32" height="10" rx="5" fill="#b9986c"/>
+            </svg>
+          </div>
+          <div class="app-body">
+            <h4>Label & Packaging</h4>
+            <p>UV and transfer-oriented consumables for labels, promotional packaging and decorative applications.</p>
+          </div>
+        </div>
+
+        <div class="app-card reveal">
+          <div class="app-thumb four">
+            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+              <rect x="34" y="40" width="332" height="144" rx="22" fill="rgba(255,255,255,.62)"/>
+              <circle cx="130" cy="112" r="38" fill="#ffffff"/>
+              <rect x="188" y="74" width="116" height="76" rx="14" fill="#ffffff"/>
+              <rect x="212" y="98" width="68" height="12" rx="6" fill="#17181c"/>
+              <rect x="212" y="118" width="52" height="8" rx="4" fill="#b9986c"/>
+            </svg>
+          </div>
+          <div class="app-body">
+            <h4>Customized Gifts</h4>
+            <p>Suitable for personalized hard-surface decoration, gift printing, and short-run branded customization.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hot products -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title reveal">Hot Products</div>
+      <div class="section-subtitle reveal">
+        A stronger homepage usually needs a “hot products” block just like UVINK. This section gives buyers a quick scan of your key sale-driving items.
+      </div>
+
+      <div class="showcase-grid">
+        <div class="showcase-card reveal">
+          <div class="showcase-thumb">
+            <div class="bottle small" style="--c:#00a9e8; transform:translateY(10px)">
+              <div class="bottle-label">
+                <div class="bottle-band"></div>
+                <div class="bottle-logo">INHAOSIN</div>
+                <div class="bottle-type">DTF INK</div>
+                <div class="bottle-color">CYAN</div>
+              </div>
+            </div>
+            <div class="bottle small" style="--c:#ff3f98">
+              <div class="bottle-label">
+                <div class="bottle-band"></div>
+                <div class="bottle-logo">INHAOSIN</div>
+                <div class="bottle-type">DTF INK</div>
+                <div class="bottle-color">MAGENTA</div>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-body">
+            <h4>DTF Ink Set</h4>
+            <p>For garment transfer printing with stable color density, smooth white ink support and good transfer performance.</p>
+            <span class="price-tag">Standard / High-Con / Ultra-Con</span>
+          </div>
+        </div>
+
+        <div class="showcase-card reveal">
+          <div class="showcase-thumb">
+            <div class="bottle small" style="--c:#5d9df3; transform:translateY(12px)">
+              <div class="bottle-label">
+                <div class="bottle-band"></div>
+                <div class="bottle-logo">INHAOSIN</div>
+                <div class="bottle-type">UV INK</div>
+                <div class="bottle-color">SOFT</div>
+              </div>
+            </div>
+            <div class="bottle small" style="--c:#99b3c6">
+              <div class="bottle-label">
+                <div class="bottle-band"></div>
+                <div class="bottle-logo">INHAOSIN</div>
+                <div class="bottle-type">UV INK</div>
+                <div class="bottle-color">NEUTRAL</div>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-body">
+            <h4>UV Ink Series</h4>
+            <p>Soft, neutral and hard UV ink solutions for Epson-based and compatible industrial systems.</p>
+            <span class="price-tag">Epson / Industrial Head Compatible</span>
+          </div>
+        </div>
+
+        <div class="showcase-card reveal">
+          <div class="showcase-thumb">
+            <div class="roll"></div>
+            <div class="roll" style="transform:translateY(-10px)"></div>
+          </div>
+          <div class="showcase-body">
+            <h4>DTF PET Film</h4>
+            <p>Available in A3 / A4 sheets and 30cm, 33cm, 60cm roll formats for transfer workflows.</p>
+            <span class="price-tag">Hot Peel / Matte / Double Side</span>
+          </div>
+        </div>
+
+        <div class="showcase-card reveal">
+          <div class="showcase-thumb">
+            <div class="powder-bag"></div>
+          </div>
+          <div class="showcase-body">
+            <h4>TPU DTF Powder</h4>
+            <p>Strong adhesion, anti-static optimization and dependable transfer performance for dark and light fabrics.</p>
+            <span class="price-tag">High Temp Pure TPU</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OEM process -->
+  <section class="section section-soft" id="oem">
+    <div class="container">
+      <div class="section-title reveal">OEM / ODM Cooperation Process</div>
+      <div class="section-subtitle reveal">
+        Since you want your site to convert well for distributors, this section explains the OEM process clearly—something many B2B buyers appreciate before they inquire.
+      </div>
+
+      <div class="process">
+        <div class="process-card reveal">
+          <h4>Tell Us Your Market</h4>
+          <p>Share your target country, product category, packaging preference and expected positioning level.</p>
+        </div>
+        <div class="process-card reveal">
+          <h4>Confirm Formula & Packaging</h4>
+          <p>Choose standard or premium options, bottle size, label design, and neutral / branded carton details.</p>
+        </div>
+        <div class="process-card reveal">
+          <h4>Sample & Testing</h4>
+          <p>We arrange sample confirmation so you can verify print result, packaging appearance and compatibility.</p>
+        </div>
+        <div class="process-card reveal">
+          <h4>Mass Production & Delivery</h4>
+          <p>After confirmation, we organize production, quality check, and shipment according to your schedule.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section class="section" id="news">
+    <div class="container">
+      <div class="section-title reveal">News & Blog</div>
+      <div class="section-subtitle reveal">
+        This section is inspired by UVINK’s content-driven approach and is useful for SEO as well as buyer education.
+      </div>
+
+      <div class="news-grid">
+        <div class="news-card reveal">
+          <div class="news-thumb">
+            <svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+              <rect width="600" height="380" fill="#f3ede4"/>
+              <rect x="52" y="62" width="496" height="256" rx="26" fill="#ffffff"/>
+              <rect x="88" y="96" width="184" height="120" rx="16" fill="#17181c"/>
+              <rect x="108" y="124" width="144" height="10" rx="5" fill="#b9986c"/>
+              <rect x="108" y="146" width="104" height="8" rx="4" fill="#ffffff"/>
+              <rect x="304" y="98" width="200" height="12" rx="6" fill="#b9986c"/>
+              <rect x="304" y="126" width="154" height="10" rx="5" fill="#d2d7dd"/>
+              <rect x="304" y="146" width="176" height="10" rx="5" fill="#d2d7dd"/>
+              <rect x="304" y="166" width="132" height="10" rx="5" fill="#d2d7dd"/>
+            </svg>
+          </div>
+          <div class="news-content">
+            <div class="news-meta">2026 · DTF Guide</div>
+            <h4>How To Choose The Right DTF Ink For Your Market</h4>
+            <p>Understand concentration levels, white ink stability, transfer result expectations and what resellers should compare first.</p>
+          </div>
+        </div>
+
+        <div class="news-card reveal">
+          <div class="news-thumb">
+            <svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+              <rect width="600" height="380" fill="#f2ece4"/>
+              <rect x="52" y="62" width="496" height="256" rx="26" fill="#ffffff"/>
+              <circle cx="162" cy="188" r="66" fill="#e8d3b3"/>
+              <rect x="258" y="116" width="220" height="12" rx="6" fill="#17181c"/>
+              <rect x="258" y="146" width="170" height="10" rx="5" fill="#b9986c"/>
+              <rect x="258" y="168" width="192" height="10" rx="5" fill="#d2d7dd"/>
+              <rect x="258" y="190" width="146" height="10" rx="5" fill="#d2d7dd"/>
+            </svg>
+          </div>
+          <div class="news-content">
+            <div class="news-meta">2026 · Sublimation</div>
+            <h4>Sublimation Ink Basics For Epson Wide Format Printers</h4>
+            <p>A practical entry guide for buyers comparing transfer brightness, compatibility, and application scenarios.</p>
+          </div>
+        </div>
+
+        <div class="news-card reveal">
+          <div class="news-thumb">
+            <svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+              <rect width="600" height="380" fill="#f4eee7"/>
+              <rect x="52" y="62" width="496" height="256" rx="26" fill="#ffffff"/>
+              <rect x="84" y="98" width="170" height="168" rx="18" fill="#f6f3ee"/>
+              <rect x="112" y="118" width="114" height="18" rx="9" fill="#17181c"/>
+              <rect x="112" y="152" width="88" height="12" rx="6" fill="#b9986c"/>
+              <rect x="292" y="104" width="200" height="12" rx="6" fill="#17181c"/>
+              <rect x="292" y="136" width="176" height="10" rx="5" fill="#d2d7dd"/>
+              <rect x="292" y="158" width="156" height="10" rx="5" fill="#d2d7dd"/>
+              <rect x="292" y="180" width="134" height="10" rx="5" fill="#d2d7dd"/>
+            </svg>
+          </div>
+          <div class="news-content">
+            <div class="news-meta">2026 · UV Ink</div>
+            <h4>UV Ink Selection Tips For Epson And Industrial Heads</h4>
+            <p>Learn the difference between soft, hard and neutral formulations and how to choose based on substrate type.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div>
+          <h3>Looking For A Reliable Ink & Consumables Supplier?</h3>
+          <p>
+            Whether you need factory pricing, sample support, private label service, or help selecting the right product line for your market,
+            our team is ready to assist.
+          </p>
+        </div>
+        <a href="#contact" class="btn btn-primary">Request A Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ + Contact -->
+  <section class="section section-soft" id="contact">
+    <div class="container bottom-grid">
+      <div class="faq-wrap reveal">
+        <div class="eyebrow">FAQ</div>
+        <h2 style="margin:0 0 12px;font-size:32px;">Frequently Asked Questions</h2>
+        <p style="margin:0 0 18px;color:var(--text-light);">Clear answers help improve inquiry conversion, especially for first-time buyers and distributors.</p>
+
+        <div class="faq-item active">
+          <button class="faq-q">
+            <span>Can you provide OEM / private label service?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-a">
+            Yes. We can support neutral packaging, custom labels, carton printing, and private-label cooperation according to your market requirements.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>Do you offer samples before bulk order?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-a">
+            Yes. Sample support is available so you can test print performance, compatibility, and packaging details before larger purchases.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>Which countries do you mainly export to?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-a">
+            Our major markets include the United States, Russia, Colombia, Mexico, Brazil and many other countries worldwide.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>Can you help recommend the right products for my market?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-a">
+            Absolutely. We can recommend suitable product grades, packaging styles, and item combinations based on your application and price level.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-wrap reveal">
+        <div class="eyebrow">Send Inquiry</div>
+        <h2 style="margin:0 0 12px;font-size:32px;">Get A Quick Quote</h2>
+        <p style="margin:0;color:var(--text-light);">You can connect this form to Web3Forms later. For now, the layout is ready for direct deployment.</p>
+
+        <!-- 后期把 YOUR_ACCESS_KEY 换成你自己的 web3forms key -->
+        <form action="https://api.web3forms.com/submit" method="POST" style="margin-top:10px;">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+          <div class="form-grid">
+            <div><input type="text" name="name" placeholder="Your Name" required></div>
+            <div><input type="email" name="email" placeholder="Your Email" required></div>
+            <div><input type="text" name="country" placeholder="Country / Market"></div>
+            <div>
+              <select name="product">
+                <option value="">Select Product Category</option>
+                <option>DTF Ink</option>
+                <option>UV Ink</option>
+                <option>Sublimation Ink</option>
+                <option>Eco Solvent Ink</option>
+                <option>DTF PET Film</option>
+                <option>DTF Powder</option>
+                <option>Cleaning Solution</option>
+                <option>UV DTF Film</option>
+                <option>OEM / Private Label</option>
+              </select>
+            </div>
+            <div class="full"><textarea name="message" placeholder="Please tell us your product needs, quantity, packaging preference, or target market..."></textarea></div>
+            <div class="full"><button class="btn btn-primary" type="submit">Submit Inquiry</button></div>
+          </div>
+          <div class="form-note">Tip: Replace the logo path and Web3Forms access key before publishing.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-title">Inhaosin</div>
+          <p>
+            Professional supplier of DTF ink, UV ink, sublimation ink, eco solvent ink and printing consumables.
+            Built for global distributors, resellers and long-term private-label cooperation.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-title">Products</div>
+          <a href="#products">DTF Ink</a><br>
+          <a href="#products">UV Ink</a><br>
+          <a href="#products">Sublimation Ink</a><br>
+          <a href="#products">Eco Solvent Ink</a><br>
+          <a href="#products">DTF Film / Powder</a>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-title">Company</div>
+          <a href="#about">About Us</a><br>
+          <a href="#advantages">Why Choose Us</a><br>
+          <a href="#applications">Applications</a><br>
+          <a href="#oem">OEM / ODM</a><br>
+          <a href="#news">News</a>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-title">Contact</div>
+          <div>Email: info@inhaosin.com</div>
+          <div>Tel: +86 138 0000 0000</div>
+          <div>Website: www.inhaosin.com</div>
+          <div>Shenzhen / China</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Inhaosin. All Rights Reserved.</div>
+        <div>Designed for Ink & Printing Consumables Business</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky header shadow
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 10){
+        header.classList.add('scrolled');
+      }else{
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // FAQ
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const btn = item.querySelector('.faq-q');
+      btn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if(!isActive) item.classList.add('active');
+      });
+    });
+
+    // Reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      })
+    },{threshold:0.12});
+    reveals.forEach(el=>revealObserver.observe(el));
+  </script>
 </body>
 </html>
