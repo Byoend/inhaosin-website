@@ -3,173 +3,457 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inhaosin | Professional Ink Solution</title>
+<title>Inhaosin - Professional Ink Solution Provider & Manufacturer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-:root{
-  --bg:#fff;
-  --text:#1a1d24;
-  --text-light:#6e7480;
-  --gold:#b9986c;
-  --shadow:0 15px 35px rgba(0,0,0,0.08);
-  --radius:16px;
-}
-body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-.container{width:min(1200px,95%);margin:auto;}
-header{display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10;background:#fff;}
-header .logo img{height:52px;}
-nav a{margin:0 15px;font-weight:600;color:#333;transition:color .2s;}
-nav a:hover{color:var(--gold);}
-.hero{display:flex;align-items:flex-end;justify-content:space-between;padding:80px 0;background:#f9f9f9;gap:30px;}
-.hero-text{max-width:600px;}
-.hero-text h1{font-size:42px;margin-bottom:20px;line-height:1.2;}
-.hero-text p{font-size:16px;margin-bottom:20px;line-height:1.5;}
-.btn{padding:12px 24px;border-radius:10px;margin-right:10px;border:none;font-weight:700;cursor:pointer;transition:transform .25s, box-shadow .25s;}
-.btn:hover{transform:scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,.15);}
-.btn-primary{background:var(--gold);color:#fff;}
-.btn-outline{border:1px solid var(--gold);color:var(--gold);background:#fff;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:#222;background:#fff;overflow-x:hidden;}
 
-/* Hero瓶子 */
-.hero-image{display:flex;gap:15px;align-items:flex-end;}
-.bottle{
-  position:relative;width:80px;height:240px;border-radius:22px;background:linear-gradient(180deg,#fff,#f0f0f0);border:1px solid #e7e7e7;box-shadow:var(--shadow);transition:transform .5s, opacity .5s;opacity:0;transform:translateY(50px);
-}
-.bottle.show{opacity:1;transform:translateY(0);}
-.bottle:hover{transform:translateY(-10px);}
-.bottle-top{position:absolute;top:-30px;left:20px;width:40px;height:40px;background:#111;border-radius:10px;box-shadow:0 8px 18px rgba(0,0,0,0.18);}
-.bottle-label{position:absolute;top:60px;left:10px;right:10px;height:120px;background:#fff;border-radius:14px;border:1px solid #eee;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.bottle-label .type{font-size:12px;font-weight:700;color:#555;margin-top:6px;text-transform:uppercase;}
-.bottle-color{width:24px;height:24px;border-radius:50%;margin-top:8px;}
+/* ── TOP BAR ── */
+.topbar{background:#1a1a2e;color:#ccc;font-size:12.5px;padding:8px 0;}
+.topbar-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;}
+.topbar-right{display:flex;align-items:center;gap:20px;}
+.topbar-right a{color:#ccc;text-decoration:none;}
+.topbar-right .sep{color:#555;}
+.lang-usd{display:flex;align-items:center;gap:4px;cursor:pointer;position:relative;}
+.lang-usd i{font-size:10px;color:#aaa;}
+.lang-dropdown{display:none;position:absolute;top:100%;left:0;background:#fff;color:#333;border-radius:6px;box-shadow:0 4px 20px rgba(0,0,0,.15);z-index:200;min-width:110px;padding:6px 0;}
+.lang-dropdown div{padding:8px 16px;cursor:pointer;font-size:13px;}
+.lang-dropdown div:hover{background:#f5f5f5;}
+.lang-usd:hover .lang-dropdown{display:block;}
+.topbar-icons{display:flex;gap:12px;}
+.topbar-icons i{font-size:14px;cursor:pointer;color:#aaa;}
+.topbar-icons i:hover{color:#c9a96e;}
 
-/* 产品分类 */
-.categories{display:flex;justify-content:space-between;margin:50px 0;flex-wrap:wrap;gap:15px;}
-.category-card{flex:1 1 calc(12% - 10px);text-align:center;background:#fff;padding:10px;border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .25s,opacity .5s;opacity:0;transform:translateY(50px);}
-.category-card.show{opacity:1;transform:translateY(0);}
-.category-card:hover{transform:translateY(-5px);}
-.sim-bottle{width:60px;height:180px;margin:auto;border-radius:18px;background:linear-gradient(180deg,#fff,#f4f4f4);border:1px solid #e7e7e7;box-shadow:0 8px 18px rgba(0,0,0,.08);position:relative;}
+/* ── NAV ── */
+.navbar{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.08);position:sticky;top:0;z-index:999;}
+.navbar-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:32px;height:70px;}
+.logo-wrap{flex-shrink:0;margin-right:10px;}
+.logo-text{font-size:28px;font-weight:900;letter-spacing:-1px;color:#111;line-height:1;}
+.logo-text .o{color:#c9a96e;font-style:italic;}
+.logo-sub{font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:#999;font-weight:600;margin-top:2px;}
+.nav-links{display:flex;align-items:center;gap:4px;flex:1;}
+.nav-links a,.nav-links .nav-drop{font-size:14px;font-weight:500;color:#333;text-decoration:none;padding:6px 14px;border-radius:6px;display:flex;align-items:center;gap:4px;cursor:pointer;transition:color .2s,background .2s;}
+.nav-links a:hover,.nav-links .nav-drop:hover{color:#c9a96e;}
+.nav-links a.active{background:#f5f0e8;color:#c9a96e;font-weight:700;}
+.nav-links a.active i{color:#c9a96e;}
+.nav-links .nav-drop i{font-size:10px;color:#999;}
+.nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+.btn-search{width:36px;height:36px;border:1.5px solid #ddd;border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:#fff;}
+.btn-search:hover{border-color:#c9a96e;}
+.btn-quote{background:#c9a96e;color:#fff;font-size:14px;font-weight:700;padding:10px 22px;border-radius:6px;text-decoration:none;white-space:nowrap;transition:opacity .2s;}
+.btn-quote:hover{opacity:.9;}
 
-/* 工厂实力条 */
-.stats{display:flex;justify-content:space-between;background:#121317;color:#fff;padding:30px 20px;border-radius:var(--radius);margin-bottom:50px;flex-wrap:wrap;gap:15px;}
-.stat{flex:1;text-align:center;transition:transform .25s;}
-.stat:hover{transform:translateY(-5px);}
-.stat h2{margin:0;font-size:24px;}
-.stat p{margin:5px 0 0;font-size:14px;color:#ccc;}
+/* ── HERO ── */
+.hero{position:relative;height:520px;overflow:hidden;background:#e8edf2;}
+.hero-bg{position:absolute;inset:0;background:url('https://sc01.alicdn.com/kf/A7981cbed252c4e2d88fa8551bd72b084h.png') center/cover no-repeat;opacity:1;}
+.hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 40px;height:100%;display:flex;align-items:center;}
+.hero-content{max-width:480px;}
+.hero-title{font-size:48px;font-weight:900;line-height:1.08;color:#111;text-transform:uppercase;margin-bottom:18px;}
+.hero-title .gold{color:#c9a96e;}
+.hero-badges{display:flex;align-items:center;gap:6px;margin-bottom:22px;flex-wrap:wrap;}
+.hero-badge{display:flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#333;}
+.hero-badge i{color:#c9a96e;font-size:15px;}
+.hero-badge-sep{color:#bbb;font-size:16px;}
+.hero-list{margin-bottom:32px;}
+.hero-list li{display:flex;align-items:center;gap:9px;font-size:14px;color:#222;margin-bottom:10px;font-weight:500;}
+.hero-list li i{color:#c9a96e;font-size:16px;flex-shrink:0;}
+.hero-btns{display:flex;gap:14px;}
+.btn-dark{display:inline-flex;align-items:center;gap:8px;background:#111;color:#fff;font-size:14px;font-weight:700;padding:13px 26px;border-radius:6px;text-decoration:none;transition:background .2s;}
+.btn-dark:hover{background:#333;}
+.btn-outline-dark{display:inline-flex;align-items:center;gap:8px;border:2px solid #111;color:#111;font-size:14px;font-weight:700;padding:11px 26px;border-radius:6px;text-decoration:none;transition:all .2s;}
+.btn-outline-dark:hover{background:#111;color:#fff;}
 
-/* 热销产品 */
-.hot-products{margin-bottom:50px;}
-.hot-products h2{text-align:center;font-size:28px;margin-bottom:30px;}
-.product-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;}
-.product-card{width:calc(16.6% - 10px);background:#fff;border-radius:var(--radius);padding:15px;text-align:center;box-shadow:var(--shadow);transition:transform .25s,opacity .5s;opacity:0;transform:translateY(50px);}
-.product-card.show{opacity:1;transform:translateY(0);}
-.product-card:hover{transform:scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,.15);}
-.sim-bottle-small{width:60px;height:180px;margin:auto;border-radius:18px;background:linear-gradient(180deg,#fff,#f4f4f4);border:1px solid #e7e7e7;box-shadow:0 8px 18px rgba(0,0,0,.08);position:relative;}
+/* ── FLOATING SIDEBAR ── */
+.float-sidebar{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:500;display:flex;flex-direction:column;}
+.float-item{width:58px;padding:10px 6px;background:#fff;border:1px solid #e8e8e8;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;transition:background .2s;}
+.float-item:not(:first-child){border-top:0;}
+.float-item:hover{background:#f5f0e8;}
+.float-item i{font-size:18px;color:#c9a96e;}
+.float-item span{font-size:9px;color:#555;text-align:center;font-weight:600;line-height:1.2;}
 
-/* CTA */
-.cta{display:flex;justify-content:space-between;align-items:center;padding:40px 20px;background:#17181c;border-radius:var(--radius);margin-bottom:50px;color:#fff;flex-wrap:wrap;gap:15px;}
-.cta h2{font-size:24px;max-width:600px;}
-.btn-cta{background:var(--gold);color:#fff;transition:transform .25s;}
-.btn-cta:hover{transform:scale(1.05);}
+/* ── CATEGORY STRIP ── */
+.cat-strip{background:#fff;padding:36px 0 28px;border-bottom:1px solid #f0f0f0;box-shadow:0 4px 20px rgba(0,0,0,.06);}
+.cat-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;}
+.cat-item{display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;min-width:100px;}
+.cat-circle{width:95px;height:95px;border-radius:50%;background:#f5f5f7;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:box-shadow .2s,transform .2s;}
+.cat-circle img{width:75px;height:75px;object-fit:contain;}
+.cat-item:hover .cat-circle{box-shadow:0 6px 20px rgba(0,0,0,.12);transform:translateY(-3px);}
+.cat-name{font-size:13px;font-weight:700;color:#222;text-align:center;}
+.cat-link{font-size:11px;color:#c9a96e;font-weight:600;}
+.cat-link i{font-size:9px;}
 
-/* Footer */
-footer{background:#121317;color:#ccc;padding:40px 0;text-align:center;font-size:14px;}
+/* ── STATS BAR ── */
+.stats-bar{background:#1a1a2e;padding:36px 0;}
+.stats-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+.stat-item{display:flex;align-items:center;gap:14px;}
+.stat-icon{font-size:38px;color:#c9a96e;opacity:.9;}
+.stat-num{font-size:28px;font-weight:800;color:#fff;line-height:1;}
+.stat-num sup{font-size:16px;}
+.stat-label{font-size:11.5px;color:#8899aa;text-transform:uppercase;letter-spacing:.5px;margin-top:3px;}
+.stat-divider{width:1px;height:50px;background:rgba(255,255,255,.1);}
 
-/* 响应式 */
-@media(max-width:1024px){.hero{flex-direction:column;}.product-card{width:calc(33% - 10px);}.category-card{flex:1 1 30%;}.stat{flex:1 1 30%;}}
-@media(max-width:640px){.product-card{width:calc(50% - 10px);}.stat{flex:1 1 100%;}.category-card{flex:1 1 100%;}}
+/* ── HOT PRODUCTS ── */
+.hot-products{padding:60px 0 50px;background:#f9f9fb;}
+.section-head{text-align:center;margin-bottom:40px;}
+.section-title{font-size:30px;font-weight:800;color:#111;display:inline-flex;align-items:center;gap:8px;letter-spacing:.5px;}
+.section-title .hot{color:#c9a96e;}
+.section-title .prod{color:#111;}
+.title-line{width:60px;height:3px;background:#c9a96e;margin:10px auto 0;}
+.products-wrap{max-width:1200px;margin:0 auto;padding:0 50px;position:relative;}
+.products-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid #eee;border-radius:0;background:#fff;overflow:hidden;}
+.prod-card{border-right:1px solid #eee;padding:24px 16px 20px;display:flex;flex-direction:column;align-items:center;transition:box-shadow .2s;cursor:pointer;}
+.prod-card:last-child{border-right:none;}
+.prod-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);z-index:1;}
+.prod-card-img{height:140px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.prod-card-img img{max-height:130px;max-width:100%;object-fit:contain;transition:transform .3s;}
+.prod-card:hover .prod-card-img img{transform:scale(1.05);}
+.prod-card-name{font-size:13.5px;font-weight:700;color:#111;margin-bottom:5px;text-align:center;}
+.prod-card-sub{font-size:11px;color:#888;text-align:center;line-height:1.4;}
+.prod-card-sub2{font-size:11px;color:#666;text-align:center;line-height:1.4;}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:#fff;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;color:#555;box-shadow:0 2px 8px rgba(0,0,0,.1);transition:all .2s;}
+.arrow-btn:hover{background:#c9a96e;color:#fff;border-color:#c9a96e;}
+.arrow-left{left:4px;}
+.arrow-right{right:4px;}
+.view-all-wrap{text-align:center;margin-top:32px;}
+.btn-view-all{display:inline-flex;align-items:center;gap:8px;background:#111;color:#fff;font-size:14px;font-weight:700;padding:13px 32px;border-radius:6px;text-decoration:none;transition:background .2s;}
+.btn-view-all:hover{background:#333;}
+
+/* ── FEATURES ── */
+.features{padding:48px 0;background:#fff;border-top:1px solid #f0f0f0;}
+.features-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.feat-card{padding:28px 24px;border-right:1px solid #f0f0f0;display:flex;gap:14px;align-items:flex-start;}
+.feat-card:last-child{border-right:none;}
+.feat-icon-wrap{width:44px;height:44px;border:2px solid #3b82f6;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.feat-icon-wrap i{font-size:20px;color:#3b82f6;}
+.feat-title{font-size:14px;font-weight:700;color:#111;margin-bottom:6px;}
+.feat-text{font-size:12px;color:#888;line-height:1.6;}
+.feat-img{flex-shrink:0;width:100px;height:80px;object-fit:cover;border-radius:6px;margin-left:auto;}
+
+/* ── CTA BAR ── */
+.cta-bar{background:#1a1a2e;padding:28px 0;}
+.cta-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+.cta-left .cta-title{font-size:17px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.cta-left .cta-sub{font-size:13px;color:#8899aa;}
+.btn-cta{display:inline-flex;align-items:center;gap:8px;background:#c9a96e;color:#fff;font-size:14px;font-weight:700;padding:13px 28px;border-radius:6px;text-decoration:none;white-space:nowrap;transition:opacity .2s;}
+.btn-cta:hover{opacity:.9;}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:none;}
 </style>
 </head>
 <body>
 
-<header class="container">
-  <div class="logo"><img src="assets/images/logo.png" alt="Inhaosin Logo"></div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Products</a>
-    <a href="#">About</a>
-    <a href="#">ODM/OEM</a>
-    <a href="#">Application</a>
-    <a href="#">Support</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
-
-<section class="hero container">
-  <div class="hero-text">
-    <h1>Professional Ink Solution Provider</h1>
-    <p>High quality, stable performance and eco-friendly inks for DTF, UV, sublimation, eco-solvent and related consumables.</p>
-    <button class="btn btn-primary">View Products</button>
-    <button class="btn btn-outline">Contact Us</button>
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>Professional Ink Solution Provider &amp; Manufacturer Since 2012</span>
+    <div class="topbar-right">
+      <div class="lang-usd">
+        English <i class="fa-solid fa-chevron-down"></i>
+        <div class="lang-dropdown">
+          <div onclick="setLang('en')">English</div>
+          <div onclick="setLang('zh')">中文</div>
+          <div onclick="setLang('es')">Español</div>
+          <div onclick="setLang('ru')">Русский</div>
+        </div>
+      </div>
+      <span class="sep">|</span>
+      <div class="lang-usd">USD <i class="fa-solid fa-chevron-down"></i></div>
+      <span class="sep">|</span>
+      <span><i class="fa-regular fa-envelope" style="margin-right:5px;color:#c9a96e;"></i>info@inhaosin.com</span>
+      <div class="topbar-icons">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-linkedin-in"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+    </div>
   </div>
-  <div class="hero-image">
-    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">DTF Ink</div><div class="bottle-color" style="background:#00a9e8;"></div></div></div>
-    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">UV Ink</div><div class="bottle-color" style="background:#ff3f98;"></div></div></div>
-    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">Sublimation</div><div class="bottle-color" style="background:#f2bf14;"></div></div></div>
-    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">Eco Solvent</div><div class="bottle-color" style="background:#222a35;"></div></div></div>
-    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">White Ink</div><div class="bottle-color" style="background:#c9c9c9;"></div></div></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <div class="logo-wrap">
+      <div class="logo-text">Inha<span class="o">o</span>sin</div>
+      <div class="logo-sub">Professional Ink Solution</div>
+    </div>
+    <div class="nav-links">
+      <a href="#" class="active"><i class="fa-solid fa-house" style="font-size:12px;"></i> Home</a>
+      <div class="nav-drop">Products <i class="fa-solid fa-chevron-down"></i></div>
+      <a href="#">About Us</a>
+      <a href="#">ODM/OEM</a>
+      <div class="nav-drop">Application <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="nav-drop">Support <i class="fa-solid fa-chevron-down"></i></div>
+      <a href="#">News</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="nav-right">
+      <div class="btn-search"><i class="fa-solid fa-magnifying-glass" style="font-size:14px;color:#555;"></i></div>
+      <a href="#" class="btn-quote">Get A Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <!-- Overlay: left side slightly lighter for text readability -->
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(255,255,255,0.78) 38%,rgba(255,255,255,0) 65%);z-index:1;"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Professional Ink<br>
+        <span class="gold">Solution</span> Provider
+      </h1>
+      <div class="hero-badges">
+        <div class="hero-badge"><i class="fa-solid fa-circle-check"></i> High Quality</div>
+        <span class="hero-badge-sep">|</span>
+        <div class="hero-badge"><i class="fa-solid fa-circle-check"></i> Stable Performance</div>
+        <span class="hero-badge-sep">|</span>
+        <div class="hero-badge"><i class="fa-solid fa-circle-check"></i> Eco Friendly</div>
+      </div>
+      <ul class="hero-list">
+        <li><i class="fa-solid fa-circle-check"></i> 12+ Years Manufacturing Experience</li>
+        <li><i class="fa-solid fa-circle-check"></i> 30,000m² Modern Production Base</li>
+        <li><i class="fa-solid fa-circle-check"></i> Annual Output 10,000,000+ Liters</li>
+        <li><i class="fa-solid fa-circle-check"></i> Exported to 80+ Countries &amp; Regions</li>
+        <li><i class="fa-solid fa-circle-check"></i> OEM / ODM &amp; Private Label Service</li>
+      </ul>
+      <div class="hero-btns">
+        <a href="#" class="btn-dark">View Products <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#" class="btn-outline-dark">Contact Us <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- Ink bottles in the hero (right side) -->
+  <div style="position:absolute;right:60px;bottom:0;z-index:2;height:92%;display:flex;align-items:flex-end;">
+    <img src="https://sc02.alicdn.com/kf/A0af95ccf181049308fe15b5f770f7163p.png" alt="Ink Bottles" style="height:88%;object-fit:contain;drop-shadow:0 20px 40px rgba(0,0,0,.3);">
   </div>
 </section>
 
-<section class="container categories">
-  <div class="category-card"><div class="sim-bottle"></div><span>DTF Ink</span></div>
-  <div class="category-card"><div class="sim-bottle"></div><span>UV Ink</span></div>
-  <div class="category-card"><div class="sim-bottle"></div><span>Sublimation</span></div>
-  <div class="category-card"><div class="sim-bottle"></div><span>Eco Solvent</span></div>
-  <div class="category-card"><div class="sim-bottle"></div><span>DTF PET Film</span></div>
-  <div class="category-card"><div class="sim-bottle"></div><span>DTF Powder</span></div>
-  <div class="category-card"><div class="sim-bottle"></div><span>Cleaning Solution</span></div>
-  <div class="category-card"><div class="sim-bottle"></div><span>UV DTF Film</span></div>
-  <div class="category-card"><div class="sim-bottle"></div><span>OEM / Private Label</span></div>
-</section>
+<!-- FLOATING SIDEBAR -->
+<div class="float-sidebar">
+  <div class="float-item"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></div>
+  <div class="float-item"><i class="fa-regular fa-envelope"></i><span>Email</span></div>
+  <div class="float-item"><i class="fa-regular fa-file-lines"></i><span>Request<br>Quote</span></div>
+  <div class="float-item" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fa-solid fa-chevron-up"></i><span>TOP</span></div>
+</div>
 
-<section class="container stats">
-  <div class="stat"><h2>12+</h2><p>Years Experience</p></div>
-  <div class="stat"><h2>30,000 m³</h2><p>Factory Area</p></div>
-  <div class="stat"><h2>10,000,000+</h2><p>Liters Annual Output</p></div>
-  <div class="stat"><h2>80+</h2><p>Export Countries</p></div>
-  <div class="stat"><h2>50+</h2><p>R&D Team</p></div>
-  <div class="stat"><h2>ISO9001</h2><p>Quality Certified</p></div>
-</section>
-
-<section class="container hot-products">
-  <h2>HOT PRODUCTS</h2>
-  <div class="product-row">
-    <div class="product-card"><div class="sim-bottle-small"></div><h4>DTF Ink</h4><p>CMYK W Colors Standard/High/Super</p></div>
-    <div class="product-card"><div class="sim-bottle-small"></div><h4>UV Ink</h4><p>For Epson/Industrial Heads Hard/Soft/Neutral</p></div>
-    <div class="product-card"><div class="sim-bottle-small"></div><h4>Sublimation Ink</h4><p>Epson 1-16H / 1-35H / 8H Fluorescent</p></div>
-    <div class="product-card"><div class="sim-bottle-small"></div><h4>Eco Solvent Ink</h4><p>Low Odor / Odorless Eco / Premium / Leather / ECO</p></div>
-    <div class="product-card"><div class="sim-bottle-small"></div><h4>DTF PET Film</h4><p>A3 / A4 Sheets 30cm/33cm/60cm Rolls</p></div>
-    <div class="product-card"><div class="sim-bottle-small"></div><h4>DTF Powder</h4><p>White DTF Powder Hot Melt TPU Powder</p></div>
+<!-- CATEGORY STRIP -->
+<section class="cat-strip">
+  <div class="cat-inner">
+    <!-- DTF Ink -->
+    <div class="cat-item">
+      <div class="cat-circle"><img src="https://sc02.alicdn.com/kf/A0af95ccf181049308fe15b5f770f7163p.png" alt="DTF Ink"></div>
+      <div class="cat-name">DTF Ink</div>
+      <div class="cat-link">View More <i class="fa-solid fa-chevron-right"></i></div>
+    </div>
+    <!-- UV Ink -->
+    <div class="cat-item">
+      <div class="cat-circle"><img src="https://sc02.alicdn.com/kf/A9675572fbc57404fb04fb7d4aee4b184h.png" alt="UV Ink"></div>
+      <div class="cat-name">UV Ink</div>
+      <div class="cat-link">View More <i class="fa-solid fa-chevron-right"></i></div>
+    </div>
+    <!-- Eco Solvent -->
+    <div class="cat-item">
+      <div class="cat-circle"><img src="https://sc02.alicdn.com/kf/A9cbe8d3471874c60aee2f4a891b0b38b2.png" alt="Eco Solvent Ink"></div>
+      <div class="cat-name">Eco Solvent Ink</div>
+      <div class="cat-link">View More <i class="fa-solid fa-chevron-right"></i></div>
+    </div>
+    <!-- Sublimation -->
+    <div class="cat-item">
+      <div class="cat-circle"><img src="https://sc02.alicdn.com/kf/A9cbe8d3471874c60aee2f4a891b0b38b2.png" alt="Sublimation Ink"></div>
+      <div class="cat-name">Sublimation Ink</div>
+      <div class="cat-link">View More <i class="fa-solid fa-chevron-right"></i></div>
+    </div>
+    <!-- DTF PET Film -->
+    <div class="cat-item">
+      <div class="cat-circle"><img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" alt="DTF PET Film"></div>
+      <div class="cat-name">DTF PET Film</div>
+      <div class="cat-link">View More <i class="fa-solid fa-chevron-right"></i></div>
+    </div>
+    <!-- DTF Powder -->
+    <div class="cat-item">
+      <div class="cat-circle"><img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" alt="DTF Powder"></div>
+      <div class="cat-name">DTF Powder</div>
+      <div class="cat-link">View More <i class="fa-solid fa-chevron-right"></i></div>
+    </div>
+    <!-- Cleaning Solution -->
+    <div class="cat-item">
+      <div class="cat-circle"><img src="https://sc02.alicdn.com/kf/A9675572fbc57404fb04fb7d4aee4b184h.png" alt="Cleaning Solution"></div>
+      <div class="cat-name">Cleaning Solution</div>
+      <div class="cat-link">View More <i class="fa-solid fa-chevron-right"></i></div>
+    </div>
+    <!-- UV DTF Film -->
+    <div class="cat-item">
+      <div class="cat-circle"><img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" alt="UV DTF Film"></div>
+      <div class="cat-name">UV DTF Film</div>
+      <div class="cat-link">View More <i class="fa-solid fa-chevron-right"></i></div>
+    </div>
+    <!-- OEM -->
+    <div class="cat-item">
+      <div class="cat-circle"><img src="https://sc02.alicdn.com/kf/A0af95ccf181049308fe15b5f770f7163p.png" alt="OEM"></div>
+      <div class="cat-name">OEM / Private Label</div>
+      <div class="cat-link">View More <i class="fa-solid fa-chevron-right"></i></div>
+    </div>
   </div>
 </section>
 
-<section class="cta container">
-  <h2>LOOKING FOR A RELIABLE INK SOLUTION PARTNER?</h2>
-  <button class="btn btn-cta">Get A Free Quote</button>
+<!-- STATS BAR -->
+<section class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <!-- Building icon -->
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="14" width="28" height="22" rx="2" stroke="#c9a96e" stroke-width="2"/><rect x="14" y="22" width="6" height="8" rx="1" stroke="#c9a96e" stroke-width="2"/><rect x="10" y="18" width="4" height="4" rx="0.5" stroke="#c9a96e" stroke-width="1.5"/><rect x="20" y="18" width="4" height="4" rx="0.5" stroke="#c9a96e" stroke-width="1.5"/><rect x="26" y="18" width="4" height="4" rx="0.5" stroke="#c9a96e" stroke-width="1.5"/><line x1="4" y1="36" x2="36" y2="36" stroke="#c9a96e" stroke-width="2"/><rect x="14" y="6" width="12" height="8" rx="1" stroke="#c9a96e" stroke-width="2"/></svg>
+      <div><div class="stat-num">12<sup>+</sup></div><div class="stat-label">Years Experience</div></div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <svg width="42" height="40" viewBox="0 0 42 40" fill="none"><rect x="4" y="16" width="34" height="20" rx="2" stroke="#c9a96e" stroke-width="2"/><rect x="12" y="10" width="18" height="10" rx="1" stroke="#c9a96e" stroke-width="2"/><rect x="16" y="6" width="10" height="6" rx="1" stroke="#c9a96e" stroke-width="2"/><rect x="8" y="22" width="4" height="4" rx=".5" stroke="#c9a96e" stroke-width="1.5"/><rect x="16" y="22" width="4" height="4" rx=".5" stroke="#c9a96e" stroke-width="1.5"/><rect x="24" y="22" width="4" height="4" rx=".5" stroke="#c9a96e" stroke-width="1.5"/><rect x="32" y="22" width="4" height="4" rx=".5" stroke="#c9a96e" stroke-width="1.5"/></svg>
+      <div><div class="stat-num">30,000 <span style="font-size:16px;font-weight:600;">m²</span></div><div class="stat-label">Factory Area</div></div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <svg width="38" height="40" viewBox="0 0 38 40" fill="none"><rect x="10" y="6" width="18" height="28" rx="3" stroke="#c9a96e" stroke-width="2"/><line x1="14" y1="12" x2="24" y2="12" stroke="#c9a96e" stroke-width="1.5"/><line x1="14" y1="17" x2="24" y2="17" stroke="#c9a96e" stroke-width="1.5"/><circle cx="19" cy="30" r="2.5" stroke="#c9a96e" stroke-width="1.5"/><path d="M7 34 Q19 26 31 34" stroke="#c9a96e" stroke-width="1.5" fill="none"/></svg>
+      <div><div class="stat-num">10,000,000<sup>+</sup></div><div class="stat-label">Liters Annual Output</div></div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#c9a96e" stroke-width="2"/><ellipse cx="20" cy="20" rx="6" ry="14" stroke="#c9a96e" stroke-width="1.5"/><line x1="6" y1="20" x2="34" y2="20" stroke="#c9a96e" stroke-width="1.5"/><path d="M9 13 Q20 18 31 13" stroke="#c9a96e" stroke-width="1.5" fill="none"/><path d="M9 27 Q20 22 31 27" stroke="#c9a96e" stroke-width="1.5" fill="none"/></svg>
+      <div><div class="stat-num">80<sup>+</sup></div><div class="stat-label">Export Countries</div></div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="14" cy="14" r="7" stroke="#c9a96e" stroke-width="2"/><circle cx="26" cy="14" r="7" stroke="#c9a96e" stroke-width="2"/><path d="M4 34 C4 26 10 22 14 22 C18 22 24 22 26 22 C30 22 36 26 36 34" stroke="#c9a96e" stroke-width="2" fill="none"/></svg>
+      <div><div class="stat-num">50<sup>+</sup></div><div class="stat-label">R&amp;D Team</div></div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 4 L34 10 L34 22 C34 29 27 35 20 38 C13 35 6 29 6 22 L6 10 Z" stroke="#c9a96e" stroke-width="2" fill="none"/><path d="M13 20 L18 25 L27 15" stroke="#c9a96e" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><div class="stat-num" style="font-size:22px;letter-spacing:-0.5px;">ISO9001</div><div class="stat-label">Quality Certified</div></div>
+    </div>
+  </div>
 </section>
 
-<footer>
-<div class="container"><p>© 2026 Inhaosin. All rights reserved.</p></div>
-</footer>
+<!-- HOT PRODUCTS -->
+<section class="hot-products">
+  <div class="section-head">
+    <div class="section-title"><span class="hot">HOT</span>&nbsp;<span class="prod">PRODUCTS</span></div>
+    <div class="title-line"></div>
+  </div>
+  <div class="products-wrap reveal">
+    <div class="arrow-btn arrow-left"><i class="fa-solid fa-chevron-left"></i></div>
+    <div class="products-grid">
+      <!-- Card 1 -->
+      <div class="prod-card">
+        <div class="prod-card-img"><img src="https://sc02.alicdn.com/kf/A0af95ccf181049308fe15b5f770f7163p.png" alt="DTF Ink"></div>
+        <div class="prod-card-name">DTF Ink</div>
+        <div class="prod-card-sub">CMYK W S Colors</div>
+        <div class="prod-card-sub2">Standard / High / Super</div>
+      </div>
+      <!-- Card 2 -->
+      <div class="prod-card">
+        <div class="prod-card-img"><img src="https://sc02.alicdn.com/kf/A9675572fbc57404fb04fb7d4aee4b184h.png" alt="UV Ink"></div>
+        <div class="prod-card-name">UV Ink</div>
+        <div class="prod-card-sub">For Epson / Industrial Heads</div>
+        <div class="prod-card-sub2">Hard / Soft / Neutral</div>
+      </div>
+      <!-- Card 3 -->
+      <div class="prod-card">
+        <div class="prod-card-img"><img src="https://sc02.alicdn.com/kf/A9cbe8d3471874c60aee2f4a891b0b38b2.png" alt="Sublimation Ink"></div>
+        <div class="prod-card-name" style="font-weight:800;">Sublimation Ink</div>
+        <div class="prod-card-sub">Epson 1-16H / 1-35H / 8H</div>
+        <div class="prod-card-sub2">Kyocera / Starfire / J-NEXT</div>
+      </div>
+      <!-- Card 4 -->
+      <div class="prod-card">
+        <div class="prod-card-img"><img src="https://sc02.alicdn.com/kf/A9cbe8d3471874c60aee2f4a891b0b38b2.png" alt="Eco Solvent Ink"></div>
+        <div class="prod-card-name">Eco Solvent Ink</div>
+        <div class="prod-card-sub">Low Odor / Odorless</div>
+        <div class="prod-card-sub2">Eco / Premium / Leather / ECO</div>
+      </div>
+      <!-- Card 5 -->
+      <div class="prod-card">
+        <div class="prod-card-img"><img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" alt="DTF PET Film"></div>
+        <div class="prod-card-name">DTF PET Film</div>
+        <div class="prod-card-sub">A3 / A4 Sheets</div>
+        <div class="prod-card-sub2">30cm / 33cm / 60cm Rolls</div>
+      </div>
+      <!-- Card 6 -->
+      <div class="prod-card">
+        <div class="prod-card-img"><img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" alt="DTF Powder"></div>
+        <div class="prod-card-name">DTF Powder</div>
+        <div class="prod-card-sub">White DTF Powder</div>
+        <div class="prod-card-sub2">Hot Melt TPU Powder</div>
+      </div>
+    </div>
+    <div class="arrow-btn arrow-right"><i class="fa-solid fa-chevron-right"></i></div>
+    <div class="view-all-wrap">
+      <a href="#" class="btn-view-all">View All Products <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="features-inner">
+    <div class="feat-card reveal">
+      <div class="feat-icon-wrap"><i class="fa-solid fa-flask-vial"></i></div>
+      <div>
+        <div class="feat-title">Strong R&D Capability</div>
+        <div class="feat-text">Professional R&D team with Rich experience in ink formula innovation and application.</div>
+      </div>
+      <img class="feat-img" src="https://sc02.alicdn.com/kf/A9db3682204e345c5b126f3e6a6ac530aD.png" alt="R&D">
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+      <div>
+        <div class="feat-title">Strict Quality Control</div>
+        <div class="feat-text">Raw material inspection, production process control and finished product testing to ensure stability.</div>
+      </div>
+      <img class="feat-img" src="https://sc02.alicdn.com/kf/A82a30cf215d245538d1266a6efeebe86D.png" alt="QC">
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon-wrap"><i class="fa-solid fa-handshake"></i></div>
+      <div>
+        <div class="feat-title">OEM / ODM Service</div>
+        <div class="feat-text">Support private label, custom formula, bottle, package and brand design.</div>
+      </div>
+      <img class="feat-img" src="https://sc02.alicdn.com/kf/A0af95ccf181049308fe15b5f770f7163p.png" alt="OEM">
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon-wrap"><i class="fa-solid fa-ship"></i></div>
+      <div>
+        <div class="feat-title">Global Shipping</div>
+        <div class="feat-text">Fast delivery by sea, air and express to help your business grow.</div>
+      </div>
+      <img class="feat-img" src="https://sc02.alicdn.com/kf/A5b516457314947b6b9a76228c0d0ad51O.png" alt="Shipping">
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAR -->
+<section class="cta-bar">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <div class="cta-title">Looking for a reliable ink solution partner?</div>
+      <div class="cta-sub">We are ready to support your business with high quality products and professional service.</div>
+    </div>
+    <a href="#" class="btn-cta">Get A Free Quote <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</section>
 
 <script>
-/* 简单滚动动画 */
-const observerOptions = {
-  threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries, obs) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-      obs.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll('.bottle, .category-card, .product-card').forEach(el => {
-  observer.observe(el);
-});
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+revealEls.forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>
