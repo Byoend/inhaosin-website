@@ -202,82 +202,73 @@
       position:relative;
       overflow:hidden;
       background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.15) 100%),
         url('https://sc01.alicdn.com/kf/A7981cbed252c4e2d88fa8551bd72b084h.png') center/cover no-repeat;
-      padding:120px 0 100px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#fff;
-      text-align:center;
+      padding:70px 0 58px;
     }
     .hero-grid{
-      display:block;
-      max-width:900px;
-      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      align-items:center;
+      gap:40px;
     }
     .hero h1{
-      font-size:64px;
-      line-height:1.1;
-      margin:0 0 24px;
-      letter-spacing:-1px;
-      font-weight:800;
-      color:#fff;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      font-size:58px;
+      line-height:1.04;
+      margin:0 0 18px;
+      letter-spacing:.2px;
+      color: #17181c;
     }
     .hero p{
-      color:rgba(255,255,255,0.9);
-      font-size:20px;
-      max-width:720px;
-      margin:0 auto 32px;
-      line-height:1.6;
-      text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+      color:var(--text-light);
+      font-size:18px;
+      max-width:620px;
+      margin:0 0 26px;
     }
     .hero-list{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:16px 32px;
-      margin:32px auto;
-      max-width:800px;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px 22px;
+      margin:26px 0 30px;
+      max-width:620px;
     }
     .hero-list div{
       display:flex;
       align-items:center;
       gap:10px;
       font-weight:600;
-      color:#fff;
-      font-size:16px;
+      color:#303744;
+      font-size:15px;
     }
     .hero-list div:before{
       content:"";
-      width:8px; height:8px;
+      width:10px; height:10px;
       border-radius:50%;
-      background:#fff;
-      box-shadow:0 0 0 4px rgba(255,255,255,0.2);
+      background:var(--gold);
+      box-shadow:0 0 0 6px rgba(185,152,108,.16);
+      flex:0 0 auto;
     }
     .hero-cta{
       display:flex;
-      justify-content:center;
-      gap:20px;
-      margin-bottom:40px;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:26px;
     }
     .hero-badges{
       display:flex;
-      justify-content:center;
-      gap:14px;
-      margin-top:20px;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:12px;
     }
     .hero-badge{
-      padding:10px 18px;
+      padding:10px 14px;
       border-radius:999px;
-      background:rgba(255,255,255,0.15);
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
-      border:1px solid rgba(255,255,255,0.2);
-      font-size:14px;
-      font-weight:600;
-      color:#fff;
+      background:#fff;
+      border:1px solid #ece7dd;
+      box-shadow:0 8px 18px rgba(0,0,0,.04);
+      font-size:13px;
+      font-weight:700;
+      color:#4c5561;
     }
 
     /* Hero visual */
@@ -1154,7 +1145,7 @@
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy reveal">
-        <div class="eyebrow" data-i18n="hero_eyebrow" style="background:rgba(255,255,255,0.2); color:#fff; border:1px solid rgba(255,255,255,0.3); margin: 0 auto 20px; display: table;">Factory Direct · Global Export Since 2012</div>
+        <div class="eyebrow" data-i18n="hero_eyebrow">Factory Direct · Global Export Since 2012</div>
         <h1 data-i18n="hero_h1">Professional Ink &amp; Consumables For Every Printer</h1>
         <p data-i18n="hero_p">
           Inhaosin is a China-based manufacturer specializing in DTF ink, UV ink, sublimation ink,
@@ -1170,8 +1161,8 @@
         </div>
 
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#products" data-i18n="hero_btn1" style="background:#fff; color:#17181c;">Explore Products</a>
-          <a class="btn btn-outline" href="#contact" data-i18n="hero_btn2" style="border-color:#fff; color:#fff;">Get Free Quote</a>
+          <a class="btn btn-primary" href="#products" data-i18n="hero_btn1">Explore Products</a>
+          <a class="btn btn-outline" href="#contact" data-i18n="hero_btn2">Get Free Quote</a>
         </div>
 
         <div class="hero-badges">
@@ -1179,6 +1170,59 @@
           <div class="hero-badge" data-i18n="hero_badge2">80+ Export Countries</div>
           <div class="hero-badge" data-i18n="hero_badge3">10,000,000+ Liters / Year</div>
           <div class="hero-badge" data-i18n="hero_badge4">OEM Sampling in 3–5 Days</div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="visual-bg"></div>
+
+        <div class="floating-tag tag-1">OEM / Private Label Available</div>
+        <div class="floating-tag tag-2">DTF · UV · Sublimation · Eco Solvent</div>
+        <div class="floating-tag tag-3">1000ml Bottles · Stable Batch Consistency</div>
+
+        <div class="shadow-floor"></div>
+
+        <div class="main-bottle-stage">
+          <div class="bottle small" style="--c:#00a9e8;">
+            <div class="bottle-label">
+              <div class="bottle-band"></div>
+              <div class="bottle-logo">INHAOSIN</div>
+              <div class="bottle-type">DTF INK</div>
+              <div class="bottle-color">CYAN</div>
+            </div>
+          </div>
+          <div class="bottle mid" style="--c:#ff3f98;">
+            <div class="bottle-label">
+              <div class="bottle-band"></div>
+              <div class="bottle-logo">INHAOSIN</div>
+              <div class="bottle-type">DTF INK</div>
+              <div class="bottle-color">MAGENTA</div>
+            </div>
+          </div>
+          <div class="bottle large" style="--c:#f2bf14;">
+            <div class="bottle-label">
+              <div class="bottle-band"></div>
+              <div class="bottle-logo">INHAOSIN</div>
+              <div class="bottle-type">DTF INK</div>
+              <div class="bottle-color">YELLOW</div>
+            </div>
+          </div>
+          <div class="bottle mid" style="--c:#222a35;">
+            <div class="bottle-label">
+              <div class="bottle-band"></div>
+              <div class="bottle-logo">INHAOSIN</div>
+              <div class="bottle-type">DTF INK</div>
+              <div class="bottle-color">BLACK</div>
+            </div>
+          </div>
+          <div class="bottle small" style="--c:#c9c9c9;">
+            <div class="bottle-label">
+              <div class="bottle-band"></div>
+              <div class="bottle-logo">INHAOSIN</div>
+              <div class="bottle-type">DTF INK</div>
+              <div class="bottle-color">WHITE</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1218,151 +1262,157 @@
       </div>
 
       <div class="grid-3">
-        <div class="category-card reveal">
-          <div class="card-visual"><img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" alt="Product" style="width:100%; height:100%; object-fit:contain;"></div><div class="color"></div></div>
-              <div class="mini-bottle" style="--c:#ff3f98"><div class="band"></div><div class="color"></div></div>
-              <div class="mini-bottle" style="--c:#f2bf14"><div class="band"></div><div class="color"></div></div>
-              <div class="mini-bottle" style="--c:#222a35"><div class="band"></div><div class="color"></div></div>
-            </div>
+                <div class="category-card reveal">
+          <div class="card-visual">
+            <img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" alt="Product" style="width:100%; height:100%; object-fit:contain;">
           </div>
           <div class="card-body">
+            
             <h3 class="card-title" data-i18n="prod_dtf_title">DTF Ink</h3>
             <div class="card-text" data-i18n="prod_dtf_text">CMYKW color set with standard, high concentration, and ultra concentration options for textile transfer printing.</div>
             <div class="chip-row">
               <span class="chip" data-i18n="chip_cmykw">CMYKW</span>
               <span class="chip" data-i18n="chip_1l">1L / 1000g</span>
               <span class="chip" data-i18n="chip_stable">Stable Flow</span>
-            </div>
+            
           </div>
         </div>
+        </div>
 
-        <div class="category-card reveal">
-          <div class="card-visual"><img src="https://sc02.alicdn.com/kf/A0af95ccf181049308fe15b5f770f7163p.png" alt="Product" style="width:100%; height:100%; object-fit:contain;"></div><div class="color"></div></div>
-              <div class="mini-bottle" style="--c:#95d9b2"><div class="band"></div><div class="color"></div></div>
-              <div class="mini-bottle" style="--c:#7d8590"><div class="band"></div><div class="color"></div></div>
-            </div>
+                <div class="category-card reveal">
+          <div class="card-visual">
+            <img src="https://sc02.alicdn.com/kf/A0af95ccf181049308fe15b5f770f7163p.png" alt="Product" style="width:100%; height:100%; object-fit:contain;">
           </div>
           <div class="card-body">
+            
             <h3 class="card-title" data-i18n="prod_uv_title">UV Ink</h3>
             <div class="card-text" data-i18n="prod_uv_text">Neutral, soft, and hard UV inks suitable for Epson printheads and multiple industrial printhead platforms.</div>
             <div class="chip-row">
               <span class="chip" data-i18n="chip_soft">Soft / Hard / Neutral</span>
               <span class="chip" data-i18n="chip_epson">Epson Heads</span>
               <span class="chip" data-i18n="chip_industrial">Industrial Heads</span>
-            </div>
+            
           </div>
         </div>
+        </div>
 
-        <div class="category-card reveal">
-          <div class="card-visual"><img src="https://sc02.alicdn.com/kf/A9675572fbc57404fb04fb7d4aee4b184h.png" alt="Product" style="width:100%; height:100%; object-fit:contain;"></div><div class="color"></div></div>
-              <div class="mini-bottle" style="--c:#ff5fae"><div class="band"></div><div class="color"></div></div>
-              <div class="mini-bottle" style="--c:#f7c845"><div class="band"></div><div class="color"></div></div>
-              <div class="mini-bottle" style="--c:#1a1e26"><div class="band"></div><div class="color"></div></div>
-            </div>
+                <div class="category-card reveal">
+          <div class="card-visual">
+            <img src="https://sc02.alicdn.com/kf/A9675572fbc57404fb04fb7d4aee4b184h.png" alt="Product" style="width:100%; height:100%; object-fit:contain;">
           </div>
           <div class="card-body">
+            
             <h3 class="card-title" data-i18n="prod_sub_title">Sublimation Ink</h3>
             <div class="card-text" data-i18n="prod_sub_text">Solutions for Epson 1–16 head / 1–35 head machines, fluorescent sublimation, Kyocera, J-NEXT style systems and more.</div>
             <div class="chip-row">
               <span class="chip" data-i18n="chip_wide">Wide Format</span>
               <span class="chip" data-i18n="chip_fluor">Fluorescent</span>
               <span class="chip" data-i18n="chip_textile">Textile Transfer</span>
-            </div>
+            
           </div>
         </div>
+        </div>
 
-        <div class="category-card reveal">
-          <div class="card-visual"><img src="https://sc02.alicdn.com/kf/A9cbe8d3471874c60aee2f4a891b0b38b2.png" alt="Product" style="width:100%; height:100%; object-fit:contain;"></div><div class="color"></div></div>
-              <div class="mini-bottle" style="--c:#a7b4be"><div class="band"></div><div class="color"></div></div>
-              <div class="mini-bottle" style="--c:#1f2630"><div class="band"></div><div class="color"></div></div>
-            </div>
+                <div class="category-card reveal">
+          <div class="card-visual">
+            <img src="https://sc02.alicdn.com/kf/A9cbe8d3471874c60aee2f4a891b0b38b2.png" alt="Product" style="width:100%; height:100%; object-fit:contain;">
           </div>
           <div class="card-body">
+            
             <h3 class="card-title" data-i18n="prod_eco_title">Eco Solvent Ink</h3>
             <div class="card-text" data-i18n="prod_eco_text">Low odor, odorless, environmentally friendly, premium grade, leather-specific and Galaxy eco solvent series.</div>
             <div class="chip-row">
               <span class="chip" data-i18n="chip_outdoor">Outdoor Durable</span>
               <span class="chip" data-i18n="chip_low_odor">Low Odor</span>
               <span class="chip" data-i18n="chip_eco">Eco Friendly</span>
-            </div>
+            
           </div>
         </div>
+        </div>
 
-        <div class="category-card reveal">
-          <div class="card-visual"><img src="https://sc02.alicdn.com/kf/A9675572fbc57404fb04fb7d4aee4b184h.png" alt="Product" style="width:100%; height:100%; object-fit:contain;"></div>
-              <div class="roll"></div>
-            </div>
+                <div class="category-card reveal">
+          <div class="card-visual">
+            <img src="https://sc02.alicdn.com/kf/A9675572fbc57404fb04fb7d4aee4b184h.png" alt="Product" style="width:100%; height:100%; object-fit:contain;">
           </div>
           <div class="card-body">
+            
             <h3 class="card-title" data-i18n="prod_film_title">DTF PET Film</h3>
             <div class="card-text" data-i18n="prod_film_text">A3 / A4 sheets and roll formats including 30cm × 100m, 33cm × 100m and 60cm × 100m hot peel transfer film options.</div>
             <div class="chip-row">
               <span class="chip" data-i18n="chip_sheets">Sheets & Rolls</span>
               <span class="chip" data-i18n="chip_matte">Matte Finish</span>
               <span class="chip" data-i18n="chip_hotpeel">Hot Peel</span>
-            </div>
+            
           </div>
         </div>
+        </div>
 
-        <div class="category-card reveal">
-          <div class="card-visual"><img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" alt="Product" style="width:100%; height:100%; object-fit:contain;"></div>
-            </div>
+                <div class="category-card reveal">
+          <div class="card-visual">
+            <img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" alt="Product" style="width:100%; height:100%; object-fit:contain;">
           </div>
           <div class="card-body">
+            
             <h3 class="card-title" data-i18n="prod_powder_title">TPU DTF Powder</h3>
             <div class="card-text" data-i18n="prod_powder_text">White TPU hot melt adhesive powder with anti-static improvement and high temperature transfer stability for garment printing.</div>
             <div class="chip-row">
               <span class="chip" data-i18n="chip_white">TPU White</span>
               <span class="chip" data-i18n="chip_antistatic">Anti-Static</span>
               <span class="chip" data-i18n="chip_adhesion">Strong Adhesion</span>
-            </div>
+            
           </div>
         </div>
+        </div>
 
-        <div class="category-card reveal">
-          <div class="card-visual"><img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" alt="Product" style="width:100%; height:100%; object-fit:contain;"></div>
-            </div>
+                <div class="category-card reveal">
+          <div class="card-visual">
+            <img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" alt="Product" style="width:100%; height:100%; object-fit:contain;">
           </div>
           <div class="card-body">
+            
             <h3 class="card-title" data-i18n="prod_clean_title">Cleaning Solution</h3>
             <div class="card-text" data-i18n="prod_clean_text">Daily maintenance and printhead cleaning solutions engineered to help reduce blockage and keep output more stable.</div>
             <div class="chip-row">
               <span class="chip" data-i18n="chip_head">Head Cleaning</span>
               <span class="chip" data-i18n="chip_mainten">Maintenance</span>
               <span class="chip" data-i18n="chip_care">Printer Care</span>
-            </div>
+            
           </div>
         </div>
+        </div>
 
-        <div class="category-card reveal">
-          <div class="card-visual"><img src="https://sc02.alicdn.com/kf/A9cbe8d3471874c60aee2f4a891b0b38b2.png" alt="Product" style="width:100%; height:100%; object-fit:contain;"></div>
-              <div class="roll"></div>
-            </div>
+                <div class="category-card reveal">
+          <div class="card-visual">
+            <img src="https://sc02.alicdn.com/kf/A9cbe8d3471874c60aee2f4a891b0b38b2.png" alt="Product" style="width:100%; height:100%; object-fit:contain;">
           </div>
           <div class="card-body">
+            
             <h3 class="card-title" data-i18n="prod_uvdtf_title">UV DTF Film</h3>
             <div class="card-text" data-i18n="prod_uvdtf_text">A/B film solution for UV transfer applications, supporting decorative graphics, labels, and hard-surface customization.</div>
             <div class="chip-row">
               <span class="chip" data-i18n="chip_ab">A/B Film</span>
               <span class="chip" data-i18n="chip_ready">Transfer Ready</span>
               <span class="chip" data-i18n="chip_decor">Decoration</span>
-            </div>
+            
           </div>
         </div>
+        </div>
 
-        <div class="category-card reveal">
-          <div class="card-visual"><img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" alt="Product" style="width:100%; height:100%; object-fit:contain;"></div>
-            </div>
+                <div class="category-card reveal">
+          <div class="card-visual">
+            <img src="https://sc02.alicdn.com/kf/A7f337c6f4853413ca98be9e10cce338eI.png" alt="Product" style="width:100%; height:100%; object-fit:contain;">
           </div>
           <div class="card-body">
+            
             <h3 class="card-title" data-i18n="prod_oem_title">OEM / Private Label</h3>
             <div class="card-text" data-i18n="prod_oem_text">Customized bottle labels, cartons, neutral packaging, and complete private-label support for distributors and resellers.</div>
             <div class="chip-row">
               <span class="chip" data-i18n="chip_custom">Custom Label</span>
               <span class="chip" data-i18n="chip_neutral">Neutral Packing</span>
               <span class="chip" data-i18n="chip_brand">Brand Support</span>
-            </div>
+            
           </div>
+        </div>
         </div>
       </div>
     </div>
