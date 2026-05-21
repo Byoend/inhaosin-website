@@ -36,68 +36,74 @@
     </script>
 
     <style>
-        /* ===== LOGO STYLES — faithful to bottle label ===== */
+        /* ===== LOGO STYLES — 1:1 bottle label replica ===== */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap');
+
         .logo-container {
             display: inline-flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             text-decoration: none;
             line-height: 1;
-            gap: 3px;
+            gap: 4px;
         }
         .logo-main {
             display: flex;
             align-items: center;
-            font-family: 'Georgia', 'Times New Roman', serif;
+            /* Montserrat Black Italic — closest free match to bottle wordmark */
+            font-family: 'Montserrat', 'Arial Black', 'Helvetica Neue', sans-serif;
             font-weight: 900;
             font-style: italic;
             font-size: 2rem;
-            letter-spacing: -0.02em;
-            color: #1a1a1a;
+            letter-spacing: -0.01em;
+            color: #111;
             line-height: 1;
         }
-        /* The "o" in Inha[o]sin is replaced by the color wheel ring */
+        /* The "o" in Inha[o]sin — 4-color wheel ring, same height as letters */
         .color-wheel {
-            width: 0.72em;
-            height: 0.72em;
+            display: inline-block;
+            width: 0.82em;
+            height: 0.82em;
             border-radius: 50%;
             flex-shrink: 0;
-            /* 12-segment wheel matching the bottle logo */
-            background: conic-gradient(
-                #e63946 0deg 30deg,
-                #f4a261 30deg 60deg,
-                #e9c46a 60deg 90deg,
-                #d4e157 90deg 120deg,
-                #57c460 120deg 150deg,
-                #2ec4b6 150deg 180deg,
-                #48cae4 180deg 210deg,
-                #4361ee 210deg 240deg,
-                #7209b7 240deg 270deg,
-                #b5179e 270deg 300deg,
-                #e63946 300deg 330deg,
-                #f4a261 330deg 360deg
-            );
+            margin: 0 0.01em;
             position: relative;
-            display: inline-block;
-            margin: 0 0.04em;
-            /* inner white circle to make ring shape */
-            box-shadow: inset 0 0 0 0.27em white;
+            top: 0.03em;
+            /* 4-quadrant CMYK color wheel matching the bottle "o" */
+            background: conic-gradient(
+                #00aeef 0deg 90deg,       /* Cyan  — top-left */
+                #ffdf00 90deg 180deg,     /* Yellow — top-right */
+                #ec008c 180deg 270deg,    /* Magenta — bottom-right */
+                #231f20 270deg 360deg     /* Black — bottom-left */
+            );
+            /* White inner ring to create donut shape */
+            box-shadow: inset 0 0 0 0.24em white;
+        }
+        .logo-tagline-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+            width: 100%;
+        }
+        .logo-tagline-line {
+            width: 100%;
+            height: 1px;
+            background: #bbb;
         }
         .logo-tagline {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.42rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 0.48rem;
             text-transform: uppercase;
-            letter-spacing: 0.22em;
-            font-weight: 600;
-            color: #555;
+            letter-spacing: 0.28em;
+            font-weight: 400;
+            color: #444;
             white-space: nowrap;
-            /* underline to match bottle style */
-            border-bottom: 1px solid #bbb;
-            padding-bottom: 1px;
         }
         /* White-background variant (footer) */
         .logo-main-white { color: #fff; }
-        .logo-tagline-white { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.4); }
+        .logo-tagline-white { color: rgba(255,255,255,0.7); }
+        .logo-tagline-line-white { background: rgba(255,255,255,0.35); }
         .hero-gradient {
             background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070');
             background-size: cover;
@@ -145,7 +151,10 @@
                     <div class="color-wheel"></div>
                     <span>sin</span>
                 </div>
-                <div class="logo-tagline">PROFESSIONAL INK SOLUTION</div>
+                <div class="logo-tagline-wrap">
+                    <div class="logo-tagline-line"></div>
+                    <div class="logo-tagline">PROFESSIONAL INK SOLUTION</div>
+                </div>
             </a>
             
             <ul class="hidden lg:flex space-x-8 font-semibold text-gray-700">
@@ -544,7 +553,10 @@
                         <div class="color-wheel"></div>
                         <span>sin</span>
                     </div>
-                    <div class="logo-tagline logo-tagline-white">PROFESSIONAL INK SOLUTION</div>
+                    <div class="logo-tagline-wrap">
+                        <div class="logo-tagline-line logo-tagline-line-white"></div>
+                        <div class="logo-tagline logo-tagline-white">PROFESSIONAL INK SOLUTION</div>
+                    </div>
                 </a>
                 <p class="text-gray-400 text-sm leading-relaxed">Your trusted partner for high-performance digital printing inks and consumables. Professional quality, factory direct.</p>
                 <div class="flex gap-4 mt-6">
