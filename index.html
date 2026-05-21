@@ -5,66 +5,61 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inhaosin | Professional Ink Solution</title>
 <style>
-:root {
+:root{
   --bg:#fff;
   --text:#1a1d24;
   --text-light:#6e7480;
   --gold:#b9986c;
-  --shadow:0 18px 45px rgba(15,18,28,.08);
-  --radius:20px;
+  --shadow:0 15px 35px rgba(0,0,0,0.08);
+  --radius:16px;
 }
 body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text);}
 a{text-decoration:none;color:inherit;}
 .container{width:min(1200px,95%);margin:auto;}
 header{display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10;background:#fff;}
 header .logo img{height:52px;}
-nav a{margin:0 15px;font-weight:600;color:#333;}
-.hero{display:flex;align-items:flex-end;justify-content:center;padding:80px 0;background:#f9f9f9;gap:20px;}
+nav a{margin:0 15px;font-weight:600;color:#333;transition:color .2s;}
+nav a:hover{color:var(--gold);}
+.hero{display:flex;align-items:flex-end;justify-content:space-between;padding:80px 0;background:#f9f9f9;gap:30px;}
 .hero-text{max-width:600px;}
-.hero-text h1{font-size:42px;margin-bottom:20px;}
+.hero-text h1{font-size:42px;margin-bottom:20px;line-height:1.2;}
 .hero-text p{font-size:16px;margin-bottom:20px;line-height:1.5;}
-.btn{padding:12px 24px;border-radius:8px;margin-right:10px;border:none;font-weight:700;cursor:pointer;transition:transform .25s;}
+.btn{padding:12px 24px;border-radius:10px;margin-right:10px;border:none;font-weight:700;cursor:pointer;transition:transform .25s, background .25s;}
 .btn:hover{transform:translateY(-2px);}
 .btn-primary{background:var(--gold);color:#fff;}
 .btn-outline{border:1px solid var(--gold);color:var(--gold);background:#fff;}
-.hero-image{display:flex;gap:15px;align-items:flex-end;}
 
-/* 立体墨水瓶模拟 */
-.bottle{
-  width:80px;height:240px;border-radius:22px;background:linear-gradient(180deg,#fff,#f0f0f0);border:1px solid #e7e7e7;box-shadow:var(--shadow);position:relative;transition:transform .3s;
-}
+/* Hero瓶子 */
+.hero-image{display:flex;gap:15px;align-items:flex-end;}
+.bottle{position:relative;width:80px;height:240px;border-radius:22px;background:linear-gradient(180deg,#fff,#f0f0f0);border:1px solid #e7e7e7;box-shadow:var(--shadow);transition:transform .3s;}
 .bottle:hover{transform:translateY(-10px);}
-.bottle:before{
-  content:"";position:absolute;top:-30px;left:20px;width:40px;height:40px;border-radius:10px;background:#111;box-shadow:0 8px 18px rgba(0,0,0,.18);
-}
-.bottle-label{
-  position:absolute;top:60px;left:10px;right:10px;height:120px;background:#fff;border-radius:14px;border:1px solid #eee;display:flex;flex-direction:column;align-items:center;justify-content:center;
-}
+.bottle-top{position:absolute;top:-30px;left:20px;width:40px;height:40px;background:#111;border-radius:10px;box-shadow:0 8px 18px rgba(0,0,0,0.18);}
+.bottle-label{position:absolute;top:60px;left:10px;right:10px;height:120px;background:#fff;border-radius:14px;border:1px solid #eee;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 .bottle-label .type{font-size:12px;font-weight:700;color:#555;margin-top:6px;text-transform:uppercase;}
 .bottle-color{width:24px;height:24px;border-radius:50%;margin-top:8px;}
 
-/* 产品分类卡片 */
+/* 产品分类 */
 .categories{display:flex;justify-content:space-between;margin:50px 0;flex-wrap:wrap;gap:15px;}
-.category-card{flex:1 1 calc(12% - 10px);text-align:center;background:#fff;padding:10px;border-radius:12px;box-shadow:var(--shadow);transition:transform .25s;}
+.category-card{flex:1 1 calc(12% - 10px);text-align:center;background:#fff;padding:10px;border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .25s;}
 .category-card:hover{transform:translateY(-5px);}
 .sim-bottle{width:60px;height:180px;margin:auto;border-radius:18px;background:linear-gradient(180deg,#fff,#f4f4f4);border:1px solid #e7e7e7;box-shadow:0 8px 18px rgba(0,0,0,.08);position:relative;}
 
 /* 工厂实力条 */
-.stats{display:flex;justify-content:space-between;background:#121317;color:#fff;padding:30px 20px;border-radius:12px;margin-bottom:50px;flex-wrap:wrap;gap:15px;}
+.stats{display:flex;justify-content:space-between;background:#121317;color:#fff;padding:30px 20px;border-radius:var(--radius);margin-bottom:50px;flex-wrap:wrap;gap:15px;}
 .stat{flex:1;text-align:center;}
 .stat h2{margin:0;font-size:24px;}
 .stat p{margin:5px 0 0;font-size:14px;color:#ccc;}
 
-/* 热销产品模块 */
+/* 热销产品 */
 .hot-products{margin-bottom:50px;}
 .hot-products h2{text-align:center;font-size:28px;margin-bottom:30px;}
 .product-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;}
-.product-card{width:calc(16.6% - 10px);background:#fff;border-radius:12px;padding:15px;text-align:center;box-shadow:var(--shadow);transition:transform .25s;}
+.product-card{width:calc(16.6% - 10px);background:#fff;border-radius:var(--radius);padding:15px;text-align:center;box-shadow:var(--shadow);transition:transform .25s;}
 .product-card:hover{transform:translateY(-5px);}
 .sim-bottle-small{width:60px;height:180px;margin:auto;border-radius:18px;background:linear-gradient(180deg,#fff,#f4f4f4);border:1px solid #e7e7e7;box-shadow:0 8px 18px rgba(0,0,0,.08);position:relative;}
 
 /* CTA */
-.cta{display:flex;justify-content:space-between;align-items:center;padding:40px 20px;background:#17181c;border-radius:12px;margin-bottom:50px;color:#fff;flex-wrap:wrap;gap:15px;}
+.cta{display:flex;justify-content:space-between;align-items:center;padding:40px 20px;background:#17181c;border-radius:var(--radius);margin-bottom:50px;color:#fff;flex-wrap:wrap;gap:15px;}
 .cta h2{font-size:24px;max-width:600px;}
 .btn-cta{background:var(--gold);color:#fff;}
 
@@ -99,11 +94,11 @@ footer{background:#121317;color:#ccc;padding:40px 0;text-align:center;font-size:
     <button class="btn btn-outline">Contact Us</button>
   </div>
   <div class="hero-image">
-    <div class="bottle"><div class="bottle-label"><div class="type">DTF Ink</div><div class="bottle-color" style="background:#00a9e8;"></div></div></div>
-    <div class="bottle"><div class="bottle-label"><div class="type">UV Ink</div><div class="bottle-color" style="background:#ff3f98;"></div></div></div>
-    <div class="bottle"><div class="bottle-label"><div class="type">Sublimation</div><div class="bottle-color" style="background:#f2bf14;"></div></div></div>
-    <div class="bottle"><div class="bottle-label"><div class="type">Eco Solvent</div><div class="bottle-color" style="background:#222a35;"></div></div></div>
-    <div class="bottle"><div class="bottle-label"><div class="type">White Ink</div><div class="bottle-color" style="background:#c9c9c9;"></div></div></div>
+    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">DTF Ink</div><div class="bottle-color" style="background:#00a9e8;"></div></div></div>
+    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">UV Ink</div><div class="bottle-color" style="background:#ff3f98;"></div></div></div>
+    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">Sublimation</div><div class="bottle-color" style="background:#f2bf14;"></div></div></div>
+    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">Eco Solvent</div><div class="bottle-color" style="background:#222a35;"></div></div></div>
+    <div class="bottle"><div class="bottle-top"></div><div class="bottle-label"><div class="type">White Ink</div><div class="bottle-color" style="background:#c9c9c9;"></div></div></div>
   </div>
 </section>
 
@@ -148,5 +143,6 @@ footer{background:#121317;color:#ccc;padding:40px 0;text-align:center;font-size:
 <footer>
 <div class="container"><p>© 2026 Inhaosin. All rights reserved.</p></div>
 </footer>
+
 </body>
 </html>
